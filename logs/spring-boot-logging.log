@@ -64,3 +64,464 @@
 2016-09-23 16:38:03.795  INFO 9608 --- [RMI TCP Connection(2)-192.168.56.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
 2016-09-23 16:38:03.796  INFO 9608 --- [RMI TCP Connection(2)-192.168.56.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5b8dfcc1: startup date [Fri Sep 23 16:37:18 AEST 2016]; root of context hierarchy
 2016-09-23 16:38:03.799  INFO 9608 --- [RMI TCP Connection(2)-192.168.56.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-09-24 13:21:49.811  INFO 9959 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on Ubuntu64JVM with PID 9959 (/usr/dev/mcreceiver/target/classes started by root in /usr/dev/mcreceiver)
+2016-09-24 13:21:49.881  INFO 9959 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-09-24 13:21:51.132  INFO 9959 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 13:21:51 AEST 2016]; root of context hierarchy
+2016-09-24 13:21:55.970  INFO 9959 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$7f2c5d7a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-09-24 13:21:56.303  INFO 9959 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-09-24 13:21:58.149  INFO 9959 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-09-24 13:21:58.240  INFO 9959 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-09-24 13:21:58.241  INFO 9959 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-09-24 13:21:58.881  INFO 9959 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-09-24 13:21:58.882  INFO 9959 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 7767 ms
+2016-09-24 13:21:59.686  INFO 9959 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-09-24 13:21:59.700  INFO 9959 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-09-24 13:21:59.710  INFO 9959 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-09-24 13:21:59.715  INFO 9959 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-09-24 13:21:59.723  INFO 9959 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-09-24 13:21:59.724  INFO 9959 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2016-09-24 13:22:01.137  INFO 9959 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 13:21:51 AEST 2016]; root of context hierarchy
+2016-09-24 13:22:01.719  INFO 9959 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(org.springframework.ui.Model)
+2016-09-24 13:22:01.776  INFO 9959 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-09-24 13:22:01.789  INFO 9959 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-09-24 13:22:02.138  INFO 9959 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 13:22:02.143  INFO 9959 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 13:22:02.467  INFO 9959 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 13:22:04.374  INFO 9959 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-09-24 13:22:04.590  INFO 9959 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-09-24 13:22:04.622  INFO 9959 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 15.98 seconds (JVM running for 18.167)
+2016-09-24 13:22:13.992  INFO 9959 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-09-24 13:22:13.999  INFO 9959 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-09-24 13:22:14.056  INFO 9959 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 47 ms
+2016-09-24 13:22:25.786  INFO 9959 --- [http-nio-8080-exec-2] c.m.controllers.HomeController           : this is index.
+2016-09-24 13:22:38.999  INFO 9959 --- [http-nio-8080-exec-2] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/root/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-09-24 13:23:17.464  INFO 9959 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2016-09-24 13:23:17.467  INFO 9959 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 13:21:51 AEST 2016]; root of context hierarchy
+2016-09-24 13:23:17.476  INFO 9959 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-09-24 14:02:56.405  INFO 10598 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on Ubuntu64JVM with PID 10598 (/usr/dev/mcreceiver/target/classes started by root in /usr/dev/mcreceiver)
+2016-09-24 14:02:56.454  INFO 10598 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-09-24 14:02:57.612  INFO 10598 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:02:57 AEST 2016]; root of context hierarchy
+2016-09-24 14:03:00.507  INFO 10598 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$7f2c5d7a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-09-24 14:03:00.649  INFO 10598 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-09-24 14:03:01.926  INFO 10598 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-09-24 14:03:01.964  INFO 10598 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-09-24 14:03:01.966  INFO 10598 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-09-24 14:03:02.518  INFO 10598 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-09-24 14:03:02.519  INFO 10598 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4927 ms
+2016-09-24 14:03:03.094  INFO 10598 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-09-24 14:03:03.098  INFO 10598 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-09-24 14:03:03.107  INFO 10598 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-09-24 14:03:03.109  INFO 10598 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-09-24 14:03:03.114  INFO 10598 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-09-24 14:03:03.115  INFO 10598 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2016-09-24 14:03:04.054  INFO 10598 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:02:57 AEST 2016]; root of context hierarchy
+2016-09-24 14:03:04.373  INFO 10598 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(org.springframework.ui.Model)
+2016-09-24 14:03:04.378  INFO 10598 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-09-24 14:03:04.389  INFO 10598 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-09-24 14:03:04.572  INFO 10598 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:03:04.572  INFO 10598 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:03:04.711  INFO 10598 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:03:06.308  INFO 10598 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-09-24 14:03:06.583  INFO 10598 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-09-24 14:03:06.614  INFO 10598 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 11.477 seconds (JVM running for 13.541)
+2016-09-24 14:03:18.946  INFO 10598 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-09-24 14:03:18.952  INFO 10598 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-09-24 14:03:19.112  INFO 10598 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 157 ms
+2016-09-24 14:03:19.349  INFO 10598 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-09-24 14:03:38.634  INFO 10598 --- [http-nio-8080-exec-1] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/root/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-09-24 14:03:50.063 ERROR 10598 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : etClient-----> 
+2016-09-24 14:04:59.099  INFO 10598 --- [http-nio-8080-exec-4] c.m.controllers.HomeController           : this is index.
+2016-09-24 14:05:08.451  INFO 10598 --- [http-nio-8080-exec-4] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/root/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-09-24 14:05:08.908 ERROR 10598 --- [http-nio-8080-exec-4] c.m.controllers.HomeController           : etClient-----> 
+2016-09-24 14:05:24.076  INFO 10598 --- [http-nio-8080-exec-5] c.m.controllers.HomeController           : this is index.
+2016-09-24 14:05:27.606  INFO 10598 --- [http-nio-8080-exec-5] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/root/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-09-24 14:05:28.061 ERROR 10598 --- [http-nio-8080-exec-5] c.m.controllers.HomeController           : etClient-----> 
+2016-09-24 14:05:34.266  INFO 10598 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2016-09-24 14:05:34.275  INFO 10598 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:02:57 AEST 2016]; root of context hierarchy
+2016-09-24 14:05:34.293  INFO 10598 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-09-24 14:05:53.332  INFO 10689 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on Ubuntu64JVM with PID 10689 (/usr/dev/mcreceiver/target/classes started by root in /usr/dev/mcreceiver)
+2016-09-24 14:05:53.362  INFO 10689 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-09-24 14:05:54.535  INFO 10689 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:05:54 AEST 2016]; root of context hierarchy
+2016-09-24 14:05:57.390  INFO 10689 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$7f2c5d7a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-09-24 14:05:57.580  INFO 10689 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-09-24 14:05:58.823  INFO 10689 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-09-24 14:05:58.857  INFO 10689 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-09-24 14:05:58.859  INFO 10689 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-09-24 14:05:59.306  INFO 10689 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-09-24 14:05:59.309  INFO 10689 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4800 ms
+2016-09-24 14:05:59.895  INFO 10689 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-09-24 14:05:59.903  INFO 10689 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-09-24 14:05:59.907  INFO 10689 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-09-24 14:05:59.910  INFO 10689 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-09-24 14:05:59.914  INFO 10689 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-09-24 14:05:59.915  INFO 10689 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2016-09-24 14:06:00.899  INFO 10689 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:05:54 AEST 2016]; root of context hierarchy
+2016-09-24 14:06:01.209  INFO 10689 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(org.springframework.ui.Model)
+2016-09-24 14:06:01.238  INFO 10689 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-09-24 14:06:01.241  INFO 10689 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-09-24 14:06:01.434  INFO 10689 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:06:01.448  INFO 10689 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:06:01.798  INFO 10689 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:06:03.427  INFO 10689 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-09-24 14:06:03.658  INFO 10689 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-09-24 14:06:03.679  INFO 10689 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 11.738 seconds (JVM running for 13.621)
+2016-09-24 14:06:11.846  INFO 10689 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-09-24 14:06:11.852  INFO 10689 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-09-24 14:06:12.038  INFO 10689 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 172 ms
+2016-09-24 14:06:12.253  INFO 10689 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-09-24 14:06:26.457  INFO 10689 --- [http-nio-8080-exec-1] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/root/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-09-24 14:06:35.812 ERROR 10689 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : etClientX-----> 
+2016-09-24 14:07:19.733  INFO 10689 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2016-09-24 14:07:19.737  INFO 10689 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:05:54 AEST 2016]; root of context hierarchy
+2016-09-24 14:07:19.763  INFO 10689 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-09-24 14:07:28.606  INFO 10753 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on Ubuntu64JVM with PID 10753 (/usr/dev/mcreceiver/target/classes started by root in /usr/dev/mcreceiver)
+2016-09-24 14:07:28.639  INFO 10753 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-09-24 14:07:29.810  INFO 10753 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:07:29 AEST 2016]; root of context hierarchy
+2016-09-24 14:07:32.703  INFO 10753 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$7f2c5d7a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-09-24 14:07:32.870  INFO 10753 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-09-24 14:07:34.152  INFO 10753 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-09-24 14:07:34.188  INFO 10753 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-09-24 14:07:34.190  INFO 10753 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-09-24 14:07:34.649  INFO 10753 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-09-24 14:07:34.649  INFO 10753 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4856 ms
+2016-09-24 14:07:35.264  INFO 10753 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-09-24 14:07:35.267  INFO 10753 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-09-24 14:07:35.273  INFO 10753 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-09-24 14:07:35.280  INFO 10753 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-09-24 14:07:35.281  INFO 10753 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-09-24 14:07:35.282  INFO 10753 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2016-09-24 14:07:36.291  INFO 10753 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:07:29 AEST 2016]; root of context hierarchy
+2016-09-24 14:07:36.609  INFO 10753 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(org.springframework.ui.Model)
+2016-09-24 14:07:36.621  INFO 10753 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-09-24 14:07:36.630  INFO 10753 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-09-24 14:07:36.722  INFO 10753 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:07:36.723  INFO 10753 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:07:37.139  INFO 10753 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:07:38.878  INFO 10753 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-09-24 14:07:39.069  INFO 10753 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-09-24 14:07:39.102  INFO 10753 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 11.686 seconds (JVM running for 13.52)
+2016-09-24 14:07:46.461  INFO 10753 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-09-24 14:07:46.465  INFO 10753 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-09-24 14:07:46.610  INFO 10753 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 128 ms
+2016-09-24 14:07:46.867  INFO 10753 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-09-24 14:08:00.552  INFO 10753 --- [http-nio-8080-exec-1] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/root/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-09-24 14:08:12.180 ERROR 10753 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : etClientX-----> 
+2016-09-24 14:11:17.141  INFO 10753 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2016-09-24 14:11:17.155  INFO 10753 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:07:29 AEST 2016]; root of context hierarchy
+2016-09-24 14:11:17.167  INFO 10753 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-09-24 14:11:20.940  INFO 10845 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on Ubuntu64JVM with PID 10845 (/usr/dev/mcreceiver/target/classes started by root in /usr/dev/mcreceiver)
+2016-09-24 14:11:20.970  INFO 10845 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-09-24 14:11:22.126  INFO 10845 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:11:22 AEST 2016]; root of context hierarchy
+2016-09-24 14:11:25.071  INFO 10845 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$7f2c5d7a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-09-24 14:11:25.280  INFO 10845 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-09-24 14:11:26.554  INFO 10845 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-09-24 14:11:26.589  INFO 10845 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-09-24 14:11:26.590  INFO 10845 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-09-24 14:11:27.014  INFO 10845 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-09-24 14:11:27.015  INFO 10845 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4913 ms
+2016-09-24 14:11:27.619  INFO 10845 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-09-24 14:11:27.623  INFO 10845 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-09-24 14:11:27.627  INFO 10845 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-09-24 14:11:27.634  INFO 10845 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-09-24 14:11:27.634  INFO 10845 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-09-24 14:11:27.636  INFO 10845 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2016-09-24 14:11:28.619  INFO 10845 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:11:22 AEST 2016]; root of context hierarchy
+2016-09-24 14:11:28.914  INFO 10845 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(org.springframework.ui.Model)
+2016-09-24 14:11:28.935  INFO 10845 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-09-24 14:11:28.942  INFO 10845 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-09-24 14:11:29.029  INFO 10845 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:11:29.032  INFO 10845 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:11:29.371  INFO 10845 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:11:31.735  INFO 10845 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-09-24 14:11:32.031  INFO 10845 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-09-24 14:11:32.056  INFO 10845 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 12.289 seconds (JVM running for 14.027)
+2016-09-24 14:11:56.489  INFO 10845 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-09-24 14:11:56.490  INFO 10845 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-09-24 14:11:56.581  INFO 10845 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 81 ms
+2016-09-24 14:11:56.797  INFO 10845 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-09-24 14:12:11.263  INFO 10845 --- [http-nio-8080-exec-1] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/root/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-09-24 14:12:22.825 ERROR 10845 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : etClientX-----> 
+2016-09-24 14:16:33.073  INFO 10845 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2016-09-24 14:16:33.082  INFO 10845 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:11:22 AEST 2016]; root of context hierarchy
+2016-09-24 14:16:33.094  INFO 10845 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-09-24 14:16:54.247  INFO 10993 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on Ubuntu64JVM with PID 10993 (/usr/dev/mcreceiver/target/classes started by root in /usr/dev/mcreceiver)
+2016-09-24 14:16:54.283  INFO 10993 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-09-24 14:16:55.411  INFO 10993 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:16:55 AEST 2016]; root of context hierarchy
+2016-09-24 14:16:58.388  INFO 10993 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b6a032ee] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-09-24 14:16:58.643  INFO 10993 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-09-24 14:16:59.983  INFO 10993 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-09-24 14:17:00.023  INFO 10993 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-09-24 14:17:00.033  INFO 10993 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-09-24 14:17:00.578  INFO 10993 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-09-24 14:17:00.579  INFO 10993 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5183 ms
+2016-09-24 14:17:01.196  INFO 10993 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-09-24 14:17:01.207  INFO 10993 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-09-24 14:17:01.217  INFO 10993 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-09-24 14:17:01.219  INFO 10993 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-09-24 14:17:01.220  INFO 10993 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-09-24 14:17:01.221  INFO 10993 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2016-09-24 14:17:02.173  INFO 10993 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:16:55 AEST 2016]; root of context hierarchy
+2016-09-24 14:17:02.520  INFO 10993 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(org.springframework.ui.Model)
+2016-09-24 14:17:02.546  INFO 10993 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-09-24 14:17:02.552  INFO 10993 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-09-24 14:17:02.762  INFO 10993 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:17:02.774  INFO 10993 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:17:03.029  INFO 10993 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:17:04.795  INFO 10993 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-09-24 14:17:04.971  INFO 10993 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-09-24 14:17:05.040  INFO 10993 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 11.98 seconds (JVM running for 14.962)
+2016-09-24 14:17:11.460  INFO 10993 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-09-24 14:17:11.496  INFO 10993 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-09-24 14:17:11.655  INFO 10993 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 159 ms
+2016-09-24 14:17:11.907  INFO 10993 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-09-24 14:17:25.347  INFO 10993 --- [http-nio-8080-exec-1] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/root/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-09-24 14:17:38.593  INFO 10993 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : null
+2016-09-24 14:17:38.624 ERROR 10993 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : etClientX-----> 
+2016-09-24 14:17:44.282  INFO 10993 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2016-09-24 14:17:44.293  INFO 10993 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:16:55 AEST 2016]; root of context hierarchy
+2016-09-24 14:17:44.296  INFO 10993 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-09-24 14:22:15.532  INFO 11128 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on Ubuntu64JVM with PID 11128 (/usr/dev/mcreceiver/target/classes started by root in /usr/dev/mcreceiver)
+2016-09-24 14:22:15.560  INFO 11128 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-09-24 14:22:16.793  INFO 11128 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:22:16 AEST 2016]; root of context hierarchy
+2016-09-24 14:22:19.894  INFO 11128 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b6a032ee] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-09-24 14:22:20.169  INFO 11128 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-09-24 14:22:21.453  INFO 11128 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-09-24 14:22:21.482  INFO 11128 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-09-24 14:22:21.488  INFO 11128 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-09-24 14:22:21.976  INFO 11128 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-09-24 14:22:21.976  INFO 11128 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5205 ms
+2016-09-24 14:22:22.601  INFO 11128 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-09-24 14:22:22.604  INFO 11128 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-09-24 14:22:22.612  INFO 11128 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-09-24 14:22:22.615  INFO 11128 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-09-24 14:22:22.617  INFO 11128 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-09-24 14:22:22.618  INFO 11128 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2016-09-24 14:22:23.613  INFO 11128 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:22:16 AEST 2016]; root of context hierarchy
+2016-09-24 14:22:23.946  INFO 11128 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(org.springframework.ui.Model)
+2016-09-24 14:22:23.983  INFO 11128 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-09-24 14:22:23.995  INFO 11128 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-09-24 14:22:24.162  INFO 11128 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:22:24.178  INFO 11128 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:22:24.465  INFO 11128 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:22:26.198  INFO 11128 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-09-24 14:22:26.373  INFO 11128 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-09-24 14:22:26.434  INFO 11128 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 12.133 seconds (JVM running for 13.755)
+2016-09-24 14:22:38.229  INFO 11128 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-09-24 14:22:38.242  INFO 11128 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-09-24 14:22:38.393  INFO 11128 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 143 ms
+2016-09-24 14:22:38.624  INFO 11128 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-09-24 14:22:52.442  INFO 11128 --- [http-nio-8080-exec-1] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/root/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-09-24 14:23:02.473  INFO 11128 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : null
+2016-09-24 14:23:03.027  INFO 11128 --- [http-nio-8080-exec-1] o.a.cxf.services.PartnerAPI.Soap.Soap    : Outbound Message
+---------------------------
+ID: 1
+Address: https://webservice.s4.exacttarget.com/Service.asmx
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml
+Headers: {Accept=[*/*], SOAPAction=["Update"]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <fueloauth>4pJm4FmUyPon8iR9W80G5tKd</fueloauth>
+  </soap:Header>
+  <soap:Body>
+    <UpdateRequest xmlns="http://exacttarget.com/wsdl/partnerAPI" xmlns:ns2="urn:fault.partner.exacttarget.com">
+      <Options/>
+      <Objects xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DataExtensionObject">
+        <PartnerKey xsi:nil="true"/>
+        <ModifiedDate xsi:nil="true"/>
+        <ObjectID xsi:nil="true"/>
+        <CustomerKey>8B1A73D6-8EFA-4A7D-AB43-88663EB9AD28</CustomerKey>
+        <Properties>
+          <Property>
+            <Name>name</Name>
+            <Value>ali api</Value>
+          </Property>
+          <Property>
+            <Name>email</Name>
+            <Value>alinahid+api1@gmail.com</Value>
+          </Property>
+        </Properties>
+      </Objects>
+    </UpdateRequest>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-09-24 14:23:05.138  INFO 11128 --- [http-nio-8080-exec-1] o.a.cxf.services.PartnerAPI.Soap.Soap    : Inbound Message
+----------------------------
+ID: 1
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml; charset=utf-8
+Headers: {Cache-Control=[private, max-age=0], connection=[close], Content-Length=[1829], content-type=[text/xml; charset=utf-8], Date=[Sat, 24 Sep 2016 04:23:04 GMT], Server=[Microsoft-IIS/7.5], X-AspNet-Version=[4.0.30319], X-Powered-By=[ASP.NET]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>UpdateResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:0a28e5d5-23c3-4504-b824-0a574f37dddd</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:66bc0ca8-0f6d-419f-9883-279c69608cb4</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+    <wsse:Security>
+      <wsu:Timestamp wsu:Id="Timestamp-1520c891-a650-45ca-ae66-61c238c1597c">
+        <wsu:Created>2016-09-24T04:23:04Z</wsu:Created>
+        <wsu:Expires>2016-09-24T04:28:04Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <UpdateResponse xmlns="http://exacttarget.com/wsdl/partnerAPI">
+      <Results xsi:type="DataExtensionUpdateResult">
+        <StatusCode>Error</StatusCode>
+        <StatusMessage>Errors Occurred</StatusMessage>
+        <OrdinalID>0</OrdinalID>
+        <ErrorCode>2</ErrorCode>
+        <Object xsi:type="DataExtensionObject">
+          <PartnerKey xsi:nil="true"/>
+          <ModifiedDate xsi:nil="true"/>
+          <ObjectID xsi:nil="true"/>
+          <CustomerKey>8B1A73D6-8EFA-4A7D-AB43-88663EB9AD28</CustomerKey>
+          <Properties>
+            <Property>
+              <Name>name</Name>
+              <Value>ali api</Value>
+            </Property>
+            <Property>
+              <Name>email</Name>
+              <Value>alinahid+api1@gmail.com</Value>
+            </Property>
+          </Properties>
+        </Object>
+        <ErrorMessage>Concurrency violation: the UpdateCommand affected 0 of the expected 1 records.</ErrorMessage>
+      </Results>
+      <RequestID>7fec4ad0-a101-4786-864b-165dad3df352</RequestID>
+      <OverallStatus>Error</OverallStatus>
+    </UpdateResponse>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-09-24 14:25:34.106  INFO 11128 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2016-09-24 14:25:34.137  INFO 11128 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:22:16 AEST 2016]; root of context hierarchy
+2016-09-24 14:25:34.146  INFO 11128 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-09-24 14:25:37.882  INFO 11220 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on Ubuntu64JVM with PID 11220 (/usr/dev/mcreceiver/target/classes started by root in /usr/dev/mcreceiver)
+2016-09-24 14:25:37.913  INFO 11220 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-09-24 14:25:39.122  INFO 11220 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:25:39 AEST 2016]; root of context hierarchy
+2016-09-24 14:25:42.206  INFO 11220 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$7f2c5d7a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-09-24 14:25:42.365  INFO 11220 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-09-24 14:25:43.692  INFO 11220 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-09-24 14:25:43.725  INFO 11220 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-09-24 14:25:43.731  INFO 11220 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-09-24 14:25:44.239  INFO 11220 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-09-24 14:25:44.243  INFO 11220 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5132 ms
+2016-09-24 14:25:44.859  INFO 11220 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-09-24 14:25:44.869  INFO 11220 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-09-24 14:25:44.873  INFO 11220 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-09-24 14:25:44.879  INFO 11220 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-09-24 14:25:44.882  INFO 11220 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-09-24 14:25:44.883  INFO 11220 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2016-09-24 14:25:45.859  INFO 11220 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:25:39 AEST 2016]; root of context hierarchy
+2016-09-24 14:25:46.196  INFO 11220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(org.springframework.ui.Model)
+2016-09-24 14:25:46.205  INFO 11220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-09-24 14:25:46.219  INFO 11220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-09-24 14:25:46.426  INFO 11220 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:25:46.427  INFO 11220 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:25:46.664  INFO 11220 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-09-24 14:25:48.463  INFO 11220 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-09-24 14:25:48.685  INFO 11220 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-09-24 14:25:48.730  INFO 11220 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 12.087 seconds (JVM running for 13.758)
+2016-09-24 14:26:14.895  INFO 11220 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-09-24 14:26:14.903  INFO 11220 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-09-24 14:26:15.081  INFO 11220 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 177 ms
+2016-09-24 14:26:15.362  INFO 11220 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-09-24 14:26:49.924  INFO 11220 --- [http-nio-8080-exec-1] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/root/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-09-24 14:27:01.307  INFO 11220 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : null
+2016-09-24 14:27:01.855  INFO 11220 --- [http-nio-8080-exec-1] o.a.cxf.services.PartnerAPI.Soap.Soap    : Outbound Message
+---------------------------
+ID: 1
+Address: https://webservice.s4.exacttarget.com/Service.asmx
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml
+Headers: {Accept=[*/*], SOAPAction=["Create"]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <fueloauth>4laVB96ryjjEINay0zzxDkv1</fueloauth>
+  </soap:Header>
+  <soap:Body>
+    <CreateRequest xmlns="http://exacttarget.com/wsdl/partnerAPI" xmlns:ns2="urn:fault.partner.exacttarget.com">
+      <Options/>
+      <Objects xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DataExtensionObject">
+        <PartnerKey xsi:nil="true"/>
+        <ModifiedDate xsi:nil="true"/>
+        <ObjectID xsi:nil="true"/>
+        <CustomerKey>8B1A73D6-8EFA-4A7D-AB43-88663EB9AD28</CustomerKey>
+        <Properties>
+          <Property>
+            <Name>name</Name>
+            <Value>ali api</Value>
+          </Property>
+          <Property>
+            <Name>email</Name>
+            <Value>alinahid+api1@gmail.com</Value>
+          </Property>
+        </Properties>
+      </Objects>
+    </CreateRequest>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-09-24 14:27:04.142  INFO 11220 --- [http-nio-8080-exec-1] o.a.cxf.services.PartnerAPI.Soap.Soap    : Inbound Message
+----------------------------
+ID: 1
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml; charset=utf-8
+Headers: {Cache-Control=[private, max-age=0], connection=[close], Content-Length=[1720], content-type=[text/xml; charset=utf-8], Date=[Sat, 24 Sep 2016 04:27:03 GMT], Server=[Microsoft-IIS/7.5], X-AspNet-Version=[4.0.30319], X-Powered-By=[ASP.NET]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>CreateResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:1063e7e4-a83b-4242-9b27-aa964f58111c</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:ba08105d-10dc-41b5-a18f-410592b5fb5b</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+    <wsse:Security>
+      <wsu:Timestamp wsu:Id="Timestamp-c76b8335-86af-4849-8660-ea5a7c9e2d38">
+        <wsu:Created>2016-09-24T04:27:03Z</wsu:Created>
+        <wsu:Expires>2016-09-24T04:32:03Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <CreateResponse xmlns="http://exacttarget.com/wsdl/partnerAPI">
+      <Results xsi:type="DataExtensionCreateResult">
+        <StatusCode>OK</StatusCode>
+        <StatusMessage>Created DataExtensionObject</StatusMessage>
+        <OrdinalID>0</OrdinalID>
+        <NewID>0</NewID>
+        <Object xsi:type="DataExtensionObject">
+          <PartnerKey xsi:nil="true"/>
+          <ModifiedDate xsi:nil="true"/>
+          <ObjectID xsi:nil="true"/>
+          <CustomerKey>8B1A73D6-8EFA-4A7D-AB43-88663EB9AD28</CustomerKey>
+          <Properties>
+            <Property>
+              <Name>name</Name>
+              <Value>ali api</Value>
+            </Property>
+            <Property>
+              <Name>email</Name>
+              <Value>alinahid+api1@gmail.com</Value>
+            </Property>
+          </Properties>
+        </Object>
+      </Results>
+      <RequestID>d7e1390f-7ae2-49de-8045-07b08a0e5478</RequestID>
+      <OverallStatus>OK</OverallStatus>
+    </CreateResponse>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-09-24 14:27:47.326  INFO 11220 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2016-09-24 14:27:47.328  INFO 11220 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Sep 24 14:25:39 AEST 2016]; root of context hierarchy
+2016-09-24 14:27:47.364  INFO 11220 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
