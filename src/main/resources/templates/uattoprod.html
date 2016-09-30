@@ -1,0 +1,86 @@
+<div class="row" th:fragment="content">
+		
+	<div class="col-lg-12">
+	<form action="#" th:action="@{/de/uattoprod}" th:object="${deKey}" method="post">
+	
+		<div class="dekeylist" th:unless="${#lists.isEmpty(allDEKeys)}">
+	   
+	     		<h2>List of DE Data</h2>
+	
+			<table>
+		    	<thead>
+		        	<tr>
+			            <th>Key</th>
+			            
+		          	</tr>
+		        </thead>
+		        <tbody>
+		          	<tr th:each="fd : ${allDEKeys}">
+		            	<td th:text="${fd.key}">Key</td>
+			            
+		          	</tr>
+		        </tbody>
+			</table>
+	      
+	    </div>
+		
+		<div class="submit">
+        	<button type="submit" name="save">Clone UAT To PROD</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        	<button type="submit" name="clearQueue">Clear Queue</button>
+        </div>
+	</form>
+		<div>
+			<h2>Add new dynamic</h2>
+		</div>
+		
+		<form action="#" th:action="@{/de/uattoprod}" th:object="${deKey}" method="post">
+			<fieldset>
+	         		<legend>DE Key</legend>
+	
+	         		<ul th:if="${#fields.hasErrors('*')}" class="errorlist">
+	           			<li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+	         		</ul>
+	         		
+	          	
+	          	
+	          	<div>
+	           		<label>Keys</label>
+	           		<table>
+	             			<thead>
+		               			<tr>
+		                 				<th>Row</th>
+		                 				<th>Key</th>
+		                 				<th>
+		                   					<button type="submit" name="addKey">Add Key</button>
+		                 				</th>
+		               			</tr>
+	             			</thead>
+	             			<tbody>
+	               				<tr th:each="nv,nvStat : *{keys}">
+	                 				<td th:text="${nvStat.count}">1</td>
+	                 				<td>
+									  	<input type="text" 
+				                           th:field="*{keys[__${nvStat.index}__].key}" 
+				                           th:class="${#fields.hasErrors('keys[__${nvStat.index}__].key')}? 'fieldError'"/>
+									</td>
+	                 				
+									<td>
+										<button type="submit" name="removeKey" th:value="${nvStat.index}">Remove row</button>
+									</td>
+	               				</tr>
+	             			</tbody>
+	           		</table>
+				</div>
+	   
+		        <div class="submit">
+		        	<button type="submit" name="addToQueue">Add To Data Queue</button>
+		        </div>
+			</fieldset>
+		</form>
+		
+	
+	</div>	
+		
+
+	
+</div>

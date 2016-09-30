@@ -12,6 +12,7 @@ public interface DataExtensionService {
 	
 	public ETDataExtension retrieve(String key) throws ETSdkException;
 	
-	public void cloneToProd(ETDataExtension uatDE) throws ETSdkException;
+	public void clone(ETDataExtension uatDE) throws ETSdkException;
 	
+	public void uatToProd(String key) throws ETSdkException;
 }

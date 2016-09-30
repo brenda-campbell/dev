@@ -69,7 +69,7 @@ public class DataExtensionServiceImpl implements DataExtensionService {
 		return null;
 	}
 	
-	public void cloneToProd(ETDataExtension uatDE) throws ETSdkException {
+	public void clone(ETDataExtension uatDE) throws ETSdkException {
 		String deName = uatDE.getName();
 		if(! (deName.toLowerCase().startsWith("uat") || deName.toLowerCase().endsWith("uat")) ) {
 			throw new InvalidDataException(String.format("de `%s` is not a UAT de", deName));
@@ -86,6 +86,13 @@ public class DataExtensionServiceImpl implements DataExtensionService {
 		}
 		//newDE.create(this.mcClient.getEtClient(), arg1);
 		ETResponse<ETDataExtension> createdDE = this.mcClient.getEtClient().create(new ArrayList<ETDataExtension>() {{add(newDE);}});
+	}
+
+
+	@Override
+	public void uatToProd(String key) throws ETSdkException {
+		ETDataExtension etDE = this.retrieve(key);
+		this.clone(etDE);		
 	}
 	
 }
