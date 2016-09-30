@@ -23,6 +23,12 @@ public class HomeController {
         return "home";
     }
 	
+	@RequestMapping(value="/de", method=RequestMethod.GET)
+    public String de(Model model) {
+		logger.info("this is de landing.");
+		return "delanding";
+    }
+	
 	@RequestMapping(value="/testError", method=RequestMethod.GET)
 	public String testError(Model model) {
 		throw new UnsupportedOperationException("not supported");

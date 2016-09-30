@@ -12,8 +12,10 @@ public class ClientServiceImpl implements ClientService{
 	
 	public ClientServiceImpl() throws ETSdkException {
 		super();
-		etClient = new ETClient();
-		etClient.autoHydrateObjects();
+		if(this.etClient == null) {
+			etClient = new ETClient();
+			etClient.autoHydrateObjects();
+		}
 	}
 	
 	public ETClient getEtClient(){

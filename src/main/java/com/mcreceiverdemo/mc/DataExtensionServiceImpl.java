@@ -1,5 +1,7 @@
 package com.mcreceiverdemo.mc;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -8,13 +10,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.exacttarget.fuelsdk.ETDataExtension;
+import com.exacttarget.fuelsdk.ETDataExtensionColumn;
 import com.exacttarget.fuelsdk.ETDataExtensionRow;
 import com.exacttarget.fuelsdk.ETResponse;
 import com.exacttarget.fuelsdk.ETSdkException;
+import com.mcreceiverdemo.exceptions.InvalidDataException;
+import com.exacttarget.fuelsdk.ETFilter;
+import com.exacttarget.fuelsdk.ETExpression;
+import com.exacttarget.fuelsdk.ETExpression.Operator;
 
 @Service
 public class DataExtensionServiceImpl implements DataExtensionService {
-	//http://salesforce-marketingcloud.github.io/FuelSDK-Java/		
+	//http://salesforce-marketingcloud.github.io/FuelSDK-Java/	
+	//http://column80.com/api.v2.php?a=salesforce&q=102553
+	//http://seotoast.com/pagination-or-chunking-support-for-fuel-sdk/
+	//https://developer.salesforce.com/docs/atlas.en-us.mc-sdks.meta/mc-sdks/data-extension-retrieve.htm
+	//http://salesforce.stackexchange.com/questions/49208/inserting-a-row-in-dataextension-via-java-fuelsdk-not-working
+	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
@@ -25,7 +37,7 @@ public class DataExtensionServiceImpl implements DataExtensionService {
 		super();
 	}
 	
-	public ETResponse<?> Upsert(String key, Map<String,String> recordsValues) throws ETSdkException{
+	public ETResponse<?> upsert(String key, Map<String,String> recordsValues) throws ETSdkException{
 		ETDataExtension de = new ETDataExtension();  //client.retrieveDataExtension(filter);
 		de.setKey(key); //"8B1A73D6-8EFA-4A7D-AB43-88663EB9AD28"
 		de.setClient(this.mcClient.getEtClient());
@@ -40,4 +52,40 @@ public class DataExtensionServiceImpl implements DataExtensionService {
 		logger.info(response.getResponseMessage());
 		return response;
 	}
+
+	@Override
+	public ETDataExtension retrieve(String key) throws ETSdkException {
+		ETFilter etFilter = new ETFilter();
+		ETExpression etExpression = new ETExpression();
+		etExpression.setProperty("Key");
+		etExpression.setValue(key);
+		etExpression.setOperator(com.exacttarget.fuelsdk.ETExpression.Operator.EQUALS);
+		etFilter.setExpression(etExpression);
+		ETResponse<ETDataExtension> dataExtensions = this.mcClient.getEtClient().retrieve(ETDataExtension.class,etFilter);
+		List<ETDataExtension> list = dataExtensions.getObjects();
+		if(!list.isEmpty()) {
+			return list.get(0);
+		}
+		return null;
+	}
+	
+	public void cloneToProd(ETDataExtension uatDE) throws ETSdkException {
+		String deName = uatDE.getName();
+		if(! (deName.toLowerCase().startsWith("uat") || deName.toLowerCase().endsWith("uat")) ) {
+			throw new InvalidDataException(String.format("de `%s` is not a UAT de", deName));
+		}
+		ETDataExtension newDE = new ETDataExtension();
+		//newDE.setClient(this.mcClient.getEtClient());
+		newDE.setName(uatDE.getName().replaceFirst("(?i)uat_", "").replaceFirst("(?i)_uat", ""));
+		newDE.setKey(java.util.UUID.randomUUID().toString());
+		newDE.setDescription(uatDE.getDescription());
+		newDE.setIsSendable(uatDE.getIsSendable());
+		newDE.setFolderId(uatDE.getFolderId());
+		for(ETDataExtensionColumn c : uatDE.getColumns()) {
+			newDE.addColumn(c.getName(), c.getType(), c.getLength(), c.getPrecision(), c.getScale(), c.getIsPrimaryKey(), c.getIsRequired(), c.getDefaultValue());
+		}
+		//newDE.create(this.mcClient.getEtClient(), arg1);
+		ETResponse<ETDataExtension> createdDE = this.mcClient.getEtClient().create(new ArrayList<ETDataExtension>() {{add(newDE);}});
+	}
+	
 }

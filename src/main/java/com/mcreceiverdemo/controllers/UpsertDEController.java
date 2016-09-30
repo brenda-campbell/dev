@@ -65,7 +65,7 @@ public class UpsertDEController {
 			for(NameValue pair : deData.getNameValues()) {
 				data.put(pair.getName(), pair.getValue());
 			}
-		    deService.Upsert(deData.getKey(), data );
+		    deService.upsert(deData.getKey(), data );
 		}
 		this.deDataCollectionService.clear();
 		model.clear();
