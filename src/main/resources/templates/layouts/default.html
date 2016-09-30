@@ -7,13 +7,17 @@
 		<div th:replace="fragments/navigation :: navigation">navigation</div>
 		
 		<!-- Page Content -->
-	    <div class="container" th:replace="${view} :: content">
-	    	content
+	    <div class="container">
+	    	<div class="row" th:replace="${view} :: content">
+				content	
+	        </div>
+	    	
+	    	<hr/>
+			<div th:replace="fragments/footer :: footer">Footer</div>
 	    </div>
 		
 		
-		<hr/>
-		<div th:replace="fragments/footer :: footer">Footer</div>
+		
 	</body>
 	
 </html>

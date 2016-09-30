@@ -19,7 +19,13 @@ public class HomeController {
     public String index(Model model) {
 		logger.info("this is index.");
 		
-		
+		model.addAttribute("msg", "this is home");
         return "home";
     }
+	
+	@RequestMapping(value="/testError", method=RequestMethod.GET)
+	public String testError(Model model) {
+		throw new UnsupportedOperationException("not supported");
+	}
+	
 }

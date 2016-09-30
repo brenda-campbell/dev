@@ -1,15 +1,107 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
-	<p><b>Upsert DE</b></p>
-    <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
-    	<p>Id: <input type="text" th:field="*{deKey}" /></p>
-        <p>Message: <input type="text" th:field="*{content}" /></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form>
-</body>
-</html>
+<div class="row" th:fragment="content">
+		
+	<div class="col-lg-12">
+	<form action="#" th:action="@{/de/upsertde}" th:object="${deData}" method="post">
+	
+		<div class="dedatalist" th:unless="${#lists.isEmpty(allDEData)}">
+	   
+	     		<h2>List of DE Data</h2>
+	
+			<table>
+		    	<thead>
+		        	<tr>
+			            <th>Key</th>
+			            <th>Name Values</th>
+		          	</tr>
+		        </thead>
+		        <tbody>
+		          	<tr th:each="fd : ${allDEData}">
+		            	<td th:text="${fd.key}">Key</td>
+			            <td>
+			              	<table>
+			                	<tbody>
+			                  		<tr th:each="nv,nvStat : ${fd.nameValues}">
+			                    		<td th:text="${nvStat.count}">1</td>
+			                    		<td th:text="${nv.name}">name</td>
+			                    		<td th:text="${nv.value}">value</td>
+			                  		</tr>
+			                	</tbody>
+			              	</table>
+			            </td>
+		          	</tr>
+		        </tbody>
+			</table>
+	      
+	    </div>
+		
+		<div class="submit">
+        	<button type="submit" name="save">Save to DE</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        	<button type="submit" name="clearQueue">Clear Queue</button>
+        </div>
+	</form>
+		<div>
+			<h2>Add new dynamic</h2>
+		</div>
+		
+		<form action="#" th:action="@{/de/upsertde}" th:object="${deData}" method="post">
+			<fieldset>
+	         		<legend>DE Data</legend>
+	
+	         		<ul th:if="${#fields.hasErrors('*')}" class="errorlist">
+	           			<li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+	         		</ul>
+	         		
+	         		<div>
+		            	<label for="key">
+		              		<span>key</span>
+		            	</label>
+		            	<input type="text" th:field="*{key}" th:class="${#fields.hasErrors('key')}? fieldError" required="required" />
+		          	</div>
+	          	
+	          	
+	          	<div>
+	           		<label>Name Values</label>
+	           		<table>
+	             			<thead>
+	               			<tr>
+	                 				<th>Row</th>
+	                 				<th>Name</th>
+	                 				<th>Value</th>
+	                 				<th>
+	                   				<button type="submit" name="addNameValue">Add Name Value</button>
+	                 				</th>
+	               			</tr>
+	             			</thead>
+	             			<tbody>
+	               			<tr th:each="nv,nvStat : *{nameValues}">
+	                 				<td th:text="${nvStat.count}">1</td>
+	                 				<td>
+								  	<input type="text" 
+			                           th:field="*{nameValues[__${nvStat.index}__].name}" 
+			                           th:class="${#fields.hasErrors('nameValues[__${nvStat.index}__].name')}? 'fieldError'"/>
+								</td>
+	                 				<td>
+									<input type="text" 
+			                           th:field="*{nameValues[__${nvStat.index}__].value}" 
+			                           th:class="${#fields.hasErrors('nameValues[__${nvStat.index}__].value')}? 'fieldError'"/>
+								</td>
+								<td>
+									<button type="submit" name="removeNameValue" th:value="${nvStat.index}">Remove row</button>
+								</td>
+	               			</tr>
+	             			</tbody>
+	           		</table>
+				</div>
+	   
+		        <div class="submit">
+		        	<button type="submit" name="addToQueue">Add To Data Queue</button>
+		        </div>
+			</fieldset>
+		</form>
+		
+	
+	</div>	
+		
+
+	
+</div>

@@ -1,18 +1,19 @@
 package com.mcreceiverdemo.mc;
 
+import org.springframework.stereotype.Service;
+
 import com.exacttarget.fuelsdk.ETClient;
 import com.exacttarget.fuelsdk.ETSdkException;
 
-public class MCClientServiceImpl implements MCClientService{
+@Service
+public class ClientServiceImpl implements ClientService{
 	
 	private ETClient etClient;
 	
-	@Override
-	public void Init() throws ETSdkException {
+	public ClientServiceImpl() throws ETSdkException {
+		super();
 		etClient = new ETClient();
 		etClient.autoHydrateObjects();
-		//String clientId = etClient.getClientId();
-		//String accessToken = etClient.getAccessToken();
 	}
 	
 	public ETClient getEtClient(){
