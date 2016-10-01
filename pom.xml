@@ -104,44 +104,39 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+	                <execution>
+	                    <goals>
+	                        <goal>repackage</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
 			</plugin>
+			
+			
+			<plugin>
+	            <groupId>org.springframework.boot</groupId>
+	            <artifactId>spring-boot-maven-plugin</artifactId>
+	            <configuration>
+		          <archive>
+		            <manifest>
+		              <addClasspath>true</addClasspath>
+		              <mainClass>com.mcreceiverdemo.McreceiverApplication.class</mainClass>
+		            </manifest>
+		          </archive>
+		        </configuration>
+	            <executions>
+	                <execution>
+	                    <goals>
+	                        <goal>repackage</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
+        	</plugin>
 			
 		</plugins>
 	  </pluginManagement>
 		
 	</build>
-
-
-	<profiles>
-
-        <profile>
-            <id>heroku</id>
-            <activation>
-                <property>
-                    <name>env.SOURCE_VERSION</name>
-                </property>
-            </activation>
-            <properties>
-                <buildNumber>${env.SOURCE_VERSION}</buildNumber>
-            </properties>
-        </profile>
-
-    </profiles>
-
-    <repositories>
-        <repository>
-            <id>spring-milestone</id>
-            <url>https://repo.spring.io/libs-release</url>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>spring-milestone</id>
-            <url>https://repo.spring.io/libs-release</url>
-        </pluginRepository>
-    </pluginRepositories>
-
-
 
 </project>
