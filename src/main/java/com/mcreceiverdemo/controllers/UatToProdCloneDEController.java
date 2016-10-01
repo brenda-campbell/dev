@@ -7,7 +7,6 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.exacttarget.fuelsdk.ETSdkException;
 import com.mcreceiverdemo.mc.DataExtensionService;
 import com.mcreceiverdemo.mvcmodels.DeKey;
-import com.mcreceiverdemo.mvcmodels.NameValue;
 import com.mcreceiverdemo.services.DeKeyCollectionService;
 
 @Controller
@@ -69,15 +67,14 @@ public class UatToProdCloneDEController {
 		if (bindingResult.hasErrors()) {
             return "uattoprod";
         }
-		deKey.setIdx(this.deKeyCollectionService.findAll().size() + 1);
-        this.deKeyCollectionService.add(deKey);
+		this.deKeyCollectionService.add(deKey);
         model.clear();
         
         return "redirect:/de/uattoprod";
     }
 	
-	@RequestMapping(value="/de/uattoprod", params={"addKey"}, method=RequestMethod.POST)
-    public String addKey(@ModelAttribute("deKey") @Valid final DeKey deKey, final BindingResult bindingResult, final ModelMap model) {
+	@RequestMapping(value="/de/uattoprod", params={"addKey"})
+    public String addKey(final DeKey deKey, final BindingResult bindingResult) {
 		deKey.getKeys().add("");
 		return "uattoprod";
     }

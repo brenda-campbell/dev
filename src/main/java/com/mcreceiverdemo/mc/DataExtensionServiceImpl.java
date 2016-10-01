@@ -9,11 +9,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.exacttarget.fuelsdk.ETApiObject;
 import com.exacttarget.fuelsdk.ETDataExtension;
 import com.exacttarget.fuelsdk.ETDataExtensionColumn;
 import com.exacttarget.fuelsdk.ETDataExtensionRow;
 import com.exacttarget.fuelsdk.ETResponse;
 import com.exacttarget.fuelsdk.ETSdkException;
+import com.exacttarget.fuelsdk.internal.APIObject;
 import com.mcreceiverdemo.exceptions.InvalidDataException;
 import com.exacttarget.fuelsdk.ETFilter;
 import com.exacttarget.fuelsdk.ETExpression;
@@ -54,19 +56,31 @@ public class DataExtensionServiceImpl implements DataExtensionService {
 	}
 
 	@Override
-	public ETDataExtension retrieve(String key) throws ETSdkException {
+	public <T extends ETApiObject> T retrieve(String key, Class<T> type) throws ETSdkException {
 		ETFilter etFilter = new ETFilter();
 		ETExpression etExpression = new ETExpression();
-		etExpression.setProperty("Key");
+		etExpression.setProperty("CustomerKey");
 		etExpression.setValue(key);
 		etExpression.setOperator(com.exacttarget.fuelsdk.ETExpression.Operator.EQUALS);
 		etFilter.setExpression(etExpression);
-		ETResponse<ETDataExtension> dataExtensions = this.mcClient.getEtClient().retrieve(ETDataExtension.class,etFilter);
-		List<ETDataExtension> list = dataExtensions.getObjects();
+		ETResponse<T> dataExtensions = this.mcClient.getEtClient().retrieve(type,etFilter);
+		List<T> list = dataExtensions.getObjects();
 		if(!list.isEmpty()) {
 			return list.get(0);
 		}
 		return null;
+	}
+	
+	public <T extends ETApiObject> List<T> retrieveList(String key, Class<T> type) throws ETSdkException {
+		ETFilter etFilter = new ETFilter();
+		ETExpression etExpression = new ETExpression();
+		etExpression.setProperty("CustomerKey");
+		etExpression.setValue(key);
+		etExpression.setOperator(com.exacttarget.fuelsdk.ETExpression.Operator.EQUALS);
+		etFilter.setExpression(etExpression);
+		ETResponse<T> dataExtensions = this.mcClient.getEtClient().retrieve(type, etFilter);
+		List<T> list = dataExtensions.getObjects();
+		return list;
 	}
 	
 	public void clone(ETDataExtension uatDE) throws ETSdkException {
@@ -81,7 +95,9 @@ public class DataExtensionServiceImpl implements DataExtensionService {
 		newDE.setDescription(uatDE.getDescription());
 		newDE.setIsSendable(uatDE.getIsSendable());
 		newDE.setFolderId(uatDE.getFolderId());
-		for(ETDataExtensionColumn c : uatDE.getColumns()) {
+	    String customerKey = uatDE.getKey();
+		List<ETDataExtensionColumn> l = uatDE.retrieveColumns(this.mcClient.getEtClient(), customerKey); //this.retrieveList(customerKey, ETDataExtensionColumn.class);
+		for(ETDataExtensionColumn c : l) {
 			newDE.addColumn(c.getName(), c.getType(), c.getLength(), c.getPrecision(), c.getScale(), c.getIsPrimaryKey(), c.getIsRequired(), c.getDefaultValue());
 		}
 		//newDE.create(this.mcClient.getEtClient(), arg1);
@@ -91,7 +107,7 @@ public class DataExtensionServiceImpl implements DataExtensionService {
 
 	@Override
 	public void uatToProd(String key) throws ETSdkException {
-		ETDataExtension etDE = this.retrieve(key);
+		ETDataExtension etDE = this.retrieve(key, ETDataExtension.class);
 		this.clone(etDE);		
 	}
 	

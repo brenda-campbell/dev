@@ -10,14 +10,23 @@
 			<table>
 		    	<thead>
 		        	<tr>
-			            <th>Key</th>
-			            
+			            <th>Bunch</th>
+			            <th>Keys</th>
 		          	</tr>
 		        </thead>
 		        <tbody>
 		          	<tr th:each="fd : ${allDEKeys}">
-		            	<td th:text="${fd.key}">Key</td>
-			            
+		            	<td th:text="${fd.bunchName}">bunch</td>
+		            	<td>
+			              	<table>
+			                	<tbody>
+			                  		<tr th:each="nv,nvStat : ${fd.keys}">
+			                    		<td th:text="${nvStat.count}">1</td>
+			                    		<td th:text="${nv}">Keys</td>
+			                  		</tr>
+			                	</tbody>
+			              	</table>
+			            </td>
 		          	</tr>
 		        </tbody>
 			</table>
@@ -35,13 +44,18 @@
 		
 		<form action="#" th:action="@{/de/uattoprod}" th:object="${deKey}" method="post">
 			<fieldset>
-	         		<legend>DE Key</legend>
-	
-	         		<ul th:if="${#fields.hasErrors('*')}" class="errorlist">
-	           			<li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
-	         		</ul>
-	         		
-	          	
+         		<legend>DE Key</legend>
+
+         		<ul th:if="${#fields.hasErrors('*')}" class="errorlist">
+           			<li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+         		</ul>
+         		
+          		<div>
+	            	<label for="bunchName">
+	              		<span>Package Name</span>
+	            	</label>
+	            	<input type="text" th:field="*{bunchName}" th:class="${#fields.hasErrors('bunchName')}? fieldError" required="required" />
+	          	</div>
 	          	
 	          	<div>
 	           		<label>Keys</label>
@@ -60,8 +74,8 @@
 	                 				<td th:text="${nvStat.count}">1</td>
 	                 				<td>
 									  	<input type="text" 
-				                           th:field="*{keys[__${nvStat.index}__].key}" 
-				                           th:class="${#fields.hasErrors('keys[__${nvStat.index}__].key')}? 'fieldError'"/>
+				                           th:field="*{keys[__${nvStat.index}__]}" 
+				                           th:class="${#fields.hasErrors('keys[__${nvStat.index}__]')}? 'fieldError'"/>
 									</td>
 	                 				
 									<td>

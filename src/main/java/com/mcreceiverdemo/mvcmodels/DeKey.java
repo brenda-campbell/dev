@@ -3,16 +3,26 @@ package com.mcreceiverdemo.mvcmodels;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
 
 @Component
 public class DeKey {
 	
-	private int idx = 0;
+	@NotNull
+	private String bunchName;
 	
-	//@Min(1)
+	public String getBunchName() {
+		return bunchName;
+	}
+
+	public void setBunchName(String bunchName) {
+		this.bunchName = bunchName;
+	}
+
+	@Size(min=1)
 	private List<String> keys = new ArrayList<String>();
 
 	public List<String> getKeys() {
@@ -22,14 +32,6 @@ public class DeKey {
 	public void setKeys(List<String> keys) {
 		this.keys = keys;
 	}
-
-	public int getIdx() {
-		return idx;
-	}
-
-	public void setIdx(int idx) {
-		this.idx = idx;
-	} 
 	
 	
 }
