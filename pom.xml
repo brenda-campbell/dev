@@ -22,7 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		  
+		  <start-class>com.mcreceiverdemo.McreceiverApplication</start-class>
 	</properties>
 
 	
@@ -107,7 +107,7 @@
 			</plugin>
 
 
-
+<!-- 
 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
@@ -139,20 +139,21 @@
                         </execution>
                     </executions>
                 </plugin>
-
+-->
 
 
 		</plugins>
 	  </pluginManagement>
 		
-		
-		<plugins> <!-- did NOT work without this  -->
+		<!-- did NOT work without this  -->
+		<!-- 
+		<plugins> 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
             </plugin>
         </plugins>
-		
+		-->
 		
 	</build>
 
