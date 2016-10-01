@@ -106,26 +106,42 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			
-			<plugin>
-				<!-- Build an executable JAR -->
-				  <groupId>org.apache.maven.plugins</groupId>
-				  <artifactId>maven-jar-plugin</artifactId>
-				  <version>3.0.2</version>
-				  <configuration>
-				    <archive>
-				      <manifest>
-				        <addClasspath>true</addClasspath>
-				        <classpathPrefix>lib/</classpathPrefix>
-				        <mainClass>com.mcreceiverdemo.McreceiverApplication</mainClass>
-				      </manifest>
-				    </archive>
-				  </configuration>
-				</plugin>
-			
-			
 		</plugins>
 	  </pluginManagement>
 		
 	</build>
+
+
+	<profiles>
+
+        <profile>
+            <id>heroku</id>
+            <activation>
+                <property>
+                    <name>env.SOURCE_VERSION</name>
+                </property>
+            </activation>
+            <properties>
+                <buildNumber>${env.SOURCE_VERSION}</buildNumber>
+            </properties>
+        </profile>
+
+    </profiles>
+
+    <repositories>
+        <repository>
+            <id>spring-milestone</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-milestone</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+
 
 </project>
