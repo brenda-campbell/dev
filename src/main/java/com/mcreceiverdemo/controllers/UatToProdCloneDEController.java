@@ -43,7 +43,7 @@ public class UatToProdCloneDEController {
     }
 	
 	@RequestMapping(value="/de/uattoprod", params={"save"}, method=RequestMethod.POST)
-    public String clodeUatToProd(final ModelMap model) throws ETSdkException {
+    public String clodeUatToProd(final ModelMap model) throws Exception {
 		List<DeKey> list = this.populateDEKeys();
 		for (DeKey deKey : list) {
 			for(String key : deKey.getKeys()) {

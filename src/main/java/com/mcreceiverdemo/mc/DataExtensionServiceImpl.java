@@ -16,6 +16,7 @@ import com.exacttarget.fuelsdk.ETDataExtensionRow;
 import com.exacttarget.fuelsdk.ETResponse;
 import com.exacttarget.fuelsdk.ETSdkException;
 import com.exacttarget.fuelsdk.internal.APIObject;
+import com.mcreceiverdemo.exceptions.CustomException;
 import com.mcreceiverdemo.exceptions.InvalidDataException;
 import com.exacttarget.fuelsdk.ETFilter;
 import com.exacttarget.fuelsdk.ETExpression;
@@ -83,10 +84,10 @@ public class DataExtensionServiceImpl implements DataExtensionService {
 		return list;
 	}
 	
-	public void clone(ETDataExtension uatDE) throws ETSdkException {
+	public void clone(ETDataExtension uatDE) throws Exception {
 		String deName = uatDE.getName();
 		if(! (deName.toLowerCase().startsWith("uat") || deName.toLowerCase().endsWith("uat")) ) {
-			throw new InvalidDataException(String.format("de `%s` is not a UAT de", deName));
+			throw new CustomException(String.format("de `%s` is not a UAT de", deName));
 		}
 		ETDataExtension newDE = new ETDataExtension();
 		//newDE.setClient(this.mcClient.getEtClient());
@@ -106,8 +107,11 @@ public class DataExtensionServiceImpl implements DataExtensionService {
 
 
 	@Override
-	public void uatToProd(String key) throws ETSdkException {
+	public void uatToProd(String key) throws Exception {
 		ETDataExtension etDE = this.retrieve(key, ETDataExtension.class);
+		if(etDE == null) {
+			throw new CustomException(String.format("no DE cannot be found."));
+		}
 		this.clone(etDE);		
 	}
 	

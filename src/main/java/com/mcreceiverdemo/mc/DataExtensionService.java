@@ -12,9 +12,9 @@ public interface DataExtensionService {
 	
 	public ETResponse<?> upsert(String key, Map<String,String> recordsValues) throws ETSdkException;
 	
-	public void clone(ETDataExtension uatDE) throws ETSdkException;
+	public void clone(ETDataExtension uatDE) throws Exception;
 	
-	public void uatToProd(String key) throws ETSdkException;
+	public void uatToProd(String key) throws Exception;
 
 	public <T extends ETApiObject> T retrieve(String key, Class<T> type) throws ETSdkException;
 	public <T extends ETApiObject> List<T> retrieveList(String key, Class<T> type) throws ETSdkException;

@@ -68,6 +68,9 @@ public class GlobalExceptionHandlingControllerAdvice extends ResponseEntityExcep
 		mav.addObject("url", req.getRequestURL());
 		mav.addObject("timestamp", new Date().toString());
 		mav.addObject("status", 500);
+		if(exception.getClass() == CustomException.class) {
+			mav.addObject("error", exception.getMessage());
+		}
 		
 		mav.setViewName("layouts/default");
 		mav.addObject("view", "support");

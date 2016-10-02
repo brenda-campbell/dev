@@ -56,31 +56,7 @@
             <!-- <scope>provided</scope>  -->
         </dependency>
         
-        <!-- 
         <dependency>
-	        <groupId>org.springframework</groupId>
-	        <artifactId>spring-core</artifactId>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.springframework</groupId>
-	        <artifactId>spring-web</artifactId>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.springframework</groupId>
-	        <artifactId>spring-webmvc</artifactId>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.springframework</groupId>
-	        <artifactId>spring-tx</artifactId>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.springframework</groupId>
-	        <artifactId>spring-orm</artifactId>
-	    </dependency>
-	        
-        -->
-        
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web-services</artifactId>
 		</dependency>
@@ -143,62 +119,12 @@
 			    </configuration>
 			</plugin>
 		
-		
-	<!-- 	
-			<plugin>
+		<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
+				
 			</plugin>
 
-
-
-<plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <fork>true</fork>
-                    <mainClass>${start-class}</mainClass>
-                </configuration>
-                  <executions>
-                    <execution>
-                      <goals>
-                        <goal>repackage</goal>
-                      </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-              <artifactId>maven-assembly-plugin</artifactId>
-              <version>2.2-beta-5</version>
-              <configuration>
-                <archive>
-                  <manifest>
-                    <addClasspath>true</addClasspath>
-                    <mainClass>com.mcreceiverdemo.McreceiverApplication</mainClass>
-                  </manifest>
-                </archive>
-                <descriptorRefs>
-                  <descriptorRef>jar-with-dependencies</descriptorRef>
-                </descriptorRefs>
-              </configuration>
-              <executions>
-                <execution>
-                  <id>assemble-all</id>
-                  <phase>package</phase>
-                  <goals>
-                    <goal>single</goal>
-                  </goals>
-                </execution>
-              </executions>
-            </plugin>
--->
 		</plugins>
 		
 	  </pluginManagement>
@@ -207,16 +133,10 @@
 	    	<plugin>
 	      		<groupId>org.springframework.boot</groupId>
 	      		<artifactId>spring-boot-maven-plugin</artifactId>
-	      		<!-- <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions> -->
+	      		
 	    	</plugin>
 	  </plugins>
-
+		
 
 	</build>
 
