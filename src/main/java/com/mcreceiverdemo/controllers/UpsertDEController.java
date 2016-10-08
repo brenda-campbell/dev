@@ -86,7 +86,7 @@ public class UpsertDEController {
     }
     
     
-    @RequestMapping(value="/de/upsertde", params={"removeNameValue"})
+    @RequestMapping(value="/de/upsertde", params={"removeNameValue"}, method=RequestMethod.POST)
     public String removeRow(final DeData deData, final BindingResult bindingResult, final HttpServletRequest req) {
         final Integer rowId = Integer.valueOf(req.getParameter("removeNameValue"));
         deData.getNameValues().remove(rowId.intValue());

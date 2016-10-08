@@ -43,7 +43,7 @@ public class DataExtensionServiceImpl implements DataExtensionService {
 	public ETResponse<?> upsert(String key, Map<String,String> recordsValues) throws ETSdkException{
 		ETDataExtension de = new ETDataExtension();  //client.retrieveDataExtension(filter);
 		de.setKey(key); //"8B1A73D6-8EFA-4A7D-AB43-88663EB9AD28"
-		de.setClient(this.mcClient.getEtClient());
+		de.setClient(this.mcClient.getETClient());
 		
 		//add a row to the data extension "products"
 		ETDataExtensionRow row = new ETDataExtensionRow();
@@ -64,7 +64,7 @@ public class DataExtensionServiceImpl implements DataExtensionService {
 		etExpression.setValue(key);
 		etExpression.setOperator(com.exacttarget.fuelsdk.ETExpression.Operator.EQUALS);
 		etFilter.setExpression(etExpression);
-		ETResponse<T> dataExtensions = this.mcClient.getEtClient().retrieve(type,etFilter);
+		ETResponse<T> dataExtensions = this.mcClient.getETClient().retrieve(type,etFilter);
 		List<T> list = dataExtensions.getObjects();
 		if(!list.isEmpty()) {
 			return list.get(0);
@@ -79,7 +79,7 @@ public class DataExtensionServiceImpl implements DataExtensionService {
 		etExpression.setValue(key);
 		etExpression.setOperator(com.exacttarget.fuelsdk.ETExpression.Operator.EQUALS);
 		etFilter.setExpression(etExpression);
-		ETResponse<T> dataExtensions = this.mcClient.getEtClient().retrieve(type, etFilter);
+		ETResponse<T> dataExtensions = this.mcClient.getETClient().retrieve(type, etFilter);
 		List<T> list = dataExtensions.getObjects();
 		return list;
 	}
@@ -97,12 +97,12 @@ public class DataExtensionServiceImpl implements DataExtensionService {
 		newDE.setIsSendable(uatDE.getIsSendable());
 		newDE.setFolderId(uatDE.getFolderId());
 	    String customerKey = uatDE.getKey();
-		List<ETDataExtensionColumn> l = uatDE.retrieveColumns(this.mcClient.getEtClient(), customerKey); //this.retrieveList(customerKey, ETDataExtensionColumn.class);
+		List<ETDataExtensionColumn> l = uatDE.retrieveColumns(this.mcClient.getETClient(), customerKey); //this.retrieveList(customerKey, ETDataExtensionColumn.class);
 		for(ETDataExtensionColumn c : l) {
 			newDE.addColumn(c.getName(), c.getType(), c.getLength(), c.getPrecision(), c.getScale(), c.getIsPrimaryKey(), c.getIsRequired(), c.getDefaultValue());
 		}
 		//newDE.create(this.mcClient.getEtClient(), arg1);
-		ETResponse<ETDataExtension> createdDE = this.mcClient.getEtClient().create(new ArrayList<ETDataExtension>() {{add(newDE);}});
+		ETResponse<ETDataExtension> createdDE = this.mcClient.getETClient().create(new ArrayList<ETDataExtension>() {{add(newDE);}});
 	}
 
 
