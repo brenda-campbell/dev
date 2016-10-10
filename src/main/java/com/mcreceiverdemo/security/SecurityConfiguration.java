@@ -1,5 +1,5 @@
 package com.mcreceiverdemo.security;
-
+/*
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -22,18 +22,7 @@ public class SecurityConfiguration  extends WebSecurityConfigurerAdapter {
         auth.authenticationProvider(this.customAuthenticationProvider);
     }
 
-    /*@Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-            .authorizeRequests()
-                .antMatchers("/api/users/login").permitAll()    // Permit access for all to login REST service
-                .antMatchers("/").permitAll()                   // Neccessary to permit access to default document
-            .anyRequest().authenticated().and()                 // All other requests require authentication
-            .httpBasic().and()
-            .logout().and()
-            .csrf().disable();
-    }*/
-    
+ 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
     	 http
@@ -52,8 +41,5 @@ public class SecurityConfiguration  extends WebSecurityConfigurerAdapter {
          .logout().permitAll();
     }
     
-    //@Override
-    //public void configure(WebSecurity web) throws Exception {
-    //    web.ignoring().antMatchers("/assets/**", "/js/**", "/css/**", "/img/**");
-    //}
 }
+*/

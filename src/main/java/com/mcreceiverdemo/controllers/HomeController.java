@@ -9,10 +9,7 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.authentication.WebAuthenticationDetails;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -27,7 +24,14 @@ import com.mcreceiverdemo.mc.DataExtensionService;
 import com.mcreceiverdemo.mvcmodels.ApiLoginData;
 import com.mcreceiverdemo.mvcmodels.DeData;
 import com.mcreceiverdemo.mvcmodels.NameValue;
-import com.mcreceiverdemo.security.CustomAuthenticationProvider;
+
+/*import com.mcreceiverdemo.security.CustomAuthenticationProvider;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.WebAuthenticationDetails;
+*/
+
 
 @Controller
 public class HomeController {
@@ -77,7 +81,7 @@ public class HomeController {
 	@RequestMapping(value="/", params={"logout"}, method=RequestMethod.POST)
     public String logout(final ModelMap model) {
 		this.mcClientService.logoutClient();
-		SecurityContextHolder.clearContext();
+		//SecurityContextHolder.clearContext();
         return "redirect:/";
     }
 	
