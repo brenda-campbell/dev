@@ -41,7 +41,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
          .headers().disable()
          //.and()
          .authorizeRequests()
-         .antMatchers("/assets/**", "/js/**", "/css/**", "/img/**", "/").permitAll()
+         .antMatchers("/assets/**", "/js/**", "/css/**", "/img/**", "/favicon.ico", "/").permitAll()
          //.antMatchers("/index.jsp", "/index.html", "/index").hasRole("USER")
          .antMatchers("/de", "/de/**").hasRole("ADMIN")
          .and()
