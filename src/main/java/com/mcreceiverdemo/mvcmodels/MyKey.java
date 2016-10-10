@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DeKey {
+public class MyKey {
 	
 	@NotNull
 	private String bunchName;

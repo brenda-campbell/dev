@@ -15,7 +15,4 @@ public interface DataExtensionService {
 	public void clone(ETDataExtension uatDE) throws Exception;
 	
 	public void uatToProd(String key) throws Exception;
-
-	public <T extends ETApiObject> T retrieve(String key, Class<T> type) throws ETSdkException;
-	public <T extends ETApiObject> List<T> retrieveList(String key, Class<T> type) throws ETSdkException;
 }

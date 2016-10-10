@@ -122,10 +122,10 @@
 			    </executions>
 			    <configuration>
 			        <schemaLanguage>WSDL</schemaLanguage>
-			        <generatePackage>com.mcreceiverdemo.test.wsdl</generatePackage>
+			        <generatePackage>com.mcreceiverdemo.wsdl</generatePackage>
 			        <schemas>
 			            <schema>
-			                <url>http://wsf.cdyne.com/WeatherWS/Weather.asmx?wsdl</url>
+			                <url>https://webservice.s4.exacttarget.com/etframework.wsdl</url>
 			            </schema>
 			        </schemas>
 			    </configuration>

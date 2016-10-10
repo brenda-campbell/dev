@@ -5,22 +5,22 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.mcreceiverdemo.mvcmodels.DeData;
+import com.mcreceiverdemo.mvcmodels.MyData;
 
 @Repository
 public class DEDataRepository {
 	
-	private final List<DeData> deDataCollection = new ArrayList<DeData>();
+	private final List<MyData> deDataCollection = new ArrayList<MyData>();
     
     public DEDataRepository() {
         super();
     }
     
-    public List<DeData> findAll() {
-        return new ArrayList<DeData>(this.deDataCollection);
+    public List<MyData> findAll() {
+        return new ArrayList<MyData>(this.deDataCollection);
     }
     
-    public void add(final DeData data) {
+    public void add(final MyData data) {
         this.deDataCollection.add(data);
     }
     

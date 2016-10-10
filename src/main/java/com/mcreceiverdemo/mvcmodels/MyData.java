@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DeData {
+public class MyData {
 	
 	@NotNull
 	private String key;

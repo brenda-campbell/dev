@@ -5,22 +5,22 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.mcreceiverdemo.mvcmodels.DeKey;
+import com.mcreceiverdemo.mvcmodels.MyKey;
 
 
 @Repository
 public class DeKeyRepository {
-private final List<DeKey> deKeyCollection = new ArrayList<DeKey>();
+private final List<MyKey> deKeyCollection = new ArrayList<MyKey>();
     
     public DeKeyRepository() {
         super();
     }
     
-    public List<DeKey> findAll() {
-        return new ArrayList<DeKey>(this.deKeyCollection);
+    public List<MyKey> findAll() {
+        return new ArrayList<MyKey>(this.deKeyCollection);
     }
     
-    public void add(final DeKey key) {
+    public void add(final MyKey key) {
         this.deKeyCollection.add(key);
     }
     

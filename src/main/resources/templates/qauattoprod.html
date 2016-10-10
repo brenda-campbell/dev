@@ -1,0 +1,100 @@
+<div class="row" th:fragment="content">
+		
+	<div class="col-lg-12">
+	<form action="#" th:action="@{/qa/uattoprod}" th:object="${qaKey}" method="post">
+	
+		<div class="qakeylist" th:unless="${#lists.isEmpty(allQAKeys)}">
+	   
+	     		<h2>List of QA Data</h2>
+	
+			<table>
+		    	<thead>
+		        	<tr>
+			            <th>Bunch</th>
+			            <th>Keys</th>
+		          	</tr>
+		        </thead>
+		        <tbody>
+		          	<tr th:each="fd : ${allQAKeys}">
+		            	<td th:text="${fd.bunchName}">bunch</td>
+		            	<td>
+			              	<table>
+			                	<tbody>
+			                  		<tr th:each="nv,nvStat : ${fd.keys}">
+			                    		<td th:text="${nvStat.count}">1</td>
+			                    		<td th:text="${nv}">Keys</td>
+			                  		</tr>
+			                	</tbody>
+			              	</table>
+			            </td>
+		          	</tr>
+		        </tbody>
+			</table>
+	      
+	    </div>
+		
+		<div class="submit">
+        	<button type="submit" name="save">Clone UAT To PROD</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        	<button type="submit" name="clearQueue">Clear Queue</button>
+        </div>
+	</form>
+		<div>
+			<h2>Add new dynamic</h2>
+		</div>
+		
+		<form action="#" th:action="@{/qa/uattoprod}" th:object="${qaKey}" method="post">
+			<fieldset>
+         		<legend>qa Key</legend>
+
+         		<ul th:if="${#fields.hasErrors('*')}" class="errorlist">
+           			<li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+         		</ul>
+         		
+          		<div>
+	            	<label for="bunchName">
+	              		<span>Package Name</span>
+	            	</label>
+	            	<input type="text" th:field="*{bunchName}" th:class="${#fields.hasErrors('bunchName')}? fieldError" required="required" />
+	          	</div>
+	          	
+	          	<div>
+	           		<label>Keys</label>
+	           		<table>
+	             			<thead>
+		               			<tr>
+		                 				<th>Row</th>
+		                 				<th>Key</th>
+		                 				<th>
+		                   					<button type="submit" name="addKey">Add Key</button>
+		                 				</th>
+		               			</tr>
+	             			</thead>
+	             			<tbody>
+	               				<tr th:each="nv,nvStat : *{keys}">
+	                 				<td th:text="${nvStat.count}">1</td>
+	                 				<td>
+									  	<input type="text" 
+				                           th:field="*{keys[__${nvStat.index}__]}" 
+				                           th:class="${#fields.hasErrors('keys[__${nvStat.index}__]')}? 'fieldError'"/>
+									</td>
+	                 				
+									<td>
+										<button type="submit" name="removeKey" th:value="${nvStat.index}">Remove row</button>
+									</td>
+	               				</tr>
+	             			</tbody>
+	           		</table>
+				</div>
+	   
+		        <div class="submit">
+		        	<button type="submit" name="addToQueue">Add To Data Queue</button>
+		        </div>
+			</fieldset>
+		</form>
+		
+	
+	</div>	
+		
+
+	
+</div>

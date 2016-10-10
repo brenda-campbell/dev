@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.exacttarget.fuelsdk.ETSdkException;
 import com.mcreceiverdemo.mc.DataExtensionService;
-import com.mcreceiverdemo.mvcmodels.DeKey;
-import com.mcreceiverdemo.services.DeKeyCollectionService;
+import com.mcreceiverdemo.mvcmodels.MyKey;
+import com.mcreceiverdemo.services.MyKeyCollectionService;
 
 @Controller
 public class UatToProdCloneDEController {
 	
 	@Autowired
-    private DeKeyCollectionService deKeyCollectionService;
+    private MyKeyCollectionService deKeyCollectionService;
 	
 	@Autowired
     private DataExtensionService deService;
@@ -32,20 +32,21 @@ public class UatToProdCloneDEController {
     }
 	
 	@RequestMapping(value="/de/uattoprod", method=RequestMethod.GET)
-	public String index(final DeKey deKey) {
-		return "uattoprod";
+	public String index(@ModelAttribute("deKey") final MyKey deKey) {
+		return "deuattoprod";
 	}
 	
 	
 	@ModelAttribute("allDEKeys")
-    public List<DeKey> populateDEKeys() {
-        return this.deKeyCollectionService.findAll();
+    public List<MyKey> populateDEKeys() {
+        List<MyKey> keys = this.deKeyCollectionService.findAll();
+        return keys;
     }
 	
 	@RequestMapping(value="/de/uattoprod", params={"save"}, method=RequestMethod.POST)
     public String clodeUatToProd(final ModelMap model) throws Exception {
-		List<DeKey> list = this.populateDEKeys();
-		for (DeKey deKey : list) {
+		List<MyKey> list = this.populateDEKeys();
+		for (MyKey deKey : list) {
 			for(String key : deKey.getKeys()) {
 				deService.uatToProd(key);
 			}
@@ -63,9 +64,9 @@ public class UatToProdCloneDEController {
     }
 	
 	@RequestMapping(value="/de/uattoprod", params={"addToQueue"}, method=RequestMethod.POST)
-    public String addToQueue(@ModelAttribute("deKey") @Valid final DeKey deKey, final BindingResult bindingResult, final ModelMap model) {
+    public String addToQueue(@ModelAttribute("deKey") @Valid final MyKey deKey, final BindingResult bindingResult, final ModelMap model) {
 		if (bindingResult.hasErrors()) {
-            return "uattoprod";
+            return "deuattoprod";
         }
 		this.deKeyCollectionService.add(deKey);
         model.clear();
@@ -74,15 +75,15 @@ public class UatToProdCloneDEController {
     }
 	
 	@RequestMapping(value="/de/uattoprod", params={"addKey"})
-    public String addKey(final DeKey deKey, final BindingResult bindingResult) {
+    public String addKey(@ModelAttribute("deKey") final MyKey deKey, final BindingResult bindingResult) {
 		deKey.getKeys().add("");
-		return "uattoprod";
+		return "deuattoprod";
     }
 	
 	@RequestMapping(value="/de/uattoprod", params={"removeKey"})
-    public String removeKey(final DeKey deKey, final BindingResult bindingResult, final HttpServletRequest req) {
+    public String removeKey(@ModelAttribute("deKey") final MyKey deKey, final BindingResult bindingResult, final HttpServletRequest req) {
         final Integer rowId = Integer.valueOf(req.getParameter("removeKey"));
         this.deKeyCollectionService.findAll().remove(rowId.intValue());
-        return "uattoprod";
+        return "deuattoprod";
     }
 }

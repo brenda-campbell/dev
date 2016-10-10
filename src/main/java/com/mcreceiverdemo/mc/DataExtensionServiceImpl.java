@@ -23,7 +23,7 @@ import com.exacttarget.fuelsdk.ETExpression;
 import com.exacttarget.fuelsdk.ETExpression.Operator;
 
 @Service
-public class DataExtensionServiceImpl implements DataExtensionService {
+public class DataExtensionServiceImpl extends CommonMcServiceImpl implements DataExtensionService, CommonMcService {
 	//http://salesforce-marketingcloud.github.io/FuelSDK-Java/	
 	//http://column80.com/api.v2.php?a=salesforce&q=102553
 	//http://seotoast.com/pagination-or-chunking-support-for-fuel-sdk/
@@ -31,10 +31,6 @@ public class DataExtensionServiceImpl implements DataExtensionService {
 	//http://salesforce.stackexchange.com/questions/49208/inserting-a-row-in-dataextension-via-java-fuelsdk-not-working
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
-	
-	@Autowired
-	private ClientService mcClient;
-	
 	
 	public DataExtensionServiceImpl(){
 		super();
@@ -56,33 +52,7 @@ public class DataExtensionServiceImpl implements DataExtensionService {
 		return response;
 	}
 
-	@Override
-	public <T extends ETApiObject> T retrieve(String key, Class<T> type) throws ETSdkException {
-		ETFilter etFilter = new ETFilter();
-		ETExpression etExpression = new ETExpression();
-		etExpression.setProperty("CustomerKey");
-		etExpression.setValue(key);
-		etExpression.setOperator(com.exacttarget.fuelsdk.ETExpression.Operator.EQUALS);
-		etFilter.setExpression(etExpression);
-		ETResponse<T> dataExtensions = this.mcClient.getETClient().retrieve(type,etFilter);
-		List<T> list = dataExtensions.getObjects();
-		if(!list.isEmpty()) {
-			return list.get(0);
-		}
-		return null;
-	}
 	
-	public <T extends ETApiObject> List<T> retrieveList(String key, Class<T> type) throws ETSdkException {
-		ETFilter etFilter = new ETFilter();
-		ETExpression etExpression = new ETExpression();
-		etExpression.setProperty("CustomerKey");
-		etExpression.setValue(key);
-		etExpression.setOperator(com.exacttarget.fuelsdk.ETExpression.Operator.EQUALS);
-		etFilter.setExpression(etExpression);
-		ETResponse<T> dataExtensions = this.mcClient.getETClient().retrieve(type, etFilter);
-		List<T> list = dataExtensions.getObjects();
-		return list;
-	}
 	
 	public void clone(ETDataExtension uatDE) throws Exception {
 		String deName = uatDE.getName();

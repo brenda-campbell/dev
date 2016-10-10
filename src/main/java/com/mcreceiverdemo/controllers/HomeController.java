@@ -22,7 +22,7 @@ import com.exacttarget.fuelsdk.ETSdkException;
 import com.mcreceiverdemo.mc.ClientService;
 import com.mcreceiverdemo.mc.DataExtensionService;
 import com.mcreceiverdemo.mvcmodels.ApiLoginData;
-import com.mcreceiverdemo.mvcmodels.DeData;
+import com.mcreceiverdemo.mvcmodels.MyData;
 import com.mcreceiverdemo.mvcmodels.NameValue;
 
 import com.mcreceiverdemo.security.CustomAuthenticationProvider;
@@ -89,6 +89,12 @@ public class HomeController {
     public String de(Model model) {
 		logger.info("this is de landing.");
 		return "delanding";
+    }
+	
+	@RequestMapping(value="/qa", method=RequestMethod.GET)
+    public String qa(Model model) {
+		logger.info("this is qa landing.");
+		return "qalanding";
     }
 	
 	@RequestMapping(value="/testError", method=RequestMethod.GET)

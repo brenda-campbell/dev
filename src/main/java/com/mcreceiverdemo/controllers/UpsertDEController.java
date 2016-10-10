@@ -17,15 +17,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.exacttarget.fuelsdk.ETSdkException;
 import com.mcreceiverdemo.mc.DataExtensionService;
-import com.mcreceiverdemo.mvcmodels.DeData;
+import com.mcreceiverdemo.mvcmodels.MyData;
 import com.mcreceiverdemo.mvcmodels.NameValue;
-import com.mcreceiverdemo.services.DEDataCollectionService;
+import com.mcreceiverdemo.services.MyDataCollectionService;
 
 @Controller
 public class UpsertDEController {
 	
 	@Autowired
-    private DEDataCollectionService deDataCollectionService;
+    private MyDataCollectionService deDataCollectionService;
 	
 	@Autowired
     private DataExtensionService deService;
@@ -35,18 +35,18 @@ public class UpsertDEController {
     }
 	
 	@ModelAttribute("allDEData")
-    public List<DeData> populateDEData() {
+    public List<MyData> populateDEData() {
         return this.deDataCollectionService.findAll();
     }
 	
 	@RequestMapping(value="/de/upsertde", method=RequestMethod.GET)
-	public String dynamicForm(final DeData deData) {
+	public String dynamicForm(@ModelAttribute("deData") final MyData deData) {
 		return "upsertde";
 	}
 	
 	
 	@RequestMapping(value="/de/upsertde", params={"addToQueue"}, method=RequestMethod.POST)
-    public String addToQueue(@ModelAttribute("deData") @Valid final DeData deData, final BindingResult bindingResult, final ModelMap model) {
+    public String addToQueue(@ModelAttribute("deData") @Valid final MyData deData, final BindingResult bindingResult, final ModelMap model) {
         if (bindingResult.hasErrors()) {
             return "upsertde";
         }
@@ -58,8 +58,8 @@ public class UpsertDEController {
 	
 	@RequestMapping(value="/de/upsertde", params={"save"}, method=RequestMethod.POST)
     public String saveDEData(final ModelMap model) throws ETSdkException {
-		List<DeData> list = this.populateDEData();
-		for (DeData deData : list) {
+		List<MyData> list = this.populateDEData();
+		for (MyData deData : list) {
 			Map<String,String> data = new HashMap<String, String>();
 			for(NameValue pair : deData.getNameValues()) {
 				data.put(pair.getName(), pair.getValue());
@@ -80,14 +80,14 @@ public class UpsertDEController {
 	
 	
 	@RequestMapping(value="/de/upsertde", params={"addNameValue"})
-    public String addRow(final DeData deData, final BindingResult bindingResult) {
+    public String addRow(@ModelAttribute("deData") final MyData deData, final BindingResult bindingResult) {
         deData.getNameValues().add(new NameValue());
         return "upsertde";
     }
     
     
     @RequestMapping(value="/de/upsertde", params={"removeNameValue"}, method=RequestMethod.POST)
-    public String removeRow(final DeData deData, final BindingResult bindingResult, final HttpServletRequest req) {
+    public String removeRow(@ModelAttribute("deData") final MyData deData, final BindingResult bindingResult, final HttpServletRequest req) {
         final Integer rowId = Integer.valueOf(req.getParameter("removeNameValue"));
         deData.getNameValues().remove(rowId.intValue());
         return "upsertde";
