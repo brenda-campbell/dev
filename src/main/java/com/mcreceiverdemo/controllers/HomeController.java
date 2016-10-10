@@ -9,6 +9,10 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -23,6 +27,7 @@ import com.mcreceiverdemo.mc.DataExtensionService;
 import com.mcreceiverdemo.mvcmodels.ApiLoginData;
 import com.mcreceiverdemo.mvcmodels.DeData;
 import com.mcreceiverdemo.mvcmodels.NameValue;
+import com.mcreceiverdemo.security.CustomAuthenticationProvider;
 
 @Controller
 public class HomeController {
@@ -34,6 +39,9 @@ public class HomeController {
 	
 	@Autowired
     private ClientService mcClientService;
+
+	@Autowired
+	private CustomAuthenticationProvider authenticationProvider;
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
     public String index(final ApiLoginData apiLoginData, Model model) {
@@ -46,14 +54,20 @@ public class HomeController {
     }
 	
 	@RequestMapping(value="/", params={"initiate"}, method=RequestMethod.POST)
-    public String saveDEData(@ModelAttribute("apiLoginData") @Valid final ApiLoginData apiLoginData, final BindingResult bindingResult, final ModelMap model) {
+    public String initiateApiAccess(@ModelAttribute("apiLoginData") @Valid final ApiLoginData apiLoginData, final BindingResult bindingResult, final ModelMap model) {
 		if(bindingResult.hasErrors()) {
 			return "home";
 		}
 		try {
 			this.mcClientService.initiate(apiLoginData.getApiKey(), apiLoginData.getApiSecret());
+			UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken("admin", "admin");
+	        //token.setDetails(new WebAuthenticationDetails(request));
+	        Authentication authentication = this.authenticationProvider.authenticate(token);
+	        logger.debug("Logging in with [{}]", authentication.getPrincipal());
+	        SecurityContextHolder.getContext().setAuthentication(authentication);
 		} catch (ETSdkException e) {
 			model.addAttribute("msg", e.getMessage());
+			model.addAttribute("isShowForm", true );
 			return "home";
 		}
 		model.clear();
@@ -63,6 +77,7 @@ public class HomeController {
 	@RequestMapping(value="/", params={"logout"}, method=RequestMethod.POST)
     public String logout(final ModelMap model) {
 		this.mcClientService.logoutClient();
+		SecurityContextHolder.clearContext();
         return "redirect:/";
     }
 	
