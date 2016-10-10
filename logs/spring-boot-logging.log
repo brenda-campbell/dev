@@ -21704,3 +21704,536 @@ Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving temp
 	... 25 common frames omitted
 
 2016-10-10 20:32:19.825  INFO 9056 --- [http-nio-8080-exec-2] c.m.controllers.HomeController           : this is index.
+2016-10-10 20:37:21.147  INFO 7928 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on anahid-lt02 with PID 7928 (C:\Ali\projects\java\mcreceiver\target\classes started by anahid in C:\Ali\projects\java\mcreceiver)
+2016-10-10 20:37:21.156  INFO 7928 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-10-10 20:37:21.574  INFO 7928 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c402120: startup date [Mon Oct 10 20:37:21 AEDT 2016]; root of context hierarchy
+2016-10-10 20:37:22.778  INFO 7928 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$83ec80b0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-10-10 20:37:22.826  INFO 7928 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-10-10 20:37:23.326  INFO 7928 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-10-10 20:37:23.339  INFO 7928 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-10-10 20:37:23.340  INFO 7928 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-10-10 20:37:23.535  INFO 7928 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-10-10 20:37:23.536  INFO 7928 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1966 ms
+2016-10-10 20:37:23.772  INFO 7928 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-10-10 20:37:23.775  INFO 7928 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2016-10-10 20:37:23.776  INFO 7928 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-10-10 20:37:23.777  INFO 7928 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-10-10 20:37:23.848  WARN 7928 --- [main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'homeController': Unsatisfied dependency expressed through field 'authenticationProvider': No qualifying bean of type [com.mcreceiverdemo.security.CustomAuthenticationProvider] found for dependency [com.mcreceiverdemo.security.CustomAuthenticationProvider]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.mcreceiverdemo.security.CustomAuthenticationProvider] found for dependency [com.mcreceiverdemo.security.CustomAuthenticationProvider]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2016-10-10 20:37:23.850  INFO 7928 --- [main] o.apache.catalina.core.StandardService   : Stopping service Tomcat
+2016-10-10 20:37:23.869  INFO 7928 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report enable debug logging (start with --debug)
+
+
+2016-10-10 20:37:23.885 ERROR 7928 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'homeController': Unsatisfied dependency expressed through field 'authenticationProvider': No qualifying bean of type [com.mcreceiverdemo.security.CustomAuthenticationProvider] found for dependency [com.mcreceiverdemo.security.CustomAuthenticationProvider]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.mcreceiverdemo.security.CustomAuthenticationProvider] found for dependency [com.mcreceiverdemo.security.CustomAuthenticationProvider]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:569) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:349) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:776) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861) ~[spring-context-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541) ~[spring-context-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:369) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1185) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1174) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at com.mcreceiverdemo.McreceiverApplication.main(McreceiverApplication.java:12) [classes/:na]
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.mcreceiverdemo.security.CustomAuthenticationProvider] found for dependency [com.mcreceiverdemo.security.CustomAuthenticationProvider]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1406) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1057) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1019) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:566) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	... 19 common frames omitted
+
+2016-10-10 20:37:57.548  INFO 4960 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on anahid-lt02 with PID 4960 (C:\Ali\projects\java\mcreceiver\target\classes started by anahid in C:\Ali\projects\java\mcreceiver)
+2016-10-10 20:37:57.554  INFO 4960 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-10-10 20:37:57.953  INFO 4960 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c402120: startup date [Mon Oct 10 20:37:57 AEDT 2016]; root of context hierarchy
+2016-10-10 20:37:59.179  INFO 4960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$ac19eca5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-10-10 20:37:59.240  INFO 4960 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-10-10 20:37:59.780  INFO 4960 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-10-10 20:37:59.792  INFO 4960 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-10-10 20:37:59.793  INFO 4960 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-10-10 20:38:00.016  INFO 4960 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-10-10 20:38:00.016  INFO 4960 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2066 ms
+2016-10-10 20:38:00.245  INFO 4960 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-10-10 20:38:00.248  INFO 4960 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2016-10-10 20:38:00.249  INFO 4960 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-10-10 20:38:00.251  INFO 4960 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-10-10 20:38:00.466  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.ui.Model)
+2016-10-10 20:38:00.480  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.de(org.springframework.ui.Model)
+2016-10-10 20:38:00.482  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[initiate]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.initiateApiAccess(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-10 20:38:00.482  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[logout]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.logout(org.springframework.ui.ModelMap)
+2016-10-10 20:38:00.483  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testError],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.testError(org.springframework.ui.Model)
+2016-10-10 20:38:00.484  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.index(com.mcreceiverdemo.mvcmodels.DeKey)
+2016-10-10 20:38:00.485  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.removeKey(com.mcreceiverdemo.mvcmodels.DeKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-10 20:38:00.485  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-10 20:38:00.486  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addToQueue(com.mcreceiverdemo.mvcmodels.DeKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-10 20:38:00.486  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addKey(com.mcreceiverdemo.mvcmodels.DeKey,org.springframework.validation.BindingResult)
+2016-10-10 20:38:00.486  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clodeUatToProd(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-10 20:38:00.489  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[removeNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.removeRow(com.mcreceiverdemo.mvcmodels.DeData,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-10 20:38:00.490  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.clearQueue(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-10 20:38:00.491  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addToQueue(com.mcreceiverdemo.mvcmodels.DeData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-10 20:38:00.491  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.dynamicForm(com.mcreceiverdemo.mvcmodels.DeData)
+2016-10-10 20:38:00.492  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],params=[addNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addRow(com.mcreceiverdemo.mvcmodels.DeData,org.springframework.validation.BindingResult)
+2016-10-10 20:38:00.492  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.saveDEData(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-10 20:38:00.500  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-10-10 20:38:00.502  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-10-10 20:38:00.537  INFO 4960 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/assets/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-10 20:38:00.575  INFO 4960 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c402120: startup date [Mon Oct 10 20:37:57 AEDT 2016]; root of context hierarchy
+2016-10-10 20:38:00.622  INFO 4960 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandlingControllerAdvice
+2016-10-10 20:38:01.259  INFO 4960 --- [main] b.a.s.AuthenticationManagerConfiguration : 
+
+Using default security password: 9e378695-6911-462f-88cc-43b7fd51ae27
+
+2016-10-10 20:38:01.366  INFO 4960 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/css/**'], []
+2016-10-10 20:38:01.367  INFO 4960 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/js/**'], []
+2016-10-10 20:38:01.367  INFO 4960 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/images/**'], []
+2016-10-10 20:38:01.368  INFO 4960 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/webjars/**'], []
+2016-10-10 20:38:01.368  INFO 4960 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2016-10-10 20:38:01.369  INFO 4960 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/error'], []
+2016-10-10 20:38:01.503  INFO 4960 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@700f518a, org.springframework.security.web.context.SecurityContextPersistenceFilter@66c38e51, org.springframework.security.web.header.HeaderWriterFilter@24934262, org.springframework.security.web.authentication.logout.LogoutFilter@6ecab872, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@74294c1a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@34f392be, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27e5b378, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@b835727, org.springframework.security.web.session.SessionManagementFilter@2bebb74f, org.springframework.security.web.access.ExceptionTranslationFilter@6c302a1d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@778d82e9]
+2016-10-10 20:38:02.145  INFO 4960 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-10-10 20:38:02.182 ERROR 4960 --- [main] o.a.coyote.http11.Http11NioProtocol      : Failed to start end point associated with ProtocolHandler [http-nio-8080]
+
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_101]
+	at sun.nio.ch.Net.bind(Unknown Source) ~[na:1.8.0_101]
+	at sun.nio.ch.Net.bind(Unknown Source) ~[na:1.8.0_101]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source) ~[na:1.8.0_101]
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source) ~[na:1.8.0_101]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:229) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:573) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1035) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:152) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:234) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:179) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544) [spring-context-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:369) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1185) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1174) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at com.mcreceiverdemo.McreceiverApplication.main(McreceiverApplication.java:12) [classes/:na]
+
+2016-10-10 20:38:02.185 ERROR 4960 --- [main] o.apache.catalina.core.StandardService   : Failed to start connector [Connector[HTTP/1.1-8080]]
+
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:158) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:234) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:179) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544) [spring-context-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:369) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1185) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1174) [spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
+	at com.mcreceiverdemo.McreceiverApplication.main(McreceiverApplication.java:12) [classes/:na]
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1042) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:152) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	... 13 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_101]
+	at sun.nio.ch.Net.bind(Unknown Source) ~[na:1.8.0_101]
+	at sun.nio.ch.Net.bind(Unknown Source) ~[na:1.8.0_101]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source) ~[na:1.8.0_101]
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source) ~[na:1.8.0_101]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:229) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:874) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:573) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1035) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	... 14 common frames omitted
+
+2016-10-10 20:38:02.194  INFO 4960 --- [main] o.apache.catalina.core.StandardService   : Stopping service Tomcat
+2016-10-10 20:38:02.205  INFO 4960 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report enable debug logging (start with --debug)
+
+
+2016-10-10 20:38:02.213 ERROR 4960 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Embedded servlet container failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2016-10-10 20:38:02.215  INFO 4960 --- [main] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c402120: startup date [Mon Oct 10 20:37:57 AEDT 2016]; root of context hierarchy
+2016-10-10 20:38:02.217  INFO 4960 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-10-10 20:38:07.609  INFO 9056 --- [RMI TCP Connection(2)-192.168.56.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2016-10-10 20:38:07.610  INFO 9056 --- [RMI TCP Connection(2)-192.168.56.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c402120: startup date [Mon Oct 10 20:32:03 AEDT 2016]; root of context hierarchy
+2016-10-10 20:38:07.612  INFO 9056 --- [RMI TCP Connection(2)-192.168.56.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-10-10 20:38:12.827  INFO 5204 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on anahid-lt02 with PID 5204 (C:\Ali\projects\java\mcreceiver\target\classes started by anahid in C:\Ali\projects\java\mcreceiver)
+2016-10-10 20:38:12.832  INFO 5204 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-10-10 20:38:13.255  INFO 5204 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c402120: startup date [Mon Oct 10 20:38:13 AEDT 2016]; root of context hierarchy
+2016-10-10 20:38:14.524  INFO 5204 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$ac19eca5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-10-10 20:38:14.578  INFO 5204 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-10-10 20:38:15.081  INFO 5204 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-10-10 20:38:15.096  INFO 5204 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-10-10 20:38:15.098  INFO 5204 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-10-10 20:38:15.328  INFO 5204 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-10-10 20:38:15.328  INFO 5204 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2077 ms
+2016-10-10 20:38:15.572  INFO 5204 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-10-10 20:38:15.575  INFO 5204 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2016-10-10 20:38:15.576  INFO 5204 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-10-10 20:38:15.580  INFO 5204 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-10-10 20:38:15.818  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.ui.Model)
+2016-10-10 20:38:15.820  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.de(org.springframework.ui.Model)
+2016-10-10 20:38:15.821  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[initiate]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.initiateApiAccess(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-10 20:38:15.821  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[logout]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.logout(org.springframework.ui.ModelMap)
+2016-10-10 20:38:15.822  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testError],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.testError(org.springframework.ui.Model)
+2016-10-10 20:38:15.823  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.index(com.mcreceiverdemo.mvcmodels.DeKey)
+2016-10-10 20:38:15.824  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addToQueue(com.mcreceiverdemo.mvcmodels.DeKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-10 20:38:15.824  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addKey(com.mcreceiverdemo.mvcmodels.DeKey,org.springframework.validation.BindingResult)
+2016-10-10 20:38:15.824  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.removeKey(com.mcreceiverdemo.mvcmodels.DeKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-10 20:38:15.825  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clodeUatToProd(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-10 20:38:15.825  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-10 20:38:15.827  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],params=[addNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addRow(com.mcreceiverdemo.mvcmodels.DeData,org.springframework.validation.BindingResult)
+2016-10-10 20:38:15.827  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addToQueue(com.mcreceiverdemo.mvcmodels.DeData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-10 20:38:15.828  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[removeNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.removeRow(com.mcreceiverdemo.mvcmodels.DeData,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-10 20:38:15.828  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.saveDEData(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-10 20:38:15.828  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.dynamicForm(com.mcreceiverdemo.mvcmodels.DeData)
+2016-10-10 20:38:15.828  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.clearQueue(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-10 20:38:15.834  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-10-10 20:38:15.835  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-10-10 20:38:15.880  INFO 5204 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/assets/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-10 20:38:15.921  INFO 5204 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c402120: startup date [Mon Oct 10 20:38:13 AEDT 2016]; root of context hierarchy
+2016-10-10 20:38:15.984  INFO 5204 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandlingControllerAdvice
+2016-10-10 20:38:16.631  INFO 5204 --- [main] b.a.s.AuthenticationManagerConfiguration : 
+
+Using default security password: c1e5a4d0-080a-459b-93ac-1aa15e7909a7
+
+2016-10-10 20:38:16.767  INFO 5204 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/css/**'], []
+2016-10-10 20:38:16.768  INFO 5204 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/js/**'], []
+2016-10-10 20:38:16.768  INFO 5204 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/images/**'], []
+2016-10-10 20:38:16.768  INFO 5204 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/webjars/**'], []
+2016-10-10 20:38:16.768  INFO 5204 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2016-10-10 20:38:16.769  INFO 5204 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/error'], []
+2016-10-10 20:38:16.944  INFO 5204 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@700f518a, org.springframework.security.web.context.SecurityContextPersistenceFilter@66c38e51, org.springframework.security.web.header.HeaderWriterFilter@24934262, org.springframework.security.web.authentication.logout.LogoutFilter@6ecab872, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@74294c1a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@34f392be, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27e5b378, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@b835727, org.springframework.security.web.session.SessionManagementFilter@2bebb74f, org.springframework.security.web.access.ExceptionTranslationFilter@6c302a1d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@778d82e9]
+2016-10-10 20:38:17.713  INFO 5204 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-10-10 20:38:17.789  INFO 5204 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-10-10 20:38:17.797  INFO 5204 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 5.461 seconds (JVM running for 6.227)
+2016-10-10 20:38:24.560  INFO 5204 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-10-10 20:38:24.560  INFO 5204 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-10-10 20:38:24.587  INFO 5204 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 27 ms
+2016-10-10 20:38:24.915 ERROR 5204 --- [http-nio-8080-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-1] Exception processing template "layouts/default": Error resolving template "error", template might not exist or might not be accessible by any of the configured Template Resolvers (layouts/default:11)
+2016-10-10 20:38:24.926 ERROR 5204 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet dispatcherServlet threw exception
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template "error", template might not exist or might not be accessible by any of the configured Template Resolvers (layouts/default:11)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:246) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.fragment.StandardFragment.extractFragment(StandardFragment.java:202) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.processor.attr.AbstractStandardFragmentHandlingAttrProcessor.computeFragment(AbstractStandardFragmentHandlingAttrProcessor.java:72) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractFragmentHandlingAttrProcessor.processAttribute(AbstractFragmentHandlingAttrProcessor.java:63) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractAttrProcessor.doProcess(AbstractAttrProcessor.java:87) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.AbstractProcessor.process(AbstractProcessor.java:212) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.applyNextProcessor(Node.java:1017) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:972) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Document.process(Document.java:93) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1155) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1257) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:726) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:471) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:394) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:311) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:395) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:254) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:177) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:1110) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:785) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1425) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_101]
+
+2016-10-10 20:38:24.929 ERROR 5204 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template "error", template might not exist or might not be accessible by any of the configured Template Resolvers (layouts/default:11)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:982) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:726) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:471) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:394) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:311) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:395) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:254) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:177) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:1110) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:785) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1425) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_101]
+Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving template "error", template might not exist or might not be accessible by any of the configured Template Resolvers (layouts/default:11)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:246) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.fragment.StandardFragment.extractFragment(StandardFragment.java:202) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.processor.attr.AbstractStandardFragmentHandlingAttrProcessor.computeFragment(AbstractStandardFragmentHandlingAttrProcessor.java:72) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractFragmentHandlingAttrProcessor.processAttribute(AbstractFragmentHandlingAttrProcessor.java:63) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractAttrProcessor.doProcess(AbstractAttrProcessor.java:87) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.AbstractProcessor.process(AbstractProcessor.java:212) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.applyNextProcessor(Node.java:1017) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:972) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Document.process(Document.java:93) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1155) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1257) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	... 25 common frames omitted
+
+2016-10-10 20:39:28.156  INFO 5204 --- [RMI TCP Connection(2)-192.168.56.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2016-10-10 20:39:28.156  INFO 5204 --- [RMI TCP Connection(2)-192.168.56.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c402120: startup date [Mon Oct 10 20:38:13 AEDT 2016]; root of context hierarchy
+2016-10-10 20:39:28.159  INFO 5204 --- [RMI TCP Connection(2)-192.168.56.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-10-10 20:39:31.467  INFO 7240 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on anahid-lt02 with PID 7240 (C:\Ali\projects\java\mcreceiver\target\classes started by anahid in C:\Ali\projects\java\mcreceiver)
+2016-10-10 20:39:31.472  INFO 7240 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-10-10 20:39:32.043  INFO 7240 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c402120: startup date [Mon Oct 10 20:39:32 AEDT 2016]; root of context hierarchy
+2016-10-10 20:39:33.750  INFO 7240 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$d9c7c5b3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-10-10 20:39:33.838  INFO 7240 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-10-10 20:39:34.715  INFO 7240 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-10-10 20:39:34.757  INFO 7240 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-10-10 20:39:34.759  INFO 7240 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-10-10 20:39:35.247  INFO 7240 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-10-10 20:39:35.247  INFO 7240 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3207 ms
+2016-10-10 20:39:35.593  INFO 7240 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-10-10 20:39:35.599  INFO 7240 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2016-10-10 20:39:35.601  INFO 7240 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-10-10 20:39:35.604  INFO 7240 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-10-10 20:39:35.824  INFO 7240 --- [main] c.m.s.CustomAuthenticationProvider       : *** CustomAuthenticationProvider created
+2016-10-10 20:39:36.378  INFO 7240 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e4d2287, org.springframework.security.web.context.SecurityContextPersistenceFilter@16073fa8, org.springframework.security.web.authentication.logout.LogoutFilter@5c82cd4f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@cfbc8e8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14379273, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f4b840d, org.springframework.security.web.session.SessionManagementFilter@14f3c6fc, org.springframework.security.web.access.ExceptionTranslationFilter@610df783, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6c65860d]
+2016-10-10 20:39:36.487  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.ui.Model)
+2016-10-10 20:39:36.490  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.de(org.springframework.ui.Model)
+2016-10-10 20:39:36.491  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[logout]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.logout(org.springframework.ui.ModelMap)
+2016-10-10 20:39:36.500  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testError],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.testError(org.springframework.ui.Model)
+2016-10-10 20:39:36.501  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[initiate]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.initiateApiAccess(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-10 20:39:36.503  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.index(com.mcreceiverdemo.mvcmodels.DeKey)
+2016-10-10 20:39:36.504  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-10 20:39:36.504  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addToQueue(com.mcreceiverdemo.mvcmodels.DeKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-10 20:39:36.504  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clodeUatToProd(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-10 20:39:36.505  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.removeKey(com.mcreceiverdemo.mvcmodels.DeKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-10 20:39:36.505  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addKey(com.mcreceiverdemo.mvcmodels.DeKey,org.springframework.validation.BindingResult)
+2016-10-10 20:39:36.508  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.clearQueue(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-10 20:39:36.509  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addToQueue(com.mcreceiverdemo.mvcmodels.DeData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-10 20:39:36.509  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.dynamicForm(com.mcreceiverdemo.mvcmodels.DeData)
+2016-10-10 20:39:36.509  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.saveDEData(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-10 20:39:36.510  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],params=[addNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addRow(com.mcreceiverdemo.mvcmodels.DeData,org.springframework.validation.BindingResult)
+2016-10-10 20:39:36.510  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[removeNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.removeRow(com.mcreceiverdemo.mvcmodels.DeData,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-10 20:39:36.518  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-10-10 20:39:36.519  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-10-10 20:39:36.597  INFO 7240 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/assets/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-10 20:39:36.688  INFO 7240 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c402120: startup date [Mon Oct 10 20:39:32 AEDT 2016]; root of context hierarchy
+2016-10-10 20:39:36.773  INFO 7240 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandlingControllerAdvice
+2016-10-10 20:39:38.495  INFO 7240 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-10-10 20:39:38.608  INFO 7240 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-10-10 20:39:38.615  INFO 7240 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 7.778 seconds (JVM running for 8.582)
+2016-10-10 20:39:46.153  INFO 7240 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-10-10 20:39:46.153  INFO 7240 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-10-10 20:39:46.176  INFO 7240 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+2016-10-10 20:39:46.229  INFO 7240 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-10-10 20:39:48.970 ERROR 7240 --- [http-nio-8080-exec-4] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-4] Exception processing template "layouts/default": Error resolving template "error", template might not exist or might not be accessible by any of the configured Template Resolvers (layouts/default:11)
+2016-10-10 20:39:48.976 ERROR 7240 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet dispatcherServlet threw exception
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template "error", template might not exist or might not be accessible by any of the configured Template Resolvers (layouts/default:11)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:246) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.fragment.StandardFragment.extractFragment(StandardFragment.java:202) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.processor.attr.AbstractStandardFragmentHandlingAttrProcessor.computeFragment(AbstractStandardFragmentHandlingAttrProcessor.java:72) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractFragmentHandlingAttrProcessor.processAttribute(AbstractFragmentHandlingAttrProcessor.java:63) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractAttrProcessor.doProcess(AbstractAttrProcessor.java:87) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.AbstractProcessor.process(AbstractProcessor.java:212) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.applyNextProcessor(Node.java:1017) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:972) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Document.process(Document.java:93) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1155) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1257) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:726) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:471) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:394) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:311) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:395) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:254) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:177) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:1110) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:785) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1425) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_101]
+
+2016-10-10 20:39:48.979 ERROR 7240 --- [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template "error", template might not exist or might not be accessible by any of the configured Template Resolvers (layouts/default:11)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:982) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:726) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:471) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:394) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:311) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:395) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:254) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:177) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:1110) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:785) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1425) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_101]
+Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving template "error", template might not exist or might not be accessible by any of the configured Template Resolvers (layouts/default:11)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:246) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.fragment.StandardFragment.extractFragment(StandardFragment.java:202) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.processor.attr.AbstractStandardFragmentHandlingAttrProcessor.computeFragment(AbstractStandardFragmentHandlingAttrProcessor.java:72) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractFragmentHandlingAttrProcessor.processAttribute(AbstractFragmentHandlingAttrProcessor.java:63) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractAttrProcessor.doProcess(AbstractAttrProcessor.java:87) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.AbstractProcessor.process(AbstractProcessor.java:212) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.applyNextProcessor(Node.java:1017) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:972) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Document.process(Document.java:93) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1155) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1257) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	... 25 common frames omitted
+
