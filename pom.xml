@@ -27,16 +27,6 @@
 	</properties>
 
 	
-	
-	<http use-expressions="true">
-        <intercept-url pattern="/de/**" access="isAuthenticated()"/>
-        <http-basic/>
-    </http>
- 
-    <authentication-manager>
-        <authentication-provider ref="customAuthenticationProvider" />
-    </authentication-manager>
-	
 
 	<dependencies>
 		
