@@ -1,23 +1,27 @@
 package com.mcreceiverdemo.et;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.exacttarget.fuelsdk.ETClient;
-import com.exacttarget.fuelsdk.ETDataExtension;
 import com.exacttarget.fuelsdk.ETExpression;
 import com.exacttarget.fuelsdk.ETFilter;
 import com.exacttarget.fuelsdk.ETResponse;
 import com.exacttarget.fuelsdk.ETSdkException;
+import com.exacttarget.fuelsdk.ETSoapConnection;
 import com.exacttarget.fuelsdk.ETSoapObject;
 import com.exacttarget.fuelsdk.annotations.ExternalName;
 import com.exacttarget.fuelsdk.annotations.InternalName;
 import com.exacttarget.fuelsdk.annotations.SoapObject;
-
-import com.exacttarget.fuelsdk.internal.QueryDefinition;
-import com.exacttarget.fuelsdk.internal.DataExtension;
+import com.exacttarget.fuelsdk.internal.APIObject;
 import com.exacttarget.fuelsdk.internal.InteractionBaseObject;
+import com.exacttarget.fuelsdk.internal.Soap;
+import com.exacttarget.fuelsdk.internal.UpdateOptions;
+import com.exacttarget.fuelsdk.internal.UpdateRequest;
+import com.exacttarget.fuelsdk.internal.UpdateResponse;
 
-@SoapObject(internalType = QueryDefinitionExtended.class, unretrievable = {
+@SoapObject(internalType = QueryDefinition.class, unretrievable = {
 	    "ID"
 	})
 public class ETQueryObject extends ETSoapObject  {
@@ -42,12 +46,10 @@ public class ETQueryObject extends ETSoapObject  {
     @ExternalName("targetType")
     private String targetType = null;
     
-    @InternalName("dataExtensionTarget.CustomerKey")
-    //@ExternalName("dataExtensionTarget")
-    //private InteractionBaseObject dataExtensionTarget = null;
-    
-    
-    private String dataExtensionTargetCustomerKey = null;
+    @InternalName("dataExtensionTarget")
+    @ExternalName("dataExtensionTarget.CustomerKey")
+    private InteractionBaseObject dataExtensionTarget = null;
+    //private String dataExtensionTargetCustomerKey = null;
     @ExternalName("targetUpdateType")
     private String targetUpdateType = null;
     
@@ -119,21 +121,21 @@ public class ETQueryObject extends ETSoapObject  {
     	this.targetType = targetType;
     }
     
-    public String getDataExtensionTargetCustomerKey() {
+    /*public String getDataExtensionTargetCustomerKey() {
     	return this.dataExtensionTargetCustomerKey;
     }
     
     public void setDataExtensionTargetCustomerKey(String dataExtensionTargetCustomerKey) {
     	this.dataExtensionTargetCustomerKey = dataExtensionTargetCustomerKey;
-    }
+    }*/
     
-    /*public InteractionBaseObject getDataExtensionTarget() {
+    public InteractionBaseObject getDataExtensionTarget() {
     	return this.dataExtensionTarget;
     }
     
     public void setDataExtensionTarget(InteractionBaseObject dataExtensionTarget) {
     	this.dataExtensionTarget = dataExtensionTarget;
-    }*/
+    }
     
     public String getTargetUpdateType() {
     	return this.targetUpdateType;
@@ -153,5 +155,37 @@ public class ETQueryObject extends ETSoapObject  {
 		etFilter.setExpression(etExpression);
 		ETResponse<ETQueryObject> x = (ETResponse<ETQueryObject>) this.retrieve(client, "QueryDefinition", etFilter, this.getClass());
 		return x;    	
+    }
+    
+    public void update(ETClient client) throws ETSdkException {
+    	List<QueryDefinition> l = new ArrayList<QueryDefinition>();
+    	QueryDefinition qd = new QueryDefinition();
+    	qd.setCustomerKey(this.getKey());
+    	qd.setQueryText(this.getQueryText());
+    	l.add(qd);
+    	//this.update(client);
+    	//ETSoapObject.update(client, l);
+    	
+    	 ETSoapConnection connection = client.getSoapConnection();
+
+         //
+         // Automatically refresh the token if necessary:
+         //
+
+         client.refreshToken();
+
+         //
+         // Perform the SOAP update:
+         //
+
+         Soap soap = connection.getSoap();
+
+         UpdateRequest updateRequest = new UpdateRequest();
+         updateRequest.setOptions(new UpdateOptions());
+         updateRequest.getObjects().add(qd);
+         
+         UpdateResponse updateResponse = soap.update(updateRequest);
+    	
+    	
     }
 }

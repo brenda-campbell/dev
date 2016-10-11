@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.exacttarget.fuelsdk.ETApiObject;
+import com.exacttarget.fuelsdk.ETClient;
 import com.exacttarget.fuelsdk.ETObject;
 import com.exacttarget.fuelsdk.ETSoapObject;
 import com.mcreceiverdemo.et.ETQueryObject;
@@ -29,9 +30,8 @@ private final Logger logger = LoggerFactory.getLogger(this.getClass());
 			throw new CustomException(String.format("no Query Activiry found."));
 		}*/	
 		x.setQueryText("SELECT 'alitestseverything+3@gmail.com' as email, 'bla bla 3' as name");
-		List<ETQueryObject> list = new ArrayList<ETQueryObject>();
-		list.add(x);
-		ETSoapObject.update(this.mcClient.getETClient(), list);
+		x.update(this.mcClient.getETClient());
+		//ETSoapObject.update(this.mcClient.getETClient(), list);
 	}
 	
 }
