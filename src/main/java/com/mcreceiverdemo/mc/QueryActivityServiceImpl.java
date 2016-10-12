@@ -12,6 +12,8 @@ import com.exacttarget.fuelsdk.ETClient;
 import com.exacttarget.fuelsdk.ETObject;
 import com.exacttarget.fuelsdk.ETSoapObject;
 import com.mcreceiverdemo.et.ETQueryObject;
+import com.mcreceiverdemo.et.ETRetrieveQueryObject;
+import com.mcreceiverdemo.et.ETUpdateQueryObject;
 import com.mcreceiverdemo.exceptions.CustomException;
 
 @Service
@@ -24,13 +26,15 @@ private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	}
 	
 	public void uatToProd(String key) throws Exception {
-		ETQueryObject query = new ETQueryObject();
-		ETQueryObject x = query.select(this.mcClient.getETClient(), key).getObject();
+		ETRetrieveQueryObject query = new ETRetrieveQueryObject ();
+		ETRetrieveQueryObject x = query.select(this.mcClient.getETClient(), key).getObject();
 		/*if(etQA == null) {
 			throw new CustomException(String.format("no Query Activiry found."));
 		}*/	
-		x.setQueryText("SELECT 'alitestseverything+3@gmail.com' as email, 'bla bla 3' as name");
-		x.update(this.mcClient.getETClient());
+		ETUpdateQueryObject u = new ETUpdateQueryObject();
+		u.cloneQueryObject(x);
+		u.setQueryText("SELECT 'alitestseverything+3@gmail.com' as email, 'bla bla 3' as name");
+		u.update(this.mcClient.getETClient());
 		//ETSoapObject.update(this.mcClient.getETClient(), list);
 	}
 	

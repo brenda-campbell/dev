@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlElement;
+
 import com.exacttarget.fuelsdk.ETClient;
 import com.exacttarget.fuelsdk.ETExpression;
 import com.exacttarget.fuelsdk.ETFilter;
@@ -15,19 +17,20 @@ import com.exacttarget.fuelsdk.annotations.ExternalName;
 import com.exacttarget.fuelsdk.annotations.InternalName;
 import com.exacttarget.fuelsdk.annotations.SoapObject;
 import com.exacttarget.fuelsdk.internal.APIObject;
+import com.exacttarget.fuelsdk.internal.ClientID;
 import com.exacttarget.fuelsdk.internal.InteractionBaseObject;
 import com.exacttarget.fuelsdk.internal.Soap;
 import com.exacttarget.fuelsdk.internal.UpdateOptions;
 import com.exacttarget.fuelsdk.internal.UpdateRequest;
 import com.exacttarget.fuelsdk.internal.UpdateResponse;
 
-@SoapObject(internalType = QueryDefinition.class, unretrievable = {
-	    "ID"
-	})
+
 public class ETQueryObject extends ETSoapObject  {
 
 	@ExternalName("id")
     private String id = null;
+	@ExternalName("objectID")
+    protected String objectID;
     @ExternalName("key")
     @InternalName("customerKey")
     private String key = null;
@@ -40,16 +43,22 @@ public class ETQueryObject extends ETSoapObject  {
     @ExternalName("folderId")
     @InternalName("categoryID")
     private Integer folderId = null;
-	
+    @ExternalName("fileSpec")
+    private String fileSpec = null;
+    @ExternalName("fileType")
+    private String fileType = null;
+    @ExternalName("status")
+    private String status = null;
+    
     @ExternalName("queryText")
     private String queryText = null;
     @ExternalName("targetType")
     private String targetType = null;
     
     @InternalName("dataExtensionTarget")
-    @ExternalName("dataExtensionTarget.CustomerKey")
-    private InteractionBaseObject dataExtensionTarget = null;
-    //private String dataExtensionTargetCustomerKey = null;
+    @ExternalName("dataExtensionTarget")
+    protected InteractionBaseObject dataExtensionTarget = null;
+
     @ExternalName("targetUpdateType")
     private String targetUpdateType = null;
     
@@ -65,6 +74,14 @@ public class ETQueryObject extends ETSoapObject  {
         this.id = id;
     }
 
+    public String getObjectID() {
+        return objectID;
+    }
+
+    public void setObjectID(String id) {
+        this.objectID = id;
+    }
+    
     public String getKey() {
         return key;
     }
@@ -137,6 +154,7 @@ public class ETQueryObject extends ETSoapObject  {
     	this.dataExtensionTarget = dataExtensionTarget;
     }
     
+       
     public String getTargetUpdateType() {
     	return this.targetUpdateType;
     }
@@ -146,25 +164,69 @@ public class ETQueryObject extends ETSoapObject  {
     }
     
     
-    public ETResponse<ETQueryObject> select(ETClient client, String key) throws ETSdkException {
+    public void setFileSpec(String fileSpec) {
+    	this.fileSpec =fileSpec;
+    }
+    
+    public String getFileSpec() {
+    	return this.fileSpec;
+    }
+    
+    public void setFileType(String fileType) {
+    	this.fileType =fileType;
+    }
+    
+    public String getFileType() {
+    	return this.fileType;
+    }
+    
+    public void setStatus(String status) {
+    	this.status =status;
+    }
+    
+    public String getStatus() {
+    	return this.status;
+    }
+    
+    public void applyDataExtensionTarget(InteractionBaseObject dataExtensionTarget) {
+    	this.dataExtensionTarget = dataExtensionTarget;
+    }
+    
+    /*
+    public ETResponse<ETQueryObject> select(ETClient client, ETFilter etFilter, T ) throws ETSdkException {
     	ETFilter etFilter = new ETFilter();
 		ETExpression etExpression = new ETExpression();
 		etExpression.setProperty("CustomerKey");
 		etExpression.setValue(key);
 		etExpression.setOperator(com.exacttarget.fuelsdk.ETExpression.Operator.EQUALS);
 		etFilter.setExpression(etExpression);
-		ETResponse<ETQueryObject> x = (ETResponse<ETQueryObject>) this.retrieve(client, "QueryDefinition", etFilter, this.getClass());
+		ETResponse<ETQueryObject> x = (ETResponse<ETQueryObject>) super.retrieve(client, "QueryDefinition", etFilter, this.getClass());
 		return x;    	
     }
+    */
     
-    public void update(ETClient client) throws ETSdkException {
-    	List<QueryDefinition> l = new ArrayList<QueryDefinition>();
-    	QueryDefinition qd = new QueryDefinition();
+    /*public void update(ETClient client) throws ETSdkException {
+    	List<com.exacttarget.fuelsdk.internal.QueryDefinition> l = new ArrayList<com.exacttarget.fuelsdk.internal.QueryDefinition>();
+    	com.exacttarget.fuelsdk.internal.QueryDefinition qd = new com.exacttarget.fuelsdk.internal.QueryDefinition();
     	qd.setCustomerKey(this.getKey());
+    	qd.setCategoryID(this.getFolderId());
     	qd.setQueryText(this.getQueryText());
+    	qd.setDataExtensionTarget(this.getDataExtensionTarget());
+    	qd.setTargetUpdateType(this.getTargetUpdateType());
+    	qd.setName(this.getName());
+    	qd.setCreatedDate(this.getCreatedDate());
+    	qd.setModifiedDate(new Date());
+    	qd.setFileSpec(this.getFileSpec());
+    	qd.setFileType(this.getFileType());
+    	qd.setStatus(this.getStatus());
+    	//com.exacttarget.fuelsdk.internal.ClientID clientId = new com.exacttarget.fuelsdk.internal.ClientID();
+    	//clientId.setCustomerKey(this.getKey());
+    	//qd.setClient(clientId);;
     	l.add(qd);
+    	//List<ETQueryObject> l = new ArrayList<ETQueryObject>();
+    	//l.add(this);
     	//this.update(client);
-    	//ETSoapObject.update(client, l);
+    	//super.update(client, l);
     	
     	 ETSoapConnection connection = client.getSoapConnection();
 
@@ -187,5 +249,5 @@ public class ETQueryObject extends ETSoapObject  {
          UpdateResponse updateResponse = soap.update(updateRequest);
     	
     	
-    }
+    }*/
 }

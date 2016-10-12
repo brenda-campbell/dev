@@ -3,10 +3,12 @@ package com.mcreceiverdemo.et;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
+import com.exacttarget.fuelsdk.internal.InteractionBaseObject;
 import com.exacttarget.fuelsdk.internal.InteractionDefinition;
 
 
@@ -54,8 +56,14 @@ public class QueryDefinition extends InteractionDefinition
     protected String queryText;
     @XmlElement(name = "TargetType")
     protected String targetType;
+    @XmlElements( {
+    		@XmlElement(name = "DataExtensionTarget.CustomerKey"),
+    		@XmlElement(name = "DataExtensionTarget.Name")
+         })
     @XmlElement(name = "DataExtensionTarget.CustomerKey")
-    protected String dataExtensionTarget;
+    protected InteractionBaseObject dataExtensionTarget;
+    //@XmlElement(name = "DataExtensionTarget.Name")
+    //protected String dataExtensionTargetName;
     @XmlElement(name = "TargetUpdateType")
     protected String targetUpdateType;
     @XmlElement(name = "FileSpec")
@@ -123,7 +131,7 @@ public class QueryDefinition extends InteractionDefinition
      *     {@link InteractionBaseObject }
      *     
      */
-    public String getDataExtensionTarget() {
+    public InteractionBaseObject getDataExtensionTarget() {
         return dataExtensionTarget;
     }
 
@@ -135,10 +143,11 @@ public class QueryDefinition extends InteractionDefinition
      *     {@link InteractionBaseObject }
      *     
      */
-    public void String (String value) {
+    public void setDataExtensionTarget (InteractionBaseObject value) {
         this.dataExtensionTarget = value;
     }
 
+    
     /**
      * Gets the value of the targetUpdateType property.
      * 

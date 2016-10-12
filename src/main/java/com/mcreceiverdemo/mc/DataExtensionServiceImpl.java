@@ -47,6 +47,7 @@ public class DataExtensionServiceImpl extends CommonMcServiceImpl implements Dat
 		    row.setColumn(entry.getKey(), entry.getValue());
 		}
 		ETResponse<?> response = de.insert(row);
+		//ETResponse<?> response = de.update(row);
 		response.getObject();
 		logger.info(response.getResponseMessage());
 		return response;
@@ -84,5 +85,6 @@ public class DataExtensionServiceImpl extends CommonMcServiceImpl implements Dat
 		}
 		this.clone(etDE);		
 	}
+	
 	
 }
