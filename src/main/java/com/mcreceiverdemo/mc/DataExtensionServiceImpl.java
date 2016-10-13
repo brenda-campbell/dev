@@ -13,6 +13,7 @@ import com.exacttarget.fuelsdk.ETDataExtensionRow;
 import com.exacttarget.fuelsdk.ETResponse;
 import com.exacttarget.fuelsdk.ETSdkException;
 import com.mcreceiverdemo.et.ETDataExtensionObject;
+import com.mcreceiverdemo.et.ETDataExtensionTemplateObject;
 import com.mcreceiverdemo.et.ETRetrieveDataExtensionObject;
 import com.mcreceiverdemo.et.ETUpdateDataExtensionObject;
 import com.mcreceiverdemo.exceptions.CustomException;
@@ -60,13 +61,57 @@ public class DataExtensionServiceImpl extends CommonMcServiceImpl implements Dat
 		//newDE.setClient(this.mcClient.getEtClient());
 		newDE.setName(uatDE.getName().replaceFirst("(?i)uat_", "").replaceFirst("(?i)_uat", ""));
 		newDE.setKey(java.util.UUID.randomUUID().toString());
-		String customerKey = uatDE.getKey();
-		List<ETDataExtensionColumn> l = uatDE.retrieveColumns(this.mcClient.getETClient(), customerKey); //this.retrieveList(customerKey, ETDataExtensionColumn.class);
-		for(ETDataExtensionColumn c : l) {
-			newDE.addColumn(c.getName(), c.getType(), c.getLength(), c.getPrecision(), c.getScale(), c.getIsPrimaryKey(), c.getIsRequired(), c.getDefaultValue());
+		if(newDE.getTemplate() == null || newDE.getTemplate().getObjectID().isEmpty()) {
+			String customerKey = uatDE.getKey();
+			List<ETDataExtensionColumn> l = uatDE.retrieveColumns(this.mcClient.getETClient(), customerKey); //this.retrieveList(customerKey, ETDataExtensionColumn.class);
+			for(ETDataExtensionColumn c : l) {
+				newDE.addColumn(c.getName(), c.getType(), c.getLength(), c.getPrecision(), c.getScale(), c.getIsPrimaryKey(), c.getIsRequired(), c.getDefaultValue());
+			}
 		}
 		//newDE.create(this.mcClient.getEtClient(), arg1);
-		ETResponse<ETDataExtensionObject> createdDE = this.mcClient.getETClient().create(new ArrayList<ETDataExtensionObject>() {{add(newDE);}});
+		ETResponse<ETUpdateDataExtensionObject> response = this.mcClient.getETClient().create(new ArrayList<ETUpdateDataExtensionObject>() {{add(newDE);}});
+		if(response != null) {
+			ETUpdateDataExtensionObject createdDE = response.getObject();		
+			if(createdDE!=null && newDE.getTemplate() != null && !newDE.getTemplate().getObjectID().isEmpty()) {
+				
+				//ETUpdateDataExtensionObject createdDE = new ETUpdateDataExtensionObject();
+				//createdDE.cloneObject(responseDE);
+				
+				String customerKey = createdDE.getKey();
+				List<ETDataExtensionColumn> createdCols = createdDE.retrieveColumns(this.mcClient.getETClient(), customerKey); //this.retrieveList(customerKey, ETDataExtensionColumn.class);
+				customerKey = uatDE.getKey();
+				List<ETDataExtensionColumn> uatCols = uatDE.retrieveColumns(this.mcClient.getETClient(), customerKey);
+				for(ETDataExtensionColumn c : uatCols) {
+					boolean isExist = false;
+					for(ETDataExtensionColumn cc : createdCols) {
+						if(cc.getName().equalsIgnoreCase(c.getName())) {
+							isExist = true;
+							break;
+						}
+					}
+					if(isExist) {
+						continue;
+					}
+					createdDE.addColumn(c.getName(), c.getType(), c.getLength(), c.getPrecision(), c.getScale(), c.getIsPrimaryKey(), c.getIsRequired(), c.getDefaultValue());
+					
+					/*ETDataExtensionColumn newCol = new ETDataExtensionColumn();
+					newCol.setName(c.getName());
+					newCol.setType(c.getType());
+					newCol.setLength(c.getLength());
+					newCol.setPrecision(c.getPrecision());
+					newCol.setScale(c.getScale());
+					newCol.setIsPrimaryKey(c.getIsPrimaryKey());
+					newCol.setIsRequired(c.getIsRequired());
+					newCol.setDefaultValue(c.getDefaultValue());
+					
+					newCol.setDataExtension(createdDE);
+					*/
+															
+				}
+				ETResponse<ETUpdateDataExtensionObject> resCol = this.mcClient.getETClient().update(new ArrayList<ETUpdateDataExtensionObject>() {{add(createdDE);}});
+			}
+		}
+		
 	}
 
 
@@ -77,10 +122,8 @@ public class DataExtensionServiceImpl extends CommonMcServiceImpl implements Dat
 			throw new CustomException(String.format("no DE cannot be found."));
 		}
 		if(etDE.getTemplate() != null && !etDE.getTemplate().getCustomerKey().isEmpty()) {
-			// do retrieve template
-			// set it in the etDE 
-			// then go for cloning.
-			// Otherwise it will always create standard DE.
+			ETDataExtensionTemplateObject etTemplate = this.retrieve(etDE.getTemplate().getCustomerKey(), ETDataExtensionTemplateObject.class);
+			etDE.getTemplate().setObjectID(etTemplate.getId());;
 		}
 		this.clone(etDE);		
 	}
