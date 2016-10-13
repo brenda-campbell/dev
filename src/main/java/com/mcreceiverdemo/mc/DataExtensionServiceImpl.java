@@ -6,21 +6,16 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.exacttarget.fuelsdk.ETApiObject;
-import com.exacttarget.fuelsdk.ETDataExtension;
 import com.exacttarget.fuelsdk.ETDataExtensionColumn;
 import com.exacttarget.fuelsdk.ETDataExtensionRow;
 import com.exacttarget.fuelsdk.ETResponse;
 import com.exacttarget.fuelsdk.ETSdkException;
-import com.exacttarget.fuelsdk.internal.APIObject;
+import com.mcreceiverdemo.et.ETDataExtensionObject;
+import com.mcreceiverdemo.et.ETRetrieveDataExtensionObject;
+import com.mcreceiverdemo.et.ETUpdateDataExtensionObject;
 import com.mcreceiverdemo.exceptions.CustomException;
-import com.mcreceiverdemo.exceptions.InvalidDataException;
-import com.exacttarget.fuelsdk.ETFilter;
-import com.exacttarget.fuelsdk.ETExpression;
-import com.exacttarget.fuelsdk.ETExpression.Operator;
 
 @Service
 public class DataExtensionServiceImpl extends CommonMcServiceImpl implements DataExtensionService, CommonMcService {
@@ -37,7 +32,7 @@ public class DataExtensionServiceImpl extends CommonMcServiceImpl implements Dat
 	}
 	
 	public ETResponse<?> upsert(String key, Map<String,String> recordsValues) throws ETSdkException{
-		ETDataExtension de = new ETDataExtension();  //client.retrieveDataExtension(filter);
+		ETDataExtensionObject de = new ETDataExtensionObject();  //client.retrieveDataExtension(filter);
 		de.setKey(key); //"8B1A73D6-8EFA-4A7D-AB43-88663EB9AD28"
 		de.setClient(this.mcClient.getETClient());
 		
@@ -55,33 +50,37 @@ public class DataExtensionServiceImpl extends CommonMcServiceImpl implements Dat
 
 	
 	
-	public void clone(ETDataExtension uatDE) throws Exception {
+	public void clone(ETRetrieveDataExtensionObject uatDE) throws Exception {
 		String deName = uatDE.getName();
 		if(! (deName.toLowerCase().startsWith("uat") || deName.toLowerCase().endsWith("uat")) ) {
 			throw new CustomException(String.format("de `%s` is not a UAT de", deName));
 		}
-		ETDataExtension newDE = new ETDataExtension();
+		ETUpdateDataExtensionObject newDE = new ETUpdateDataExtensionObject();
+		newDE.cloneObject(uatDE);
 		//newDE.setClient(this.mcClient.getEtClient());
 		newDE.setName(uatDE.getName().replaceFirst("(?i)uat_", "").replaceFirst("(?i)_uat", ""));
 		newDE.setKey(java.util.UUID.randomUUID().toString());
-		newDE.setDescription(uatDE.getDescription());
-		newDE.setIsSendable(uatDE.getIsSendable());
-		newDE.setFolderId(uatDE.getFolderId());
-	    String customerKey = uatDE.getKey();
+		String customerKey = uatDE.getKey();
 		List<ETDataExtensionColumn> l = uatDE.retrieveColumns(this.mcClient.getETClient(), customerKey); //this.retrieveList(customerKey, ETDataExtensionColumn.class);
 		for(ETDataExtensionColumn c : l) {
 			newDE.addColumn(c.getName(), c.getType(), c.getLength(), c.getPrecision(), c.getScale(), c.getIsPrimaryKey(), c.getIsRequired(), c.getDefaultValue());
 		}
 		//newDE.create(this.mcClient.getEtClient(), arg1);
-		ETResponse<ETDataExtension> createdDE = this.mcClient.getETClient().create(new ArrayList<ETDataExtension>() {{add(newDE);}});
+		ETResponse<ETDataExtensionObject> createdDE = this.mcClient.getETClient().create(new ArrayList<ETDataExtensionObject>() {{add(newDE);}});
 	}
 
 
 	@Override
 	public void uatToProd(String key) throws Exception {
-		ETDataExtension etDE = this.retrieve(key, ETDataExtension.class);
+		ETRetrieveDataExtensionObject etDE = this.retrieve(key, ETRetrieveDataExtensionObject.class);
 		if(etDE == null) {
 			throw new CustomException(String.format("no DE cannot be found."));
+		}
+		if(etDE.getTemplate() != null && !etDE.getTemplate().getCustomerKey().isEmpty()) {
+			// do retrieve template
+			// set it in the etDE 
+			// then go for cloning.
+			// Otherwise it will always create standard DE.
 		}
 		this.clone(etDE);		
 	}

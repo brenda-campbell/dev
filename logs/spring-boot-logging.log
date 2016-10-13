@@ -2235,3 +2235,1094 @@ Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" x
 </soap:Envelope>
 
 --------------------------------------
+2016-10-13 17:14:23.317  INFO 10640 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on anahid-lt02 with PID 10640 (C:\Ali\projects\java\mcreceiver\target\classes started by anahid in C:\Ali\projects\java\mcreceiver)
+2016-10-13 17:14:23.365  INFO 10640 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-10-13 17:14:24.212  INFO 10640 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 17:14:24 AEDT 2016]; root of context hierarchy
+2016-10-13 17:14:26.004  INFO 10640 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$c16e6ef1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-10-13 17:14:26.854  INFO 10640 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-10-13 17:14:27.622  INFO 10640 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-10-13 17:14:27.649  INFO 10640 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-10-13 17:14:27.651  INFO 10640 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-10-13 17:14:28.517  INFO 10640 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-10-13 17:14:28.518  INFO 10640 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4311 ms
+2016-10-13 17:14:28.822  INFO 10640 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-10-13 17:14:28.825  INFO 10640 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2016-10-13 17:14:28.825  INFO 10640 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-10-13 17:14:28.827  INFO 10640 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-10-13 17:14:28.953  INFO 10640 --- [main] c.m.s.CustomAuthenticationProvider       : *** CustomAuthenticationProvider created
+2016-10-13 17:14:29.989  INFO 10640 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d760326, org.springframework.security.web.context.SecurityContextPersistenceFilter@2740e316, org.springframework.security.web.authentication.logout.LogoutFilter@6aa7b67f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c991465, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3451f01d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@9e54c59, org.springframework.security.web.session.SessionManagementFilter@34b87182, org.springframework.security.web.access.ExceptionTranslationFilter@2c2a027c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3330f3ad]
+2016-10-13 17:14:30.119  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.ui.Model)
+2016-10-13 17:14:30.121  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.de(org.springframework.ui.Model)
+2016-10-13 17:14:30.121  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[initiate]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.initiateApiAccess(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:14:30.122  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[logout]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.logout(org.springframework.ui.ModelMap)
+2016-10-13 17:14:30.123  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testError],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.testError(org.springframework.ui.Model)
+2016-10-13 17:14:30.124  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.qa(org.springframework.ui.Model)
+2016-10-13 17:14:30.125  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 17:14:30.125  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 17:14:30.126  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 17:14:30.127  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clodeUatToProd(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 17:14:30.127  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:14:30.127  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 17:14:30.134  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 17:14:30.135  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 17:14:30.135  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 17:14:30.136  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.cloqauattoprod(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 17:14:30.137  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:14:30.137  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 17:14:30.138  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.clearQueue(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 17:14:30.139  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[removeNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.removeRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 17:14:30.140  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.saveDEData(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 17:14:30.140  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:14:30.140  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.dynamicForm(com.mcreceiverdemo.mvcmodels.MyData)
+2016-10-13 17:14:30.141  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],params=[addNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult)
+2016-10-13 17:14:30.149  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-10-13 17:14:30.150  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-10-13 17:14:30.297  INFO 10640 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/assets/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-13 17:14:30.554  INFO 10640 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 17:14:24 AEDT 2016]; root of context hierarchy
+2016-10-13 17:14:30.686  INFO 10640 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandlingControllerAdvice
+2016-10-13 17:14:33.284  INFO 10640 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-10-13 17:14:33.472  INFO 10640 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-10-13 17:14:33.483  INFO 10640 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 11.121 seconds (JVM running for 20.744)
+2016-10-13 17:15:17.263  INFO 10640 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-10-13 17:15:17.264  INFO 10640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-10-13 17:15:17.288  INFO 10640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 24 ms
+2016-10-13 17:15:17.338  INFO 10640 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-10-13 17:15:17.871  WARN 10640 --- [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'dispatcherServlet'
+2016-10-13 17:15:28.754  INFO 10640 --- [http-nio-8080-exec-5] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/C:/Users/anahid/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-10-13 17:15:31.574  INFO 10640 --- [http-nio-8080-exec-6] c.m.controllers.HomeController           : this is index.
+2016-10-13 17:15:34.476  INFO 10640 --- [http-nio-8080-exec-7] c.m.controllers.HomeController           : this is de landing.
+2016-10-13 17:15:43.833 ERROR 10640 --- [http-nio-8080-exec-2] .GlobalExceptionHandlingControllerAdvice : Request: /de/uattoprod raised com.exacttarget.fuelsdk.ETSdkException: error invoking retrieve method for type class com.mcreceiverdemo.et.ETDataExtensionEx
+2016-10-13 17:15:51.220  INFO 10640 --- [http-nio-8080-exec-3] c.m.controllers.HomeController           : this is de landing.
+2016-10-13 17:16:26.656 ERROR 10640 --- [http-nio-8080-exec-5] .GlobalExceptionHandlingControllerAdvice : Request: /de/uattoprod raised com.exacttarget.fuelsdk.ETSdkException: error invoking retrieve method for type class com.mcreceiverdemo.et.ETDataExtensionEx
+2016-10-13 17:17:19.596  INFO 9688 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on anahid-lt02 with PID 9688 (C:\Ali\projects\java\mcreceiver\target\classes started by anahid in C:\Ali\projects\java\mcreceiver)
+2016-10-13 17:17:19.602  INFO 9688 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-10-13 17:17:20.149  INFO 9688 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 17:17:20 AEDT 2016]; root of context hierarchy
+2016-10-13 17:17:21.388  INFO 9688 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$44fdb283] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-10-13 17:17:21.441  INFO 9688 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-10-13 17:17:22.040  INFO 9688 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-10-13 17:17:22.053  INFO 9688 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-10-13 17:17:22.055  INFO 9688 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-10-13 17:17:22.317  INFO 9688 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-10-13 17:17:22.318  INFO 9688 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2172 ms
+2016-10-13 17:17:22.595  INFO 9688 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-10-13 17:17:22.597  INFO 9688 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2016-10-13 17:17:22.598  INFO 9688 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-10-13 17:17:22.600  INFO 9688 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-10-13 17:17:22.700  INFO 9688 --- [main] c.m.s.CustomAuthenticationProvider       : *** CustomAuthenticationProvider created
+2016-10-13 17:17:23.300  INFO 9688 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10b687f2, org.springframework.security.web.context.SecurityContextPersistenceFilter@682abca7, org.springframework.security.web.authentication.logout.LogoutFilter@93824eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76f881d9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2539cd1c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@55f4887d, org.springframework.security.web.session.SessionManagementFilter@20a967fe, org.springframework.security.web.access.ExceptionTranslationFilter@40ac6b76, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7ab1127c]
+2016-10-13 17:17:23.415  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.ui.Model)
+2016-10-13 17:17:23.417  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.de(org.springframework.ui.Model)
+2016-10-13 17:17:23.418  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.qa(org.springframework.ui.Model)
+2016-10-13 17:17:23.419  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[logout]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.logout(org.springframework.ui.ModelMap)
+2016-10-13 17:17:23.420  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testError],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.testError(org.springframework.ui.Model)
+2016-10-13 17:17:23.420  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[initiate]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.initiateApiAccess(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:17:23.424  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 17:17:23.425  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:17:23.426  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clodeUatToProd(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 17:17:23.426  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 17:17:23.426  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 17:17:23.427  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 17:17:23.433  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 17:17:23.434  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:17:23.434  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 17:17:23.435  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 17:17:23.436  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 17:17:23.436  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.cloqauattoprod(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 17:17:23.437  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:17:23.438  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.clearQueue(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 17:17:23.438  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],params=[addNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult)
+2016-10-13 17:17:23.438  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.dynamicForm(com.mcreceiverdemo.mvcmodels.MyData)
+2016-10-13 17:17:23.439  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.saveDEData(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 17:17:23.439  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[removeNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.removeRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 17:17:23.454  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-10-13 17:17:23.455  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-10-13 17:17:23.527  INFO 9688 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/assets/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-13 17:17:23.619  INFO 9688 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 17:17:20 AEDT 2016]; root of context hierarchy
+2016-10-13 17:17:23.760  INFO 9688 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandlingControllerAdvice
+2016-10-13 17:17:25.154  INFO 9688 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-10-13 17:17:25.311  INFO 9688 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-10-13 17:17:25.319  INFO 9688 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 6.254 seconds (JVM running for 7.122)
+2016-10-13 17:17:30.750  INFO 9688 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-10-13 17:17:30.750  INFO 9688 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-10-13 17:17:30.777  INFO 9688 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+2016-10-13 17:17:30.834  INFO 9688 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-10-13 17:17:40.890  INFO 9688 --- [http-nio-8080-exec-2] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/C:/Users/anahid/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-10-13 17:17:43.788  INFO 9688 --- [http-nio-8080-exec-3] c.m.controllers.HomeController           : this is index.
+2016-10-13 17:17:46.711  INFO 9688 --- [http-nio-8080-exec-4] c.m.controllers.HomeController           : this is de landing.
+2016-10-13 17:17:57.690  INFO 9688 --- [http-nio-8080-exec-9] o.a.cxf.services.PartnerAPI.Soap.Soap    : Outbound Message
+---------------------------
+ID: 1
+Address: https://webservice.s4.exacttarget.com/Service.asmx
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml
+Headers: {Accept=[*/*], SOAPAction=["Retrieve"]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <fueloauth>4ftNINjJ090By1r4QhChEzmP</fueloauth>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveRequestMsg xmlns="http://exacttarget.com/wsdl/partnerAPI" xmlns:ns2="urn:fault.partner.exacttarget.com">
+      <RetrieveRequest>
+        <ObjectType>DataExtension</ObjectType>
+        <Properties>ObjectID</Properties>
+        <Properties>CustomerKey</Properties>
+        <Properties>Name</Properties>
+        <Properties>Description</Properties>
+        <Properties>CreatedDate</Properties>
+        <Properties>ModifiedDate</Properties>
+        <Properties>CategoryID</Properties>
+        <Properties>IsSendable</Properties>
+        <Properties>IsTestable</Properties>
+        <Properties>Template</Properties>
+        <Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="SimpleFilterPart">
+          <Property>CustomerKey</Property>
+          <SimpleOperator>equals</SimpleOperator>
+          <Value>F021511F-C1AD-4D27-A4D5-328CFAC3C958</Value>
+        </Filter>
+      </RetrieveRequest>
+    </RetrieveRequestMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-10-13 17:17:59.284  INFO 9688 --- [http-nio-8080-exec-9] o.a.cxf.services.PartnerAPI.Soap.Soap    : Inbound Message
+----------------------------
+ID: 1
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml; charset=utf-8
+Headers: {Cache-Control=[private, max-age=0], connection=[close], Content-Length=[1283], content-type=[text/xml; charset=utf-8], Date=[Thu, 13 Oct 2016 06:18:53 GMT], Server=[Microsoft-IIS/7.5], X-AspNet-Version=[4.0.30319], X-Powered-By=[ASP.NET]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>RetrieveResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:7796c715-0b66-49dc-b381-85152eb42cd7</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:a0ff9112-51c7-4c66-b237-f85ed0bb0381</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+    <wsse:Security>
+      <wsu:Timestamp wsu:Id="Timestamp-0b11ef29-5767-4597-9e87-d4b2cb68a994">
+        <wsu:Created>2016-10-13T06:18:53Z</wsu:Created>
+        <wsu:Expires>2016-10-13T06:23:53Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveResponseMsg xmlns="http://exacttarget.com/wsdl/partnerAPI">
+      <OverallStatus>Error: The Request Property(s) Template do not match with the fields of DataExtension retrieve</OverallStatus>
+      <RequestID>3686df8d-d1ff-4712-bc9e-b71349eefad1</RequestID>
+    </RetrieveResponseMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-10-13 17:44:10.026  INFO 6180 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on anahid-lt02 with PID 6180 (C:\Ali\projects\java\mcreceiver\target\classes started by anahid in C:\Ali\projects\java\mcreceiver)
+2016-10-13 17:44:10.039  INFO 6180 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-10-13 17:44:10.558  INFO 6180 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 17:44:10 AEDT 2016]; root of context hierarchy
+2016-10-13 17:44:11.883  INFO 6180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$72f39d5a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-10-13 17:44:11.943  INFO 6180 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-10-13 17:44:12.519  INFO 6180 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-10-13 17:44:12.546  INFO 6180 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-10-13 17:44:12.547  INFO 6180 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-10-13 17:44:12.848  INFO 6180 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-10-13 17:44:12.849  INFO 6180 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2294 ms
+2016-10-13 17:44:13.133  INFO 6180 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-10-13 17:44:13.135  INFO 6180 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2016-10-13 17:44:13.136  INFO 6180 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-10-13 17:44:13.138  INFO 6180 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-10-13 17:44:13.243  INFO 6180 --- [main] c.m.s.CustomAuthenticationProvider       : *** CustomAuthenticationProvider created
+2016-10-13 17:44:13.823  INFO 6180 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@650c405c, org.springframework.security.web.context.SecurityContextPersistenceFilter@36c2d629, org.springframework.security.web.authentication.logout.LogoutFilter@753fd7a1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54089484, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c37f145, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20eaeaf8, org.springframework.security.web.session.SessionManagementFilter@6c8dbf56, org.springframework.security.web.access.ExceptionTranslationFilter@79d82f66, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1fbf088b]
+2016-10-13 17:44:13.926  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.ui.Model)
+2016-10-13 17:44:13.928  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.de(org.springframework.ui.Model)
+2016-10-13 17:44:13.929  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[initiate]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.initiateApiAccess(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:44:13.929  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testError],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.testError(org.springframework.ui.Model)
+2016-10-13 17:44:13.930  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[logout]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.logout(org.springframework.ui.ModelMap)
+2016-10-13 17:44:13.931  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.qa(org.springframework.ui.Model)
+2016-10-13 17:44:13.932  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 17:44:13.933  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:44:13.934  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 17:44:13.934  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 17:44:13.934  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clodeUatToProd(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 17:44:13.934  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 17:44:13.938  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 17:44:13.939  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:44:13.939  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 17:44:13.939  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 17:44:13.940  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.cloqauattoprod(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 17:44:13.940  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 17:44:13.941  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:44:13.942  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.saveDEData(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 17:44:13.942  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.dynamicForm(com.mcreceiverdemo.mvcmodels.MyData)
+2016-10-13 17:44:13.942  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],params=[addNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult)
+2016-10-13 17:44:13.942  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[removeNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.removeRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 17:44:13.943  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.clearQueue(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 17:44:13.951  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-10-13 17:44:13.952  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-10-13 17:44:14.011  INFO 6180 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/assets/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-13 17:44:14.098  INFO 6180 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 17:44:10 AEDT 2016]; root of context hierarchy
+2016-10-13 17:44:14.192  INFO 6180 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandlingControllerAdvice
+2016-10-13 17:44:15.657  INFO 6180 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-10-13 17:44:15.746  INFO 6180 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-10-13 17:44:15.764  INFO 6180 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 6.275 seconds (JVM running for 7.781)
+2016-10-13 17:44:24.865  INFO 6180 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-10-13 17:44:24.866  INFO 6180 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-10-13 17:44:24.891  INFO 6180 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
+2016-10-13 17:44:24.946  INFO 6180 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-10-13 17:44:36.451  INFO 6180 --- [http-nio-8080-exec-2] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/C:/Users/anahid/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-10-13 17:44:39.223  INFO 6180 --- [http-nio-8080-exec-5] c.m.controllers.HomeController           : this is index.
+2016-10-13 17:44:41.459  INFO 6180 --- [http-nio-8080-exec-6] c.m.controllers.HomeController           : this is de landing.
+2016-10-13 17:44:54.088  INFO 6180 --- [http-nio-8080-exec-1] o.a.cxf.services.PartnerAPI.Soap.Soap    : Outbound Message
+---------------------------
+ID: 1
+Address: https://webservice.s4.exacttarget.com/Service.asmx
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml
+Headers: {Accept=[*/*], SOAPAction=["Retrieve"]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <fueloauth>4uRpPCpK0eaufR9Q1SYqPdG1</fueloauth>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveRequestMsg xmlns="http://exacttarget.com/wsdl/partnerAPI" xmlns:ns2="urn:fault.partner.exacttarget.com">
+      <RetrieveRequest>
+        <ObjectType>DataExtension</ObjectType>
+        <Properties>ObjectID</Properties>
+        <Properties>CustomerKey</Properties>
+        <Properties>Name</Properties>
+        <Properties>Description</Properties>
+        <Properties>CreatedDate</Properties>
+        <Properties>ModifiedDate</Properties>
+        <Properties>CategoryID</Properties>
+        <Properties>IsSendable</Properties>
+        <Properties>IsTestable</Properties>
+        <Properties>Template.ObjectID</Properties>
+        <Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="SimpleFilterPart">
+          <Property>CustomerKey</Property>
+          <SimpleOperator>equals</SimpleOperator>
+          <Value>F021511F-C1AD-4D27-A4D5-328CFAC3C958</Value>
+        </Filter>
+      </RetrieveRequest>
+    </RetrieveRequestMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-10-13 17:44:55.540  INFO 6180 --- [http-nio-8080-exec-1] o.a.cxf.services.PartnerAPI.Soap.Soap    : Inbound Message
+----------------------------
+ID: 1
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml; charset=utf-8
+Headers: {Cache-Control=[private, max-age=0], connection=[close], Content-Length=[1292], content-type=[text/xml; charset=utf-8], Date=[Thu, 13 Oct 2016 06:45:49 GMT], Server=[Microsoft-IIS/7.5], X-AspNet-Version=[4.0.30319], X-Powered-By=[ASP.NET]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>RetrieveResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:3da373b9-7024-4258-bc81-0644f57b6556</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:2ebcd224-7f2b-4adf-8391-eb73e626ee77</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+    <wsse:Security>
+      <wsu:Timestamp wsu:Id="Timestamp-5e7e271c-854a-4664-8d3e-c040020ed5d5">
+        <wsu:Created>2016-10-13T06:45:49Z</wsu:Created>
+        <wsu:Expires>2016-10-13T06:50:49Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveResponseMsg xmlns="http://exacttarget.com/wsdl/partnerAPI">
+      <OverallStatus>Error: The Request Property(s) Template.ObjectID do not match with the fields of DataExtension retrieve</OverallStatus>
+      <RequestID>785ee9a1-cd49-46b3-ac1d-81aa1bc6b63c</RequestID>
+    </RetrieveResponseMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-10-13 17:46:24.322  INFO 1592 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on anahid-lt02 with PID 1592 (C:\Ali\projects\java\mcreceiver\target\classes started by anahid in C:\Ali\projects\java\mcreceiver)
+2016-10-13 17:46:24.330  INFO 1592 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-10-13 17:46:24.811  INFO 1592 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 17:46:24 AEDT 2016]; root of context hierarchy
+2016-10-13 17:46:26.324  INFO 1592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$cf0072dc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-10-13 17:46:26.385  INFO 1592 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-10-13 17:46:27.087  INFO 1592 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-10-13 17:46:27.107  INFO 1592 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-10-13 17:46:27.108  INFO 1592 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-10-13 17:46:27.388  INFO 1592 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-10-13 17:46:27.389  INFO 1592 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2582 ms
+2016-10-13 17:46:27.682  INFO 1592 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-10-13 17:46:27.687  INFO 1592 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2016-10-13 17:46:27.688  INFO 1592 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-10-13 17:46:27.690  INFO 1592 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-10-13 17:46:27.797  INFO 1592 --- [main] c.m.s.CustomAuthenticationProvider       : *** CustomAuthenticationProvider created
+2016-10-13 17:46:28.318  INFO 1592 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51dae791, org.springframework.security.web.context.SecurityContextPersistenceFilter@6bc24e72, org.springframework.security.web.authentication.logout.LogoutFilter@22d9bc14, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7cfb4736, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31b7d869, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@688a2c09, org.springframework.security.web.session.SessionManagementFilter@3f362135, org.springframework.security.web.access.ExceptionTranslationFilter@31db34da, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5befbac1]
+2016-10-13 17:46:28.404  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.ui.Model)
+2016-10-13 17:46:28.406  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.de(org.springframework.ui.Model)
+2016-10-13 17:46:28.407  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[initiate]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.initiateApiAccess(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:46:28.408  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[logout]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.logout(org.springframework.ui.ModelMap)
+2016-10-13 17:46:28.408  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testError],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.testError(org.springframework.ui.Model)
+2016-10-13 17:46:28.409  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.qa(org.springframework.ui.Model)
+2016-10-13 17:46:28.410  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 17:46:28.411  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 17:46:28.412  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 17:46:28.412  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 17:46:28.413  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:46:28.414  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clodeUatToProd(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 17:46:28.418  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 17:46:28.418  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 17:46:28.419  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 17:46:28.419  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 17:46:28.420  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.cloqauattoprod(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 17:46:28.420  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:46:28.421  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.dynamicForm(com.mcreceiverdemo.mvcmodels.MyData)
+2016-10-13 17:46:28.422  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.clearQueue(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 17:46:28.422  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.saveDEData(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 17:46:28.423  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],params=[addNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult)
+2016-10-13 17:46:28.423  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[removeNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.removeRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 17:46:28.424  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:46:28.438  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-10-13 17:46:28.439  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-10-13 17:46:28.493  INFO 1592 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/assets/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-13 17:46:28.581  INFO 1592 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 17:46:24 AEDT 2016]; root of context hierarchy
+2016-10-13 17:46:28.654  INFO 1592 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandlingControllerAdvice
+2016-10-13 17:46:30.146  INFO 1592 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-10-13 17:46:30.252  INFO 1592 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-10-13 17:46:30.257  INFO 1592 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 6.468 seconds (JVM running for 7.325)
+2016-10-13 17:47:11.220  INFO 1592 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-10-13 17:47:11.221  INFO 1592 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-10-13 17:47:11.243  INFO 1592 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+2016-10-13 17:47:11.290  INFO 1592 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-10-13 17:47:11.526  INFO 1592 --- [http-nio-8080-exec-2] c.m.controllers.HomeController           : this is index.
+2016-10-13 17:47:21.432  INFO 1592 --- [http-nio-8080-exec-3] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/C:/Users/anahid/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-10-13 17:47:24.194  INFO 1592 --- [http-nio-8080-exec-5] c.m.controllers.HomeController           : this is index.
+2016-10-13 17:47:27.373  INFO 1592 --- [http-nio-8080-exec-6] c.m.controllers.HomeController           : this is de landing.
+2016-10-13 17:47:38.188  INFO 1592 --- [http-nio-8080-exec-2] o.a.cxf.services.PartnerAPI.Soap.Soap    : Outbound Message
+---------------------------
+ID: 1
+Address: https://webservice.s4.exacttarget.com/Service.asmx
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml
+Headers: {Accept=[*/*], SOAPAction=["Retrieve"]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <fueloauth>4z6r6aIjgSkW1KhB7CrDdREB</fueloauth>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveRequestMsg xmlns="http://exacttarget.com/wsdl/partnerAPI" xmlns:ns2="urn:fault.partner.exacttarget.com">
+      <RetrieveRequest>
+        <ObjectType>DataExtension</ObjectType>
+        <Properties>ObjectID</Properties>
+        <Properties>CustomerKey</Properties>
+        <Properties>Name</Properties>
+        <Properties>Description</Properties>
+        <Properties>CreatedDate</Properties>
+        <Properties>ModifiedDate</Properties>
+        <Properties>CategoryID</Properties>
+        <Properties>IsSendable</Properties>
+        <Properties>IsTestable</Properties>
+        <Properties>Template.CustomerKey</Properties>
+        <Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="SimpleFilterPart">
+          <Property>CustomerKey</Property>
+          <SimpleOperator>equals</SimpleOperator>
+          <Value>F021511F-C1AD-4D27-A4D5-328CFAC3C958</Value>
+        </Filter>
+      </RetrieveRequest>
+    </RetrieveRequestMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-10-13 17:47:39.542  INFO 1592 --- [http-nio-8080-exec-2] o.a.cxf.services.PartnerAPI.Soap.Soap    : Inbound Message
+----------------------------
+ID: 1
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml; charset=utf-8
+Headers: {Cache-Control=[private, max-age=0], connection=[close], Content-Length=[1618], content-type=[text/xml; charset=utf-8], Date=[Thu, 13 Oct 2016 06:48:33 GMT], Server=[Microsoft-IIS/7.5], X-AspNet-Version=[4.0.30319], X-Powered-By=[ASP.NET]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>RetrieveResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:ce53db6e-e48b-41a9-9f4c-989f821d7bff</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:554bed9a-8eb6-41fd-976b-502b2b134fbe</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+    <wsse:Security>
+      <wsu:Timestamp wsu:Id="Timestamp-8337191c-5dfd-497b-9673-a5faaad094b2">
+        <wsu:Created>2016-10-13T06:48:33Z</wsu:Created>
+        <wsu:Expires>2016-10-13T06:53:33Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveResponseMsg xmlns="http://exacttarget.com/wsdl/partnerAPI">
+      <OverallStatus>OK</OverallStatus>
+      <RequestID>972ecdae-3c11-4c8c-b25e-1765a0e003c1</RequestID>
+      <Results xsi:type="DataExtension">
+        <PartnerKey xsi:nil="true"/>
+        <CreatedDate>2016-09-30T19:45:25.257</CreatedDate>
+        <ModifiedDate>2016-09-30T19:45:25.257</ModifiedDate>
+        <ObjectID>ec1f58b6-7887-e611-b43b-78e3b50b4f00</ObjectID>
+        <CustomerKey>F021511F-C1AD-4D27-A4D5-328CFAC3C958</CustomerKey>
+        <Name>simple_de_uat</Name>
+        <Description/>
+        <IsSendable>false</IsSendable>
+        <IsTestable>false</IsTestable>
+        <CategoryID>404519</CategoryID>
+      </Results>
+    </RetrieveResponseMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-10-13 17:51:58.708  INFO 8220 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on anahid-lt02 with PID 8220 (C:\Ali\projects\java\mcreceiver\target\classes started by anahid in C:\Ali\projects\java\mcreceiver)
+2016-10-13 17:51:58.715  INFO 8220 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-10-13 17:51:59.270  INFO 8220 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 17:51:59 AEDT 2016]; root of context hierarchy
+2016-10-13 17:52:01.280  INFO 8220 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$d979171] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-10-13 17:52:01.474  INFO 8220 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-10-13 17:52:02.348  INFO 8220 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-10-13 17:52:02.386  INFO 8220 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-10-13 17:52:02.389  INFO 8220 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-10-13 17:52:02.746  INFO 8220 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-10-13 17:52:02.747  INFO 8220 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3483 ms
+2016-10-13 17:52:03.367  INFO 8220 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-10-13 17:52:03.371  INFO 8220 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2016-10-13 17:52:03.373  INFO 8220 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-10-13 17:52:03.377  INFO 8220 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-10-13 17:52:03.594  INFO 8220 --- [main] c.m.s.CustomAuthenticationProvider       : *** CustomAuthenticationProvider created
+2016-10-13 17:52:04.416  INFO 8220 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e09f1b6, org.springframework.security.web.context.SecurityContextPersistenceFilter@54a2d96e, org.springframework.security.web.authentication.logout.LogoutFilter@479ac2cb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d229b1c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@661fe025, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@557b6a37, org.springframework.security.web.session.SessionManagementFilter@535b1ae6, org.springframework.security.web.access.ExceptionTranslationFilter@6c8f60f3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2bbb44da]
+2016-10-13 17:52:04.568  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.ui.Model)
+2016-10-13 17:52:04.569  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.de(org.springframework.ui.Model)
+2016-10-13 17:52:04.570  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testError],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.testError(org.springframework.ui.Model)
+2016-10-13 17:52:04.570  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.qa(org.springframework.ui.Model)
+2016-10-13 17:52:04.571  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[logout]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.logout(org.springframework.ui.ModelMap)
+2016-10-13 17:52:04.571  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[initiate]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.initiateApiAccess(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:52:04.574  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 17:52:04.574  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clodeUatToProd(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 17:52:04.575  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 17:52:04.576  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 17:52:04.577  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 17:52:04.578  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:52:04.582  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 17:52:04.583  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 17:52:04.583  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 17:52:04.584  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.cloqauattoprod(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 17:52:04.584  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 17:52:04.585  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:52:04.588  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.dynamicForm(com.mcreceiverdemo.mvcmodels.MyData)
+2016-10-13 17:52:04.589  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[removeNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.removeRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 17:52:04.589  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.clearQueue(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 17:52:04.589  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 17:52:04.590  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.saveDEData(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 17:52:04.590  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],params=[addNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult)
+2016-10-13 17:52:04.606  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-10-13 17:52:04.607  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-10-13 17:52:04.688  INFO 8220 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/assets/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-13 17:52:04.919  INFO 8220 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 17:51:59 AEDT 2016]; root of context hierarchy
+2016-10-13 17:52:05.201  INFO 8220 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandlingControllerAdvice
+2016-10-13 17:52:07.650  INFO 8220 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-10-13 17:52:07.835  INFO 8220 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-10-13 17:52:07.845  INFO 8220 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 9.701 seconds (JVM running for 10.601)
+2016-10-13 17:52:19.690  INFO 8220 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-10-13 17:52:19.691  INFO 8220 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-10-13 17:52:19.716  INFO 8220 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
+2016-10-13 17:52:19.766  INFO 8220 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-10-13 17:52:19.845  INFO 8220 --- [http-nio-8080-exec-2] c.m.controllers.HomeController           : this is index.
+2016-10-13 17:52:30.339  INFO 8220 --- [http-nio-8080-exec-3] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/C:/Users/anahid/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-10-13 17:52:33.434  INFO 8220 --- [http-nio-8080-exec-4] c.m.controllers.HomeController           : this is index.
+2016-10-13 17:52:35.361  INFO 8220 --- [http-nio-8080-exec-5] c.m.controllers.HomeController           : this is de landing.
+2016-10-13 17:52:46.833  INFO 8220 --- [http-nio-8080-exec-10] o.a.cxf.services.PartnerAPI.Soap.Soap    : Outbound Message
+---------------------------
+ID: 1
+Address: https://webservice.s4.exacttarget.com/Service.asmx
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml
+Headers: {Accept=[*/*], SOAPAction=["Retrieve"]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <fueloauth>4b0G1OfjhydVL5MmJbvdvUlF</fueloauth>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveRequestMsg xmlns="http://exacttarget.com/wsdl/partnerAPI" xmlns:ns2="urn:fault.partner.exacttarget.com">
+      <RetrieveRequest>
+        <ObjectType>DataExtension</ObjectType>
+        <Properties>ObjectID</Properties>
+        <Properties>CustomerKey</Properties>
+        <Properties>Name</Properties>
+        <Properties>Description</Properties>
+        <Properties>CreatedDate</Properties>
+        <Properties>ModifiedDate</Properties>
+        <Properties>CategoryID</Properties>
+        <Properties>IsSendable</Properties>
+        <Properties>IsTestable</Properties>
+        <Properties>Template.CustomerKey</Properties>
+        <Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="SimpleFilterPart">
+          <Property>CustomerKey</Property>
+          <SimpleOperator>equals</SimpleOperator>
+          <Value>F021511F-C1AD-4D27-A4D5-328CFAC3C958</Value>
+        </Filter>
+      </RetrieveRequest>
+    </RetrieveRequestMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-10-13 17:52:48.324  INFO 8220 --- [http-nio-8080-exec-10] o.a.cxf.services.PartnerAPI.Soap.Soap    : Inbound Message
+----------------------------
+ID: 1
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml; charset=utf-8
+Headers: {Cache-Control=[private, max-age=0], connection=[close], Content-Length=[1618], content-type=[text/xml; charset=utf-8], Date=[Thu, 13 Oct 2016 06:53:42 GMT], Server=[Microsoft-IIS/7.5], X-AspNet-Version=[4.0.30319], X-Powered-By=[ASP.NET]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>RetrieveResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:2d22dac9-cb02-4dd0-8e99-1e79f5cc4bd6</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:b4994ee2-953a-4f50-a5d8-4ee675a755f4</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+    <wsse:Security>
+      <wsu:Timestamp wsu:Id="Timestamp-e84ded64-9f4b-4633-acba-9c84acba3bf4">
+        <wsu:Created>2016-10-13T06:53:42Z</wsu:Created>
+        <wsu:Expires>2016-10-13T06:58:42Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveResponseMsg xmlns="http://exacttarget.com/wsdl/partnerAPI">
+      <OverallStatus>OK</OverallStatus>
+      <RequestID>a42e28cc-3b7b-4536-a1b1-c0a1604e30a8</RequestID>
+      <Results xsi:type="DataExtension">
+        <PartnerKey xsi:nil="true"/>
+        <CreatedDate>2016-09-30T19:45:25.257</CreatedDate>
+        <ModifiedDate>2016-09-30T19:45:25.257</ModifiedDate>
+        <ObjectID>ec1f58b6-7887-e611-b43b-78e3b50b4f00</ObjectID>
+        <CustomerKey>F021511F-C1AD-4D27-A4D5-328CFAC3C958</CustomerKey>
+        <Name>simple_de_uat</Name>
+        <Description/>
+        <IsSendable>false</IsSendable>
+        <IsTestable>false</IsTestable>
+        <CategoryID>404519</CategoryID>
+      </Results>
+    </RetrieveResponseMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-10-13 18:02:24.506  INFO 9536 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on anahid-lt02 with PID 9536 (C:\Ali\projects\java\mcreceiver\target\classes started by anahid in C:\Ali\projects\java\mcreceiver)
+2016-10-13 18:02:24.514  INFO 9536 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-10-13 18:02:24.984  INFO 9536 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 18:02:24 AEDT 2016]; root of context hierarchy
+2016-10-13 18:02:26.348  INFO 9536 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$43934083] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-10-13 18:02:26.409  INFO 9536 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-10-13 18:02:27.031  INFO 9536 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-10-13 18:02:27.047  INFO 9536 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-10-13 18:02:27.049  INFO 9536 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-10-13 18:02:27.264  INFO 9536 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-10-13 18:02:27.265  INFO 9536 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2283 ms
+2016-10-13 18:02:27.528  INFO 9536 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-10-13 18:02:27.530  INFO 9536 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2016-10-13 18:02:27.531  INFO 9536 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-10-13 18:02:27.533  INFO 9536 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-10-13 18:02:27.612  INFO 9536 --- [main] c.m.s.CustomAuthenticationProvider       : *** CustomAuthenticationProvider created
+2016-10-13 18:02:28.150  INFO 9536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68b366e2, org.springframework.security.web.context.SecurityContextPersistenceFilter@20a967fe, org.springframework.security.web.authentication.logout.LogoutFilter@7bcecef6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@682abca7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@610d28b8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2d74c81b, org.springframework.security.web.session.SessionManagementFilter@769bd849, org.springframework.security.web.access.ExceptionTranslationFilter@4887de2b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5ba03c82]
+2016-10-13 18:02:28.260  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.ui.Model)
+2016-10-13 18:02:28.262  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.de(org.springframework.ui.Model)
+2016-10-13 18:02:28.263  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.qa(org.springframework.ui.Model)
+2016-10-13 18:02:28.263  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[logout]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.logout(org.springframework.ui.ModelMap)
+2016-10-13 18:02:28.264  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[initiate]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.initiateApiAccess(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:02:28.265  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testError],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.testError(org.springframework.ui.Model)
+2016-10-13 18:02:28.266  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 18:02:28.266  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 18:02:28.267  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 18:02:28.267  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:02:28.268  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clodeUatToProd(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 18:02:28.268  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 18:02:28.271  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 18:02:28.273  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 18:02:28.274  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 18:02:28.274  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.cloqauattoprod(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 18:02:28.275  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:02:28.276  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 18:02:28.277  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.clearQueue(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 18:02:28.280  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],params=[addNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult)
+2016-10-13 18:02:28.281  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[removeNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.removeRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 18:02:28.281  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.dynamicForm(com.mcreceiverdemo.mvcmodels.MyData)
+2016-10-13 18:02:28.282  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:02:28.282  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.saveDEData(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 18:02:28.291  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-10-13 18:02:28.292  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-10-13 18:02:28.343  INFO 9536 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/assets/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-13 18:02:28.427  INFO 9536 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 18:02:24 AEDT 2016]; root of context hierarchy
+2016-10-13 18:02:28.518  INFO 9536 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandlingControllerAdvice
+2016-10-13 18:02:29.969  INFO 9536 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-10-13 18:02:30.050  INFO 9536 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-10-13 18:02:30.069  INFO 9536 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 6.106 seconds (JVM running for 6.992)
+2016-10-13 18:02:41.439  INFO 9536 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-10-13 18:02:41.440  INFO 9536 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-10-13 18:02:41.461  INFO 9536 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 21 ms
+2016-10-13 18:02:41.519  INFO 9536 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-10-13 18:02:41.616  INFO 9536 --- [http-nio-8080-exec-2] c.m.controllers.HomeController           : this is index.
+2016-10-13 18:02:51.566  INFO 9536 --- [http-nio-8080-exec-3] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/C:/Users/anahid/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-10-13 18:02:54.540  INFO 9536 --- [http-nio-8080-exec-4] c.m.controllers.HomeController           : this is index.
+2016-10-13 18:02:56.487  INFO 9536 --- [http-nio-8080-exec-5] c.m.controllers.HomeController           : this is de landing.
+2016-10-13 18:03:07.830  INFO 9536 --- [http-nio-8080-exec-10] o.a.cxf.services.PartnerAPI.Soap.Soap    : Outbound Message
+---------------------------
+ID: 1
+Address: https://webservice.s4.exacttarget.com/Service.asmx
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml
+Headers: {Accept=[*/*], SOAPAction=["Retrieve"]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <fueloauth>49iSXiav7F5EJXYhALgX4KIZ</fueloauth>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveRequestMsg xmlns="http://exacttarget.com/wsdl/partnerAPI" xmlns:ns2="urn:fault.partner.exacttarget.com">
+      <RetrieveRequest>
+        <ObjectType>DataExtension</ObjectType>
+        <Properties>ObjectID</Properties>
+        <Properties>CustomerKey</Properties>
+        <Properties>Name</Properties>
+        <Properties>Description</Properties>
+        <Properties>CreatedDate</Properties>
+        <Properties>ModifiedDate</Properties>
+        <Properties>CategoryID</Properties>
+        <Properties>IsSendable</Properties>
+        <Properties>IsTestable</Properties>
+        <Properties>Template.Name</Properties>
+        <Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="SimpleFilterPart">
+          <Property>CustomerKey</Property>
+          <SimpleOperator>equals</SimpleOperator>
+          <Value>F021511F-C1AD-4D27-A4D5-328CFAC3C958</Value>
+        </Filter>
+      </RetrieveRequest>
+    </RetrieveRequestMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-10-13 18:03:09.447  INFO 9536 --- [http-nio-8080-exec-10] o.a.cxf.services.PartnerAPI.Soap.Soap    : Inbound Message
+----------------------------
+ID: 1
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml; charset=utf-8
+Headers: {Cache-Control=[private, max-age=0], connection=[close], Content-Length=[1288], content-type=[text/xml; charset=utf-8], Date=[Thu, 13 Oct 2016 07:04:03 GMT], Server=[Microsoft-IIS/7.5], X-AspNet-Version=[4.0.30319], X-Powered-By=[ASP.NET]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>RetrieveResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:4adedf06-63ac-438b-b256-f92c32019f09</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:6055f3a4-54aa-4565-8669-ac4248882e48</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+    <wsse:Security>
+      <wsu:Timestamp wsu:Id="Timestamp-b059070e-8809-423d-91fb-479634518ad8">
+        <wsu:Created>2016-10-13T07:04:03Z</wsu:Created>
+        <wsu:Expires>2016-10-13T07:09:03Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveResponseMsg xmlns="http://exacttarget.com/wsdl/partnerAPI">
+      <OverallStatus>Error: The Request Property(s) Template.Name do not match with the fields of DataExtension retrieve</OverallStatus>
+      <RequestID>e524bb50-9bf5-4920-86b6-e51f1ebf714c</RequestID>
+    </RetrieveResponseMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-10-13 18:09:03.864  INFO 10496 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on anahid-lt02 with PID 10496 (C:\Ali\projects\java\mcreceiver\target\classes started by anahid in C:\Ali\projects\java\mcreceiver)
+2016-10-13 18:09:03.882  INFO 10496 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-10-13 18:09:04.371  INFO 10496 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 18:09:04 AEDT 2016]; root of context hierarchy
+2016-10-13 18:09:05.695  INFO 10496 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f5ee88b1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-10-13 18:09:05.763  INFO 10496 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-10-13 18:09:06.382  INFO 10496 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-10-13 18:09:06.399  INFO 10496 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-10-13 18:09:06.401  INFO 10496 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-10-13 18:09:06.651  INFO 10496 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-10-13 18:09:06.652  INFO 10496 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2287 ms
+2016-10-13 18:09:06.905  INFO 10496 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-10-13 18:09:06.907  INFO 10496 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2016-10-13 18:09:06.908  INFO 10496 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-10-13 18:09:06.910  INFO 10496 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-10-13 18:09:06.985  INFO 10496 --- [main] c.m.s.CustomAuthenticationProvider       : *** CustomAuthenticationProvider created
+2016-10-13 18:09:07.470  INFO 10496 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ec95456, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e977098, org.springframework.security.web.authentication.logout.LogoutFilter@fb49fdf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6690b9fa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54089484, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@748a654a, org.springframework.security.web.session.SessionManagementFilter@708eb310, org.springframework.security.web.access.ExceptionTranslationFilter@2f14b0f6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@67022ea]
+2016-10-13 18:09:07.581  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.ui.Model)
+2016-10-13 18:09:07.582  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.de(org.springframework.ui.Model)
+2016-10-13 18:09:07.583  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[logout]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.logout(org.springframework.ui.ModelMap)
+2016-10-13 18:09:07.589  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testError],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.testError(org.springframework.ui.Model)
+2016-10-13 18:09:07.590  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.qa(org.springframework.ui.Model)
+2016-10-13 18:09:07.592  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[initiate]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.initiateApiAccess(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:09:07.593  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 18:09:07.594  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 18:09:07.594  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 18:09:07.595  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:09:07.595  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clodeUatToProd(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 18:09:07.595  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 18:09:07.598  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 18:09:07.599  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 18:09:07.599  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 18:09:07.600  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:09:07.600  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.cloqauattoprod(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 18:09:07.601  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 18:09:07.602  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.saveDEData(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 18:09:07.602  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.clearQueue(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 18:09:07.603  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[removeNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.removeRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 18:09:07.603  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:09:07.604  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],params=[addNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult)
+2016-10-13 18:09:07.604  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.dynamicForm(com.mcreceiverdemo.mvcmodels.MyData)
+2016-10-13 18:09:07.612  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-10-13 18:09:07.613  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-10-13 18:09:07.665  INFO 10496 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/assets/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-13 18:09:07.778  INFO 10496 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 18:09:04 AEDT 2016]; root of context hierarchy
+2016-10-13 18:09:07.883  INFO 10496 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandlingControllerAdvice
+2016-10-13 18:09:09.460  INFO 10496 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-10-13 18:09:09.543  INFO 10496 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-10-13 18:09:09.559  INFO 10496 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 6.234 seconds (JVM running for 7.118)
+2016-10-13 18:09:23.553  INFO 10496 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-10-13 18:09:23.553  INFO 10496 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-10-13 18:09:23.580  INFO 10496 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+2016-10-13 18:09:23.645  INFO 10496 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-10-13 18:09:23.692  INFO 10496 --- [http-nio-8080-exec-2] c.m.controllers.HomeController           : this is index.
+2016-10-13 18:09:34.386  INFO 10496 --- [http-nio-8080-exec-3] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/C:/Users/anahid/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-10-13 18:09:37.471  INFO 10496 --- [http-nio-8080-exec-4] c.m.controllers.HomeController           : this is index.
+2016-10-13 18:09:40.843  INFO 10496 --- [http-nio-8080-exec-5] c.m.controllers.HomeController           : this is de landing.
+2016-10-13 18:09:53.017  INFO 10496 --- [http-nio-8080-exec-10] o.a.cxf.services.PartnerAPI.Soap.Soap    : Outbound Message
+---------------------------
+ID: 1
+Address: https://webservice.s4.exacttarget.com/Service.asmx
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml
+Headers: {Accept=[*/*], SOAPAction=["Retrieve"]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <fueloauth>47566ujYOm0krNVztTAGyoB0</fueloauth>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveRequestMsg xmlns="http://exacttarget.com/wsdl/partnerAPI" xmlns:ns2="urn:fault.partner.exacttarget.com">
+      <RetrieveRequest>
+        <ObjectType>DataExtension</ObjectType>
+        <Properties>ObjectID</Properties>
+        <Properties>CustomerKey</Properties>
+        <Properties>Name</Properties>
+        <Properties>Description</Properties>
+        <Properties>CreatedDate</Properties>
+        <Properties>ModifiedDate</Properties>
+        <Properties>CategoryID</Properties>
+        <Properties>IsSendable</Properties>
+        <Properties>IsTestable</Properties>
+        <Properties>Template.objectID</Properties>
+        <Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="SimpleFilterPart">
+          <Property>CustomerKey</Property>
+          <SimpleOperator>equals</SimpleOperator>
+          <Value>F021511F-C1AD-4D27-A4D5-328CFAC3C958</Value>
+        </Filter>
+      </RetrieveRequest>
+    </RetrieveRequestMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-10-13 18:09:54.432  INFO 10496 --- [http-nio-8080-exec-10] o.a.cxf.services.PartnerAPI.Soap.Soap    : Inbound Message
+----------------------------
+ID: 1
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml; charset=utf-8
+Headers: {Cache-Control=[private, max-age=0], connection=[close], Content-Length=[1292], content-type=[text/xml; charset=utf-8], Date=[Thu, 13 Oct 2016 07:10:47 GMT], Server=[Microsoft-IIS/7.5], X-AspNet-Version=[4.0.30319], X-Powered-By=[ASP.NET]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>RetrieveResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:8efd6e19-0f75-4da2-9c7b-d850c97fcb2f</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:8561bf1c-3ef2-4afe-ad51-91260fc2d30e</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+    <wsse:Security>
+      <wsu:Timestamp wsu:Id="Timestamp-703d74ae-3b30-48ca-86be-2453abf4bbf2">
+        <wsu:Created>2016-10-13T07:10:48Z</wsu:Created>
+        <wsu:Expires>2016-10-13T07:15:48Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveResponseMsg xmlns="http://exacttarget.com/wsdl/partnerAPI">
+      <OverallStatus>Error: The Request Property(s) Template.objectID do not match with the fields of DataExtension retrieve</OverallStatus>
+      <RequestID>a2507b08-cee0-453a-a3ba-02fe91797513</RequestID>
+    </RetrieveResponseMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-10-13 18:11:39.491  INFO 11240 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on anahid-lt02 with PID 11240 (C:\Ali\projects\java\mcreceiver\target\classes started by anahid in C:\Ali\projects\java\mcreceiver)
+2016-10-13 18:11:39.498  INFO 11240 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-10-13 18:11:39.954  INFO 11240 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 18:11:39 AEDT 2016]; root of context hierarchy
+2016-10-13 18:11:41.379  INFO 11240 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$43934083] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-10-13 18:11:41.441  INFO 11240 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-10-13 18:11:42.073  INFO 11240 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-10-13 18:11:42.092  INFO 11240 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-10-13 18:11:42.094  INFO 11240 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-10-13 18:11:42.336  INFO 11240 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-10-13 18:11:42.337  INFO 11240 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2386 ms
+2016-10-13 18:11:42.601  INFO 11240 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-10-13 18:11:42.603  INFO 11240 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2016-10-13 18:11:42.604  INFO 11240 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-10-13 18:11:42.606  INFO 11240 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-10-13 18:11:42.678  INFO 11240 --- [main] c.m.s.CustomAuthenticationProvider       : *** CustomAuthenticationProvider created
+2016-10-13 18:11:43.140  INFO 11240 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68b366e2, org.springframework.security.web.context.SecurityContextPersistenceFilter@20a967fe, org.springframework.security.web.authentication.logout.LogoutFilter@7bcecef6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@682abca7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@610d28b8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2d74c81b, org.springframework.security.web.session.SessionManagementFilter@769bd849, org.springframework.security.web.access.ExceptionTranslationFilter@4887de2b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5ba03c82]
+2016-10-13 18:11:43.226  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.ui.Model)
+2016-10-13 18:11:43.228  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.de(org.springframework.ui.Model)
+2016-10-13 18:11:43.229  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.qa(org.springframework.ui.Model)
+2016-10-13 18:11:43.229  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[logout]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.logout(org.springframework.ui.ModelMap)
+2016-10-13 18:11:43.230  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testError],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.testError(org.springframework.ui.Model)
+2016-10-13 18:11:43.231  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[initiate]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.initiateApiAccess(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:11:43.233  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 18:11:43.233  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clodeUatToProd(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 18:11:43.234  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 18:11:43.235  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:11:43.235  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 18:11:43.235  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 18:11:43.240  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 18:11:43.240  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 18:11:43.241  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:11:43.241  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 18:11:43.242  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 18:11:43.242  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.cloqauattoprod(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 18:11:43.243  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.clearQueue(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 18:11:43.244  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:11:43.244  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.saveDEData(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 18:11:43.244  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],params=[addNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult)
+2016-10-13 18:11:43.245  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[removeNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.removeRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 18:11:43.245  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.dynamicForm(com.mcreceiverdemo.mvcmodels.MyData)
+2016-10-13 18:11:43.254  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-10-13 18:11:43.255  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-10-13 18:11:43.308  INFO 11240 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/assets/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-13 18:11:43.393  INFO 11240 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 18:11:39 AEDT 2016]; root of context hierarchy
+2016-10-13 18:11:43.476  INFO 11240 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandlingControllerAdvice
+2016-10-13 18:11:44.911  INFO 11240 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-10-13 18:11:44.992  INFO 11240 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-10-13 18:11:44.999  INFO 11240 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 6.048 seconds (JVM running for 6.93)
+2016-10-13 18:11:52.300  INFO 11240 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-10-13 18:11:52.301  INFO 11240 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-10-13 18:11:52.325  INFO 11240 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 24 ms
+2016-10-13 18:11:52.376  INFO 11240 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-10-13 18:11:52.452  INFO 11240 --- [http-nio-8080-exec-2] c.m.controllers.HomeController           : this is index.
+2016-10-13 18:12:03.017  INFO 11240 --- [http-nio-8080-exec-3] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/C:/Users/anahid/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-10-13 18:12:06.000  INFO 11240 --- [http-nio-8080-exec-4] c.m.controllers.HomeController           : this is index.
+2016-10-13 18:12:08.208  INFO 11240 --- [http-nio-8080-exec-5] c.m.controllers.HomeController           : this is de landing.
+2016-10-13 18:12:21.342  INFO 11240 --- [http-nio-8080-exec-10] o.a.cxf.services.PartnerAPI.Soap.Soap    : Outbound Message
+---------------------------
+ID: 1
+Address: https://webservice.s4.exacttarget.com/Service.asmx
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml
+Headers: {Accept=[*/*], SOAPAction=["Retrieve"]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <fueloauth>4Ffv1yzJp3uhCPOJbwXfqgm8</fueloauth>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveRequestMsg xmlns="http://exacttarget.com/wsdl/partnerAPI" xmlns:ns2="urn:fault.partner.exacttarget.com">
+      <RetrieveRequest>
+        <ObjectType>DataExtension</ObjectType>
+        <Properties>ObjectID</Properties>
+        <Properties>CustomerKey</Properties>
+        <Properties>Name</Properties>
+        <Properties>Description</Properties>
+        <Properties>CreatedDate</Properties>
+        <Properties>ModifiedDate</Properties>
+        <Properties>CategoryID</Properties>
+        <Properties>IsSendable</Properties>
+        <Properties>IsTestable</Properties>
+        <Properties>Template.CustomerKey</Properties>
+        <Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="SimpleFilterPart">
+          <Property>CustomerKey</Property>
+          <SimpleOperator>equals</SimpleOperator>
+          <Value>4B1346B2-7AD2-4386-94F8-FC58B8671D6D</Value>
+        </Filter>
+      </RetrieveRequest>
+    </RetrieveRequestMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-10-13 18:12:22.714  INFO 11240 --- [http-nio-8080-exec-10] o.a.cxf.services.PartnerAPI.Soap.Soap    : Inbound Message
+----------------------------
+ID: 1
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml; charset=utf-8
+Headers: {Cache-Control=[private, max-age=0], connection=[close], Content-Length=[1807], content-type=[text/xml; charset=utf-8], Date=[Thu, 13 Oct 2016 07:13:17 GMT], Server=[Microsoft-IIS/7.5], X-AspNet-Version=[4.0.30319], X-Powered-By=[ASP.NET]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>RetrieveResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:f2b628b7-af71-419e-bb63-e815687d0af3</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:9f36dc8e-1f0a-460a-8a1e-3d0c21dffbf6</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+    <wsse:Security>
+      <wsu:Timestamp wsu:Id="Timestamp-4af53b86-3bac-4bfa-8bd5-175d0a5b8d5c">
+        <wsu:Created>2016-10-13T07:13:17Z</wsu:Created>
+        <wsu:Expires>2016-10-13T07:18:17Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveResponseMsg xmlns="http://exacttarget.com/wsdl/partnerAPI">
+      <OverallStatus>OK</OverallStatus>
+      <RequestID>0861a3f7-297b-441a-a78e-c4cd8e610898</RequestID>
+      <Results xsi:type="DataExtension">
+        <PartnerKey xsi:nil="true"/>
+        <CreatedDate>2016-10-13T01:12:15.463</CreatedDate>
+        <ModifiedDate>2016-10-13T01:12:15.463</ModifiedDate>
+        <ObjectID>be93225b-1491-e611-af11-78e3b50b7f0c</ObjectID>
+        <CustomerKey>4B1346B2-7AD2-4386-94F8-FC58B8671D6D</CustomerKey>
+        <Name>Test Event DE Template</Name>
+        <Description>Event Data Extension Template</Description>
+        <IsSendable>true</IsSendable>
+        <IsTestable>false</IsTestable>
+        <Template>
+          <PartnerKey xsi:nil="true"/>
+          <ObjectID xsi:nil="true"/>
+          <CustomerKey>75E0880B-AA91-4271-99EE-8AF45A3A0372</CustomerKey>
+        </Template>
+        <CategoryID>404519</CategoryID>
+      </Results>
+    </RetrieveResponseMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-10-13 18:13:39.237  INFO 4084 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on anahid-lt02 with PID 4084 (C:\Ali\projects\java\mcreceiver\target\classes started by anahid in C:\Ali\projects\java\mcreceiver)
+2016-10-13 18:13:39.244  INFO 4084 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-10-13 18:13:39.718  INFO 4084 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 18:13:39 AEDT 2016]; root of context hierarchy
+2016-10-13 18:13:41.038  INFO 4084 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$7c1d600f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-10-13 18:13:41.101  INFO 4084 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-10-13 18:13:41.694  INFO 4084 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-10-13 18:13:41.710  INFO 4084 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-10-13 18:13:41.712  INFO 4084 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-10-13 18:13:41.929  INFO 4084 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-10-13 18:13:41.930  INFO 4084 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2217 ms
+2016-10-13 18:13:42.230  INFO 4084 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-10-13 18:13:42.233  INFO 4084 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2016-10-13 18:13:42.234  INFO 4084 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-10-13 18:13:42.236  INFO 4084 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-10-13 18:13:42.313  INFO 4084 --- [main] c.m.s.CustomAuthenticationProvider       : *** CustomAuthenticationProvider created
+2016-10-13 18:13:42.814  INFO 4084 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@26837057, org.springframework.security.web.context.SecurityContextPersistenceFilter@76f881d9, org.springframework.security.web.authentication.logout.LogoutFilter@77c1e611, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50a13c2f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74606204, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2dbc408c, org.springframework.security.web.session.SessionManagementFilter@682abca7, org.springframework.security.web.access.ExceptionTranslationFilter@f0020b1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5cf8676a]
+2016-10-13 18:13:42.920  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.ui.Model)
+2016-10-13 18:13:42.922  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.de(org.springframework.ui.Model)
+2016-10-13 18:13:42.923  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[logout]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.logout(org.springframework.ui.ModelMap)
+2016-10-13 18:13:42.924  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testError],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.testError(org.springframework.ui.Model)
+2016-10-13 18:13:42.924  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.qa(org.springframework.ui.Model)
+2016-10-13 18:13:42.925  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[initiate]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.initiateApiAccess(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:13:42.926  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 18:13:42.927  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 18:13:42.928  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 18:13:42.928  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 18:13:42.929  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:13:42.929  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdCloneDEController.clodeUatToProd(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 18:13:42.933  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-13 18:13:42.934  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 18:13:42.934  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-13 18:13:42.934  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-13 18:13:42.935  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:13:42.935  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.cloqauattoprod(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-13 18:13:42.937  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],params=[addNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult)
+2016-10-13 18:13:42.941  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[removeNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.removeRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-13 18:13:42.941  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.clearQueue(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 18:13:42.942  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-13 18:13:42.942  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.saveDEData(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-13 18:13:42.943  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.dynamicForm(com.mcreceiverdemo.mvcmodels.MyData)
+2016-10-13 18:13:42.951  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-10-13 18:13:42.952  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-10-13 18:13:43.011  INFO 4084 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/assets/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-13 18:13:43.110  INFO 4084 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@49c66ade: startup date [Thu Oct 13 18:13:39 AEDT 2016]; root of context hierarchy
+2016-10-13 18:13:43.201  INFO 4084 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandlingControllerAdvice
+2016-10-13 18:13:44.663  INFO 4084 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-10-13 18:13:44.746  INFO 4084 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-10-13 18:13:44.761  INFO 4084 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 6.046 seconds (JVM running for 6.911)
+2016-10-13 18:14:17.030  INFO 4084 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-10-13 18:14:17.030  INFO 4084 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-10-13 18:14:17.052  INFO 4084 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+2016-10-13 18:14:17.097  INFO 4084 --- [http-nio-8080-exec-1] c.m.controllers.HomeController           : this is index.
+2016-10-13 18:14:17.213  INFO 4084 --- [http-nio-8080-exec-2] c.m.controllers.HomeController           : this is index.
+2016-10-13 18:14:27.906  INFO 4084 --- [http-nio-8080-exec-3] o.a.c.w.s.f.ReflectionServiceFactoryBean : Creating Service {http://exacttarget.com/wsdl/partnerAPI}PartnerAPI from WSDL: jar:file:/C:/Users/anahid/.m2/repository/com/exacttarget/fuelsdk/1.1.0/fuelsdk-1.1.0.jar!/etframework.wsdl
+2016-10-13 18:14:30.820  INFO 4084 --- [http-nio-8080-exec-4] c.m.controllers.HomeController           : this is index.
+2016-10-13 18:14:33.087  INFO 4084 --- [http-nio-8080-exec-5] c.m.controllers.HomeController           : this is de landing.
+2016-10-13 18:14:44.673  INFO 4084 --- [http-nio-8080-exec-9] o.a.cxf.services.PartnerAPI.Soap.Soap    : Outbound Message
+---------------------------
+ID: 1
+Address: https://webservice.s4.exacttarget.com/Service.asmx
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml
+Headers: {Accept=[*/*], SOAPAction=["Retrieve"]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <fueloauth>4qznktFKJ76tzzVRWHRGQSWL</fueloauth>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveRequestMsg xmlns="http://exacttarget.com/wsdl/partnerAPI" xmlns:ns2="urn:fault.partner.exacttarget.com">
+      <RetrieveRequest>
+        <ObjectType>DataExtension</ObjectType>
+        <Properties>ObjectID</Properties>
+        <Properties>CustomerKey</Properties>
+        <Properties>Name</Properties>
+        <Properties>Description</Properties>
+        <Properties>CreatedDate</Properties>
+        <Properties>ModifiedDate</Properties>
+        <Properties>CategoryID</Properties>
+        <Properties>IsSendable</Properties>
+        <Properties>IsTestable</Properties>
+        <Properties>Template.CustomerKey</Properties>
+        <Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="SimpleFilterPart">
+          <Property>CustomerKey</Property>
+          <SimpleOperator>equals</SimpleOperator>
+          <Value>4B1346B2-7AD2-4386-94F8-FC58B8671D6D</Value>
+        </Filter>
+      </RetrieveRequest>
+    </RetrieveRequestMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2016-10-13 18:14:45.932  INFO 4084 --- [http-nio-8080-exec-9] o.a.cxf.services.PartnerAPI.Soap.Soap    : Inbound Message
+----------------------------
+ID: 1
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml; charset=utf-8
+Headers: {Cache-Control=[private, max-age=0], connection=[close], Content-Length=[1810], content-type=[text/xml; charset=utf-8], Date=[Thu, 13 Oct 2016 07:15:39 GMT], Server=[Microsoft-IIS/7.5], X-AspNet-Version=[4.0.30319], X-Powered-By=[ASP.NET]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>RetrieveResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:8c9e846d-b3c6-4582-ae3e-5c71fb163b60</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:27373aa1-dab6-4ae4-b319-278ce526cb80</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+    <wsse:Security>
+      <wsu:Timestamp wsu:Id="Timestamp-af7da5ca-c6e8-49bc-bdd3-1153fca059b1">
+        <wsu:Created>2016-10-13T07:15:40Z</wsu:Created>
+        <wsu:Expires>2016-10-13T07:20:40Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <RetrieveResponseMsg xmlns="http://exacttarget.com/wsdl/partnerAPI">
+      <OverallStatus>OK</OverallStatus>
+      <RequestID>a78bd315-96ba-4c82-b28b-13d0e9722a77</RequestID>
+      <Results xsi:type="DataExtension">
+        <PartnerKey xsi:nil="true"/>
+        <CreatedDate>2016-10-13T01:12:15.463</CreatedDate>
+        <ModifiedDate>2016-10-13T01:14:15.43</ModifiedDate>
+        <ObjectID>be93225b-1491-e611-af11-78e3b50b7f0c</ObjectID>
+        <CustomerKey>4B1346B2-7AD2-4386-94F8-FC58B8671D6D</CustomerKey>
+        <Name>Test Event DE Template_uat</Name>
+        <Description>Event Data Extension Template</Description>
+        <IsSendable>true</IsSendable>
+        <IsTestable>false</IsTestable>
+        <Template>
+          <PartnerKey xsi:nil="true"/>
+          <ObjectID xsi:nil="true"/>
+          <CustomerKey>75E0880B-AA91-4271-99EE-8AF45A3A0372</CustomerKey>
+        </Template>
+        <CategoryID>404519</CategoryID>
+      </Results>
+    </RetrieveResponseMsg>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
