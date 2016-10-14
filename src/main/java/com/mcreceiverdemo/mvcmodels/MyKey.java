@@ -22,7 +22,7 @@ public class MyKey {
 		this.bunchName = bunchName;
 	}
 
-	@Size(min=1)
+	@Size(min=1,max=10)
 	private List<String> keys = new ArrayList<String>();
 
 	public List<String> getKeys() {

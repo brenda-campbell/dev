@@ -57,6 +57,7 @@ public class FolderSearchController {
 	@RequestMapping(value="/folder/search", params={"search"}, method=RequestMethod.POST)
     public String search(@ModelAttribute("folderPath") @Valid final MyKey folderPath, final BindingResult bindingResult, final ModelMap model) throws Exception {
 		if (bindingResult.hasErrors()) {
+			model.addAttribute("hasError", true);
             return "foldersearch";
         }
 		this.folderPathCollectionService.add(folderPath);

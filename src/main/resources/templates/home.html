@@ -1,49 +1,75 @@
-
 <div class="row" th:fragment="content">
+<style>
+    .padding {
+        padding-bottom:10px;
+    }
+</style>
 	<div class="col-lg-12">
 		<div class="row">
 			<div class="col-lg-12">
-		        <h1 class="page-header">Ali's MC API Stuff.
-		            <small>Item Subheading</small>
-		        </h1>
-		        <h3>Project Description</h3>
-		        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-		        <h3>Project Details</h3>
-		        <ul>
-		            <li>Lorem Ipsum</li>
-		            <li>Dolor Sit Amet</li>
-		            <li>Consectetur</li>
-		            <li>Adipiscing Elit</li>
-		        </ul>
-		        <span th:text="${msg}"></span>
+				<div class="alert alert-dismissable alert-warning">
+					<h1>Project Thor</h1>
+                    <blockquote>Ali's attempt to MC @Automation</blockquote> 
+                </div>
+		        <!-- <h1 class="page-header">Ali's MC API Stuff.</h1>-->		        
 		    </div>		
 		</div>
-		<form action="#" th:action="@{/}" th:object="${apiLoginData}" method="post">
-			<div class="row" th:if="${isShowForm}">
-				<div class="col-xs-4"> API Key</div>
-				<div class="col-lg-8">
-					<input type="text" th:field="*{apiKey}" th:class="${#fields.hasErrors('apiKey')}? fieldError" />
-				</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="panel " th:classappend="${#strings.isEmpty(panel)}? panel-primary : ${panel}">
+			        <div class="panel-heading">
+			            <h3 class="panel-title"><i class="fa fa-user"></i> Log in</h3>
+			        </div>
+			        <div class="panel-body">
+						<form action="#" th:action="@{/}" th:object="${apiLoginData}" method="post">
+							<div class="row padding">
+								<div class="col-lg-12">
+									<span class="text-danger" th:text="${msg}"></span>
+								</div>
+							</div>
+							<div class="row padding" th:if="${isShowForm}">
+								<label class="col-md-2"> <b>API Key</b></label>
+								<div class="col-lg-10">
+									<input type="text" th:field="*{apiKey}" class="form-control" th:classappend="${#fields.hasErrors('apiKey')}? fieldError"/>
+								</div>
+							</div>
+							<div class="row padding" th:if="${isShowForm}">
+								<div class="col-md-2"><b>API Secret</b> </div>
+								<div class="col-lg-10">
+									<input type="text" th:field="*{apiSecret}" class="form-control" th:classappend="${#fields.hasErrors('apiSecret')}? fieldError" />
+								</div>
+							</div>
+							<div class="row padding" th:if="${isShowForm}">
+								<div class="col-md-2"> &nbsp;</div>
+								<div class="col-lg-10">
+									<button type="submit" name="initiate" class="btn btn-default">Authorize</button>
+								</div>
+							</div>
+							<div class="row padding" th:unless="${isShowForm}">
+								<div class="col-md-2"> &nbsp;</div>
+								<div class="col-lg-10">
+									<button type="submit" name="logout" class="btn btn-success">Logout</button>
+								</div>
+							</div>
+						</form>	            
+			        </div>
+			    </div>
 			</div>
-			<div class="row" th:if="${isShowForm}">
-				<div class="col-xs-4"> API Secret</div>
-				<div class="col-lg-8">
-					<input type="text" th:field="*{apiSecret}" th:class="${#fields.hasErrors('apiSecret')}? fieldError" />
-				</div>
+			<div class="col-md-8">
+			    <div class="panel panel-primary">
+			        <div class="panel-heading">
+			            <h3 class="panel-title"><i class="fa fa-rss"></i> Some important info</h3>
+			        </div>
+			        <div class="panel-body">
+			            This tool is not meant to replace the MC Studio. Rather it is a complementary tool to help implementation faster.
+			            The MC Studio is the ultimate tool to create objects for MC.
+			            <br/>
+			            <b>Caution:</b> Use at your own risk.
+			        </div>
+			    </div>
 			</div>
-			<div class="row" th:if="${isShowForm}">
-				<div class="col-xs-4"> &nbsp;</div>
-				<div class="col-lg-8">
-					<button type="submit" name="initiate">Initiate</button>
-				</div>
-			</div>
-			<div class="row" th:unless="${isShowForm}">
-				<div class="col-xs-4"> &nbsp;</div>
-				<div class="col-lg-8">
-					<button type="submit" name="logout">Logout</button>
-				</div>
-			</div>
-		</form>
+		</div>
+		
 		
 	</div>
     

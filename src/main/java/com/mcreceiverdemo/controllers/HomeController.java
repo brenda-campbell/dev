@@ -50,9 +50,12 @@ public class HomeController {
     public String index(final ApiLoginData apiLoginData, Model model) {
 		logger.info("this is index.");
 		
-		model.addAttribute("msg", "this is home");
+		//model.addAttribute("msg", "this is home");
+		if(this.mcClientService.isETClient()) {
+			model.addAttribute("isShowForm", false );
+			model.addAttribute("panel","panel-success");
+		}
 		
-		model.addAttribute("isShowForm", (!this.mcClientService.isETClient()) );
 		return "home";
     }
 	
@@ -68,8 +71,10 @@ public class HomeController {
 	        Authentication authentication = this.authenticationProvider.authenticate(token);
 	        logger.debug("Logging in with [{}]", authentication.getPrincipal());
 	        SecurityContextHolder.getContext().setAuthentication(authentication);
+	        
 		} catch (ETSdkException e) {
 			model.addAttribute("msg", e.getMessage());
+			model.addAttribute("panel","panel-danger");
 			model.addAttribute("isShowForm", true );
 			return "home";
 		}
