@@ -97,6 +97,12 @@ public class HomeController {
 		return "qalanding";
     }
 	
+	@RequestMapping(value="/folder", method=RequestMethod.GET)
+    public String folder(Model model) {
+		logger.info("this is folder landing.");
+		return "folderlanding";
+    }
+	
 	@RequestMapping(value="/testError", method=RequestMethod.GET)
 	public String testError(Model model) {
 		throw new UnsupportedOperationException("not supported");

@@ -117,12 +117,12 @@ public class DataExtensionServiceImpl extends CommonMcServiceImpl implements Dat
 
 	@Override
 	public void uatToProd(String key) throws Exception {
-		ETRetrieveDataExtensionObject etDE = this.retrieve(key, ETRetrieveDataExtensionObject.class);
+		ETRetrieveDataExtensionObject etDE = this.retrieveByKey(key, ETRetrieveDataExtensionObject.class);
 		if(etDE == null) {
 			throw new CustomException(String.format("no DE cannot be found."));
 		}
 		if(etDE.getTemplate() != null && !etDE.getTemplate().getCustomerKey().isEmpty()) {
-			ETDataExtensionTemplateObject etTemplate = this.retrieve(etDE.getTemplate().getCustomerKey(), ETDataExtensionTemplateObject.class);
+			ETDataExtensionTemplateObject etTemplate = this.retrieveByKey(etDE.getTemplate().getCustomerKey(), ETDataExtensionTemplateObject.class);
 			etDE.getTemplate().setObjectID(etTemplate.getId());;
 		}
 		this.clone(etDE);		

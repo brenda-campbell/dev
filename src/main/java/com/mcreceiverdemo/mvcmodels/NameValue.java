@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 public class NameValue {
 	private String name;
 	private String value;
+	private String key;
 	
 	public String getName() {
 		return name;
@@ -20,9 +21,15 @@ public class NameValue {
 		this.value = value;
 	}
 	
+	public String getKey() {
+		return key;
+	}
+	public void setKey(String key) {
+		this.key = key;
+	}
 	
 	@Override
     public String toString() {
-        return "NameValue [name=" + this.name + ", value=" + this.value + "]";
+        return "NameValue [name=" + this.name + ", value=" + this.value + ", key="+this.key+"]";
     }
 }
