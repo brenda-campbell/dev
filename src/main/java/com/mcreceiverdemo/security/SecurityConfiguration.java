@@ -32,7 +32,7 @@ public class SecurityConfiguration  extends WebSecurityConfigurerAdapter {
          .authorizeRequests()
          .antMatchers("/assets/**", "/js/**", "/css/**", "/img/**", "/favicon.ico", "/").permitAll()
          //.antMatchers("/index.jsp", "/index.html", "/index").hasRole("USER")
-         .antMatchers("/de", "/de/**").hasRole("ADMIN")
+         .antMatchers("/de", "/qa/**", "/folder/**").hasRole("ADMIN")
          .and()
          //.formLogin().loginProcessingUrl("/processLogin").loginPage("/login").usernameParameter("username").passwordParameter("password").permitAll()
          //.and()

@@ -55,7 +55,9 @@ public class HomeController {
 			model.addAttribute("isShowForm", false );
 			model.addAttribute("panel","panel-success");
 		}
-		
+		else {
+			model.addAttribute("isShowForm", true );
+		}
 		return "home";
     }
 	
