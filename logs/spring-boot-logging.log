@@ -19842,3 +19842,190 @@ Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving temp
 2016-10-15 15:26:36.649  INFO 9504 --- [http-nio-8080-exec-6] c.m.controllers.HomeController           : this is index.
 2016-10-15 15:26:42.208  INFO 9504 --- [http-nio-8080-exec-8] c.m.controllers.HomeController           : this is de landing.
 2016-10-15 15:26:49.039  INFO 9504 --- [http-nio-8080-exec-2] c.m.controllers.HomeController           : this is index.
+2016-10-15 15:29:22.407  WARN 9504 --- [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/w] in DispatcherServlet with name 'dispatcherServlet'
+2016-10-15 15:29:22.429 ERROR 9504 --- [http-nio-8080-exec-5] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-5] Exception processing template "layouts/default": Error resolving template "error", template might not exist or might not be accessible by any of the configured Template Resolvers (layouts/default:12)
+2016-10-15 15:29:22.438 ERROR 9504 --- [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet dispatcherServlet threw exception
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template "error", template might not exist or might not be accessible by any of the configured Template Resolvers (layouts/default:12)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:246) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.fragment.StandardFragment.extractFragment(StandardFragment.java:202) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.processor.attr.AbstractStandardFragmentHandlingAttrProcessor.computeFragment(AbstractStandardFragmentHandlingAttrProcessor.java:72) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractFragmentHandlingAttrProcessor.processAttribute(AbstractFragmentHandlingAttrProcessor.java:63) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractAttrProcessor.doProcess(AbstractAttrProcessor.java:87) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.AbstractProcessor.process(AbstractProcessor.java:212) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.applyNextProcessor(Node.java:1017) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:972) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Document.process(Document.java:93) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1155) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1257) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:726) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:471) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:394) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:311) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:395) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:254) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:177) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:1110) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:785) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1425) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_101]
+
+2016-10-15 15:29:22.440 ERROR 9504 --- [http-nio-8080-exec-5] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template "error", template might not exist or might not be accessible by any of the configured Template Resolvers (layouts/default:12)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:982) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:726) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:471) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:394) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:311) ~[tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:395) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:254) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:177) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:1110) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:785) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1425) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.4.jar:8.5.4]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_101]
+Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving template "error", template might not exist or might not be accessible by any of the configured Template Resolvers (layouts/default:12)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:246) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.fragment.StandardFragment.extractFragment(StandardFragment.java:202) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.standard.processor.attr.AbstractStandardFragmentHandlingAttrProcessor.computeFragment(AbstractStandardFragmentHandlingAttrProcessor.java:72) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractFragmentHandlingAttrProcessor.processAttribute(AbstractFragmentHandlingAttrProcessor.java:63) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractAttrProcessor.doProcess(AbstractAttrProcessor.java:87) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.AbstractProcessor.process(AbstractProcessor.java:212) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.applyNextProcessor(Node.java:1017) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:972) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Document.process(Document.java:93) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1155) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1257) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.2.RELEASE.jar:4.3.2.RELEASE]
+	... 25 common frames omitted
+
+2016-10-15 15:31:09.103  INFO 9504 --- [RMI TCP Connection(2)-192.168.56.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2016-10-15 15:31:09.104  INFO 9504 --- [RMI TCP Connection(2)-192.168.56.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c402120: startup date [Sat Oct 15 15:23:08 AEDT 2016]; root of context hierarchy
+2016-10-15 15:31:09.107  INFO 9504 --- [RMI TCP Connection(2)-192.168.56.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-10-15 15:31:14.744  INFO 9564 --- [main] c.mcreceiverdemo.McreceiverApplication   : Starting McreceiverApplication on anahid-lt02 with PID 9564 (C:\Ali\projects\java\mcreceiver\target\classes started by anahid in C:\Ali\projects\java\mcreceiver)
+2016-10-15 15:31:14.749  INFO 9564 --- [main] c.mcreceiverdemo.McreceiverApplication   : No active profile set, falling back to default profiles: default
+2016-10-15 15:31:15.225  INFO 9564 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c402120: startup date [Sat Oct 15 15:31:15 AEDT 2016]; root of context hierarchy
+2016-10-15 15:31:16.800  INFO 9564 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$6050e8c2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-10-15 15:31:16.857  INFO 9564 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-10-15 15:31:17.488  INFO 9564 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-10-15 15:31:17.508  INFO 9564 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-10-15 15:31:17.509  INFO 9564 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.4
+2016-10-15 15:31:17.895  INFO 9564 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-10-15 15:31:17.895  INFO 9564 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2674 ms
+2016-10-15 15:31:18.160  INFO 9564 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-10-15 15:31:18.162  INFO 9564 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2016-10-15 15:31:18.163  INFO 9564 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-10-15 15:31:18.165  INFO 9564 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2016-10-15 15:31:18.257  INFO 9564 --- [main] c.m.s.CustomAuthenticationProvider       : *** CustomAuthenticationProvider created
+2016-10-15 15:31:18.615  INFO 9564 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2bef09c0, org.springframework.security.web.context.SecurityContextPersistenceFilter@7186333e, org.springframework.security.web.authentication.logout.LogoutFilter@64b70919, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36f1046f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3900fa71, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62ce72ff, org.springframework.security.web.session.SessionManagementFilter@8bffb8b, org.springframework.security.web.access.ExceptionTranslationFilter@4a8df3e2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@40298285]
+2016-10-15 15:31:18.686  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/folder/search],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.FolderSearchController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-15 15:31:18.687  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/folder/search],methods=[POST],params=[search]}" onto public java.lang.String com.mcreceiverdemo.controllers.FolderSearchController.search(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-15 15:31:18.687  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/folder/search],params=[addPath]}" onto public java.lang.String com.mcreceiverdemo.controllers.FolderSearchController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-15 15:31:18.687  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/folder/search],params=[removePath]}" onto public java.lang.String com.mcreceiverdemo.controllers.FolderSearchController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-15 15:31:18.689  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.index(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.ui.Model)
+2016-10-15 15:31:18.690  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.de(org.springframework.ui.Model)
+2016-10-15 15:31:18.690  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[initiate]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.initiateApiAccess(com.mcreceiverdemo.mvcmodels.ApiLoginData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-15 15:31:18.690  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testError],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.testError(org.springframework.ui.Model)
+2016-10-15 15:31:18.691  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST],params=[logout]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.logout(org.springframework.ui.ModelMap)
+2016-10-15 15:31:18.692  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.qa(org.springframework.ui.Model)
+2016-10-15 15:31:18.692  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/folder],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.HomeController.folder(org.springframework.ui.Model)
+2016-10-15 15:31:18.695  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdDEController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-15 15:31:18.696  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-15 15:31:18.696  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdDEController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-15 15:31:18.696  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdDEController.clodeUatToProd(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-15 15:31:18.696  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdDEController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-15 15:31:18.697  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdDEController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-15 15:31:18.698  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.index(com.mcreceiverdemo.mvcmodels.MyKey)
+2016-10-15 15:31:18.698  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addToQueue(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-15 15:31:18.699  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.cloqauattoprod(org.springframework.ui.ModelMap) throws java.lang.Exception
+2016-10-15 15:31:18.699  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.clearQueue(org.springframework.ui.ModelMap)
+2016-10-15 15:31:18.699  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[addKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.addKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult)
+2016-10-15 15:31:18.700  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/qa/uattoprod],params=[removeKey]}" onto public java.lang.String com.mcreceiverdemo.controllers.UatToProdQueryActivityController.removeKey(com.mcreceiverdemo.mvcmodels.MyKey,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-15 15:31:18.701  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[save]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.saveDEData(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-15 15:31:18.701  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[addToQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addToQueue(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,org.springframework.ui.ModelMap)
+2016-10-15 15:31:18.701  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[GET]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.dynamicForm(com.mcreceiverdemo.mvcmodels.MyData)
+2016-10-15 15:31:18.702  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],params=[addNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.addRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult)
+2016-10-15 15:31:18.702  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[removeNameValue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.removeRow(com.mcreceiverdemo.mvcmodels.MyData,org.springframework.validation.BindingResult,javax.servlet.http.HttpServletRequest)
+2016-10-15 15:31:18.702  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/de/upsertde],methods=[POST],params=[clearQueue]}" onto public java.lang.String com.mcreceiverdemo.controllers.UpsertDEController.clearQueue(org.springframework.ui.ModelMap) throws com.exacttarget.fuelsdk.ETSdkException
+2016-10-15 15:31:18.710  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-10-15 15:31:18.710  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-10-15 15:31:18.761  INFO 9564 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/assets/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-15 15:31:18.846  INFO 9564 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c402120: startup date [Sat Oct 15 15:31:15 AEDT 2016]; root of context hierarchy
+2016-10-15 15:31:18.927  INFO 9564 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandlingControllerAdvice
+2016-10-15 15:31:20.383  INFO 9564 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-10-15 15:31:20.504  INFO 9564 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-10-15 15:31:20.518  INFO 9564 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 6.237 seconds (JVM running for 8.98)
