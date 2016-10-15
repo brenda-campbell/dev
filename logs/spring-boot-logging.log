@@ -20029,3 +20029,10 @@ Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving temp
 2016-10-15 15:31:20.383  INFO 9564 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
 2016-10-15 15:31:20.504  INFO 9564 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
 2016-10-15 15:31:20.518  INFO 9564 --- [main] c.mcreceiverdemo.McreceiverApplication   : Started McreceiverApplication in 6.237 seconds (JVM running for 8.98)
+2016-10-15 15:31:46.319  INFO 9564 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-10-15 15:31:46.319  INFO 9564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-10-15 15:31:46.349  INFO 9564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 29 ms
+2016-10-15 15:31:46.396  WARN 9564 --- [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/w] in DispatcherServlet with name 'dispatcherServlet'
+2016-10-15 15:32:01.226  INFO 9564 --- [http-nio-8080-exec-5] c.m.controllers.HomeController           : this is index.
+2016-10-15 15:36:02.164  INFO 9564 --- [http-nio-8080-exec-10] c.m.controllers.HomeController           : this is index.
+2016-10-15 15:36:17.138  INFO 9564 --- [http-nio-8080-exec-2] c.m.controllers.HomeController           : this is index.
