@@ -1,11 +1,18 @@
 package com.mcreceiverdemo.mvcmodels;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
 @Component
 public class NameValue {
+	
+	@NotNull @NotEmpty(message = "{NameValue.name.required}")
 	private String name;
+	@NotNull @NotEmpty(message = "{NameValue.value.required}")
 	private String value;
+	
 	private String key;
 	
 	public String getName() {

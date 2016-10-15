@@ -9,7 +9,7 @@
 			<div class="col-lg-12">
 				<div class="alert alert-dismissable alert-warning">
 					<h1>Project Thor</h1>
-                    <blockquote>Ali's attempt to MC @Automation</blockquote> 
+                    <blockquote>An attempt to MC@ Automation</blockquote> 
                 </div>
 		        <!-- <h1 class="page-header">Ali's MC API Stuff.</h1>-->		        
 		    </div>		
@@ -24,19 +24,22 @@
 						<form action="#" th:action="@{/}" th:object="${apiLoginData}" method="post">
 							<div class="row padding">
 								<div class="col-lg-12">
+									<ul th:if="${#fields.hasErrors('*')}" class="errorlist">
+					           			<li class="text-danger" th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+					         		</ul>									
 									<span class="text-danger" th:text="${msg}"></span>
 								</div>
 							</div>
 							<div class="row padding" th:if="${isShowForm}">
-								<label class="col-md-2"> <b>API Key</b></label>
+								<label class="col-md-2"> <b>KEY</b></label>
 								<div class="col-lg-10">
-									<input type="text" th:field="*{apiKey}" class="form-control" th:classappend="${#fields.hasErrors('apiKey')}? fieldError"/>
+									<input type="text" th:field="*{apiKey}" class="form-control " th:classappend="${#fields.hasErrors('apiKey')}? fieldError"/>
 								</div>
 							</div>
 							<div class="row padding" th:if="${isShowForm}">
-								<div class="col-md-2"><b>API Secret</b> </div>
+								<div class="col-md-2"><b>SECRET</b> </div>
 								<div class="col-lg-10">
-									<input type="text" th:field="*{apiSecret}" class="form-control" th:classappend="${#fields.hasErrors('apiSecret')}? fieldError" />
+									<input type="text" th:field="*{apiSecret}" class="form-control " th:classappend="${#fields.hasErrors('apiSecret')}? fieldError" />
 								</div>
 							</div>
 							<div class="row padding" th:if="${isShowForm}">

@@ -2,14 +2,15 @@ package com.mcreceiverdemo.mvcmodels;
 
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ApiLoginData {
 	
-	@NotNull
+	@NotNull @NotEmpty(message = "{ApiLoginData.apiKey.required}")
 	private String apiKey;
-	@NotNull
+	@NotNull @NotEmpty(message = "{ApiLoginData.apiSecret.required}")
 	private String apiSecret;
 	
 	public String getApiKey() {

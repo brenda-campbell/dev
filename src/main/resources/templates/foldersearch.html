@@ -16,7 +16,7 @@
 	          		<div class="row padding-bottom-20">
 		            	<div class="col-md-2">	<b>Package Name</b> </div>
 		            	<div class="col-lg-6">	
-							<input type="text" th:field="*{bunchName}" class="form-control" th:classappend="${#fields.hasErrors('bunchName')}? fieldError" required="required" />
+							<input type="text" th:field="*{bunchName}" class="form-control" th:classappend="${#fields.hasErrors('bunchName')}? fieldError"/>
 						</div>
 						<div class="col-lg-4">&nbsp;</div>
 		          	</div>
@@ -66,10 +66,11 @@
 		        </div>
 			</div>
 		</form>
-		<div class="panel panel-info">
+		
+		<div class="panel panel-info" th:unless="${#lists.isEmpty(allAPIObjects)}">
 			<div class="panel-heading">
 				<h3 class="panel-title">
-					<i class="fa fa-bar-chart-o"> <span class="lead">Search result</span></i>
+					<i class="fa fa-bar-chart-o"> <span class="lead"> Search result</span></i>
 				</h3>
 			</div>
 			<div class="panel-body">

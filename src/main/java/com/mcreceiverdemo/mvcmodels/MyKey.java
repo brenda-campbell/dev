@@ -6,12 +6,13 @@ import java.util.List;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MyKey {
 	
-	@NotNull
+	@NotNull @NotEmpty(message = "{MyKey.bunchName.required}")
 	private String bunchName;
 	
 	public String getBunchName() {
@@ -22,7 +23,7 @@ public class MyKey {
 		this.bunchName = bunchName;
 	}
 
-	@Size(min=1,max=10)
+	@Size(min=1,max=50)
 	private List<String> keys = new ArrayList<String>();
 
 	public List<String> getKeys() {

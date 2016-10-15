@@ -81,7 +81,7 @@ public class UatToProdQueryActivityController {
 	@RequestMapping(value="/qa/uattoprod", params={"removeKey"})
     public String removeKey(@ModelAttribute("qaKey") final MyKey qaKey, final BindingResult bindingResult, final HttpServletRequest req) {
         final Integer rowId = Integer.valueOf(req.getParameter("removeKey"));
-        this.qaKeyCollectionService.findAll().remove(rowId.intValue());
+        qaKey.getKeys().remove(rowId.intValue());
         return "qauattoprod";
     }
 }

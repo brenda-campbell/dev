@@ -64,6 +64,8 @@ public class HomeController {
 	@RequestMapping(value="/", params={"initiate"}, method=RequestMethod.POST)
     public String initiateApiAccess(@ModelAttribute("apiLoginData") @Valid final ApiLoginData apiLoginData, final BindingResult bindingResult, final ModelMap model) {
 		if(bindingResult.hasErrors()) {
+			model.addAttribute("panel","panel-danger");
+			model.addAttribute("isShowForm", true );
 			return "home";
 		}
 		try {
