@@ -21,16 +21,27 @@ public class ClientServiceImpl implements ClientService{
 		}
 	}*/
 	
-	
+	@Override
 	public void initiate(String apiKey, String apiSecret) throws ETSdkException {
 		ETConfiguration config = new ETConfiguration();
 		config.set("clientId", apiKey);
 		config.set("clientSecret", apiSecret);
 		
 		etClient = new ETClient(config);
-		etClient.autoHydrateObjects();
+		//etClient.autoHydrateObjects();
 	}
 	
+	@Override
+	public void login(String username, String password, String soapEndpoint) throws ETSdkException {
+		ETConfiguration config = new ETConfiguration();
+		config.set("username", username);
+		config.set("password", password);
+		config.set("soapEndpoint", soapEndpoint);
+		etClient = new ETClient(config);
+		//etClient.autoHydrateObjects();
+	}
+	
+	@Override
 	public boolean isETClient() {
 		if(this.etClient == null) {
 			return false;
@@ -38,10 +49,12 @@ public class ClientServiceImpl implements ClientService{
 		return true;
 	}
 	
+	@Override
 	public void logoutClient() {
 		this.etClient = null;
 	}
 	
+	@Override
 	public ETClient getETClient() throws CustomException {
 		if(this.etClient == null) {
 			throw new CustomException("etClient is not initated and is null.");

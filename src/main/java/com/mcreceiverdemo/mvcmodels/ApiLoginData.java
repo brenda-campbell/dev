@@ -9,20 +9,37 @@ import org.springframework.stereotype.Component;
 public class ApiLoginData {
 	
 	@NotNull @NotEmpty(message = "{ApiLoginData.apiKey.required}")
-	private String apiKey;
+	private String key;
 	@NotNull @NotEmpty(message = "{ApiLoginData.apiSecret.required}")
-	private String apiSecret;
+	private String secret;
 	
-	public String getApiKey() {
-		return apiKey;
+	private boolean apiLogin;
+	
+	private String soapEndpoint;
+	
+	public String getKey() {
+		return key;
 	}
-	public void setApiKey(String apiKey) {
-		this.apiKey = apiKey;
+	public void setKey(String key) {
+		this.key = key;
 	}
-	public String getApiSecret() {
-		return apiSecret;
+	public String getSecret() {
+		return secret;
 	}
-	public void setApiSecret(String apiSecret) {
-		this.apiSecret = apiSecret;
+	public void setSecret(String secret) {
+		this.secret = secret;
 	}
+	public boolean isApiLogin() {
+		return apiLogin;
+	}
+	public void setApiLogin(boolean apiLogin) {
+		this.apiLogin = apiLogin;
+	}
+	public String getSoapEndpoint() {
+		return soapEndpoint;
+	}
+	public void setSoapEndpoint(String soapEndpoint) {
+		this.soapEndpoint = soapEndpoint;
+	}
+	
 }

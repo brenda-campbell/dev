@@ -69,7 +69,12 @@ public class HomeController {
 			return "home";
 		}
 		try {
-			this.mcClientService.initiate(apiLoginData.getApiKey(), apiLoginData.getApiSecret());
+			if(apiLoginData.isApiLogin()) {
+				this.mcClientService.initiate(apiLoginData.getKey(), apiLoginData.getSecret());
+			}
+			else {
+				this.mcClientService.login(apiLoginData.getKey(), apiLoginData.getSecret(), apiLoginData.getSoapEndpoint());
+			}
 			UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken("admin", "admin");
 	        //token.setDetails(new WebAuthenticationDetails(request));
 	        Authentication authentication = this.authenticationProvider.authenticate(token);
