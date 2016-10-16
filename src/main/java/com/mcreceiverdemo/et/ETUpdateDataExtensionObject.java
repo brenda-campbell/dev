@@ -13,7 +13,7 @@ import com.exacttarget.fuelsdk.annotations.SoapObject;
 		collection = "items",
 		totalCount = "count")
 @SoapObject(internalType = com.exacttarget.fuelsdk.internal.DataExtension.class, unretrievable = {
-		"ID", "Fields"
+		"Fields"
 })
 public class ETUpdateDataExtensionObject extends ETDataExtensionObject {
 	

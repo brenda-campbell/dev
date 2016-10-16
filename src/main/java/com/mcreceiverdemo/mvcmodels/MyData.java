@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class MyData {
 	
 	@NotNull @NotEmpty(message = "{MyData.key.required}")
-	private String key;
+	protected String key;
 	
 	@Size(min=1, max=400)
 	private List<NameValue> nameValues = new ArrayList<NameValue>();
@@ -37,7 +37,7 @@ public class MyData {
 
     @Override
     public String toString() {
-        return "DEData [key=" + this.key + ", rows=" + this.nameValues + "]";
+        return "Data [key=" + this.key + ", rows=" + this.nameValues + "]";
     }
 	
 	

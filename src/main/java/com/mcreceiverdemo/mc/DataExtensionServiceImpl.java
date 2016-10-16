@@ -51,7 +51,7 @@ public class DataExtensionServiceImpl extends CommonMcServiceImpl implements Dat
 
 	
 	
-	public void clone(ETRetrieveDataExtensionObject uatDE) throws Exception {
+	public ETResponse<ETUpdateDataExtensionObject> clone(ETRetrieveDataExtensionObject uatDE) throws CustomException, ETSdkException {
 		String deName = uatDE.getName();
 		if(! (deName.toLowerCase().startsWith("uat") || deName.toLowerCase().endsWith("uat")) ) {
 			throw new CustomException(String.format("de `%s` is not a UAT de", deName));
@@ -109,14 +109,16 @@ public class DataExtensionServiceImpl extends CommonMcServiceImpl implements Dat
 															
 				}
 				ETResponse<ETUpdateDataExtensionObject> resCol = this.mcClient.getETClient().update(new ArrayList<ETUpdateDataExtensionObject>() {{add(createdDE);}});
+				return resCol;
 			}
 		}
+		return response;
 		
 	}
 
 
 	@Override
-	public void uatToProd(String key) throws Exception {
+	public ETResponse<ETUpdateDataExtensionObject> uatToProd(String key) throws CustomException, ETSdkException {
 		ETRetrieveDataExtensionObject etDE = this.retrieveByKey(key, ETRetrieveDataExtensionObject.class);
 		if(etDE == null) {
 			throw new CustomException(String.format("no DE cannot be found."));
@@ -125,7 +127,7 @@ public class DataExtensionServiceImpl extends CommonMcServiceImpl implements Dat
 			ETDataExtensionTemplateObject etTemplate = this.retrieveByKey(etDE.getTemplate().getCustomerKey(), ETDataExtensionTemplateObject.class);
 			etDE.getTemplate().setObjectID(etTemplate.getId());;
 		}
-		this.clone(etDE);		
+		return this.clone(etDE);		
 	}
 	
 	

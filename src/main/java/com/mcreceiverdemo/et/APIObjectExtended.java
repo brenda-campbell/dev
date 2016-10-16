@@ -6,9 +6,15 @@ import com.exacttarget.fuelsdk.internal.APIObject;
 
 public class APIObjectExtended extends APIObject {
 	@XmlElement(name = "Name")
-    private String name;
+    protected String name;
 
-	private String objectType;
+	protected String objectType;
+	
+	private String clonedObjectCustomerKey;
+	
+	private String clonedObjectObjectID;
+	
+	private String clonedObjectName;
 	
 	public String getName() {
 		return name;
@@ -25,6 +31,31 @@ public class APIObjectExtended extends APIObject {
 	public void setObjectType(String objectType) {
 		this.objectType = objectType;
 	}
+
+	public String getClonedObjectCustomerKey() {
+		return clonedObjectCustomerKey;
+	}
+
+	public void setClonedObjectCustomerKey(String clonedObjectCustomerKey) {
+		this.clonedObjectCustomerKey = clonedObjectCustomerKey;
+	}
+
+	public String getClonedObjectObjectID() {
+		return clonedObjectObjectID;
+	}
+
+	public void setClonedObjectObjectID(String clonedObjectObjectID) {
+		this.clonedObjectObjectID = clonedObjectObjectID;
+	}
+
+	public String getClonedObjectName() {
+		return clonedObjectName;
+	}
+
+	public void setClonedObjectName(String clonedObjectName) {
+		this.clonedObjectName = clonedObjectName;
+	}
+	
 	
 	
 }

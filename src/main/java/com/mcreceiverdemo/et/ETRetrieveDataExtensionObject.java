@@ -8,7 +8,7 @@ import com.exacttarget.fuelsdk.annotations.SoapObject;
 			collection = "items",
 			totalCount = "count")
 @SoapObject(internalType = com.mcreceiverdemo.et.DataExtension.class, unretrievable = {
-		"ID", "Fields"
+		"Fields"
 })
 public class ETRetrieveDataExtensionObject extends ETDataExtensionObject {
 	

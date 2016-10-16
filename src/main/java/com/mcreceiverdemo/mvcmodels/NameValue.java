@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 public class NameValue {
 	
 	@NotNull @NotEmpty(message = "{NameValue.name.required}")
-	private String name;
+	protected String name;
 	@NotNull @NotEmpty(message = "{NameValue.value.required}")
-	private String value;
+	protected String value;
 	
-	private String key;
+	protected String key;
 	
 	public String getName() {
 		return name;
