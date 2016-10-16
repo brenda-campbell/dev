@@ -1,5 +1,12 @@
 <!-- Footer -->
 <footer th:fragment="footer">
+	<div class="row">
+        <div class="col-lg-12">
+            <a href="/de" class="btn btn-xs btn-success"><i class="fa fa-database"></i> DE</a>&nbsp;&nbsp;
+            <a href="/qa" class="btn btn-xs btn-success"><i class="fa fa-tasks"></i> QA</a>&nbsp;&nbsp;
+            <a href="/folder" class="btn btn-xs btn-success"><i class="fa fa-folder"></i> Folder</a>&nbsp;&nbsp;
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <p>Copyright &copy; Project Thor By Ali Nahid <span th:text="${#calendars.format(#calendars.createNow(), 'dd MMM yyyy')}">date</span></p>
