@@ -1,9 +1,7 @@
 package com.mcreceiverdemo.controllers;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -18,18 +16,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.exacttarget.fuelsdk.ETSdkException;
+import com.mcreceiverdemo.exceptions.CustomException;
 import com.mcreceiverdemo.mc.ClientService;
-import com.mcreceiverdemo.mc.DataExtensionService;
 import com.mcreceiverdemo.mvcmodels.ApiLoginData;
-import com.mcreceiverdemo.mvcmodels.MyData;
-import com.mcreceiverdemo.mvcmodels.NameValue;
-
 import com.mcreceiverdemo.security.CustomAuthenticationProvider;
+import com.mcreceiverdemo.security.CustomLogoutHandler;
+
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.authentication.WebAuthenticationDetails;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 
 
 @Controller
@@ -49,7 +46,9 @@ public class HomeController {
 	@RequestMapping(value="/", method=RequestMethod.GET)
     public String index(final ApiLoginData apiLoginData, Model model) {
 		logger.info("this is index.");
-		
+		if(!CustomLogoutHandler.isLoggedIn() && this.mcClientService != null && this.mcClientService.isETClient()) {
+			this.mcClientService.logoutClient();
+		}
 		//model.addAttribute("msg", "this is home");
 		if(this.mcClientService.isETClient()) {
 			model.addAttribute("isShowForm", false );
@@ -69,35 +68,48 @@ public class HomeController {
 			return "home";
 		}
 		try {
+			String accessToken = null;
 			if(apiLoginData.isApiLogin()) {
-				this.mcClientService.initiate(apiLoginData.getKey(), apiLoginData.getSecret());
+				accessToken = this.mcClientService.initiate(apiLoginData.getKey(), apiLoginData.getSecret());				
 			}
 			else {
-				this.mcClientService.login(apiLoginData.getKey(), apiLoginData.getSecret(), apiLoginData.getSoapEndpoint());
+				accessToken = this.mcClientService.login(apiLoginData.getKey(), apiLoginData.getSecret(), apiLoginData.getSoapEndpoint());
 			}
-			UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken("admin", "admin");
-	        //token.setDetails(new WebAuthenticationDetails(request));
+			if(accessToken == null || accessToken.isEmpty()) {
+				throw new CustomException("login unsuccessful. You shall not pass.");
+			}
+			
+			UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(accessToken, "admin");
+			//token.setDetails(new WebAuthenticationDetails(request));
 	        Authentication authentication = this.authenticationProvider.authenticate(token);
 	        logger.debug("Logging in with [{}]", authentication.getPrincipal());
-	        SecurityContextHolder.getContext().setAuthentication(authentication);
+	        			SecurityContextHolder.getContext().setAuthentication(authentication);
 	        
-		} catch (ETSdkException e) {
+		} catch (Exception e) {
 			model.addAttribute("msg", e.getMessage());
 			model.addAttribute("panel","panel-danger");
 			model.addAttribute("isShowForm", true );
 			return "home";
 		}
+		
 		model.clear();
         return "redirect:/";
     }
 	
 	@RequestMapping(value="/", params={"logout"}, method=RequestMethod.POST)
-    public String logout(final ModelMap model) {
-		this.mcClientService.logoutClient();
-		SecurityContextHolder.clearContext();
+    public String logoutBtn(HttpServletRequest request, HttpServletResponse response) {
+		this.doLogout(request, response);
         return "redirect:/";
     }
 	
+	private void doLogout(HttpServletRequest request, HttpServletResponse response) {
+		this.mcClientService.logoutClient();
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if (auth != null){    
+	        new SecurityContextLogoutHandler().logout(request, response, auth);
+	    }
+		SecurityContextHolder.clearContext();
+	}
 	
 	@RequestMapping(value="/de", method=RequestMethod.GET)
     public String de(Model model) {
@@ -121,5 +133,5 @@ public class HomeController {
 	public String testError(Model model) {
 		throw new UnsupportedOperationException("not supported");
 	}
-	
+		
 }
