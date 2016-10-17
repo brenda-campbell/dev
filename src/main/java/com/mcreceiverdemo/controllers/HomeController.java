@@ -46,11 +46,11 @@ public class HomeController {
 	@RequestMapping(value="/", method=RequestMethod.GET)
     public String index(final ApiLoginData apiLoginData, Model model) {
 		logger.info("this is index.");
-		if(!CustomLogoutHandler.isLoggedIn() && this.mcClientService != null && this.mcClientService.isETClient()) {
+		if(!CustomLogoutHandler.isLoggedIn() && this.mcClientService != null && this.mcClientService.isETClientObject()) {
 			this.mcClientService.logoutClient();
 		}
 		//model.addAttribute("msg", "this is home");
-		if(this.mcClientService.isETClient()) {
+		if(this.mcClientService.isETClientObject()) {
 			model.addAttribute("isShowForm", false );
 			model.addAttribute("panel","panel-success");
 		}
@@ -74,6 +74,7 @@ public class HomeController {
 			}
 			else {
 				accessToken = this.mcClientService.login(apiLoginData.getKey(), apiLoginData.getSecret(), apiLoginData.getSoapEndpoint());
+				this.mcClientService.setMID(1426297);
 			}
 			if(accessToken == null || accessToken.isEmpty()) {
 				throw new CustomException("login unsuccessful. You shall not pass.");

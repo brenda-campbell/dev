@@ -8,10 +8,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.exacttarget.fuelsdk.ETDataExtensionColumn;
 import com.exacttarget.fuelsdk.ETDataExtensionRow;
 import com.exacttarget.fuelsdk.ETResponse;
 import com.exacttarget.fuelsdk.ETSdkException;
+import com.mcreceiverdemo.et.ETDataExtensionColumnObject;
 import com.mcreceiverdemo.et.ETDataExtensionObject;
 import com.mcreceiverdemo.et.ETDataExtensionTemplateObject;
 import com.mcreceiverdemo.et.ETRetrieveDataExtensionObject;
@@ -35,7 +35,7 @@ public class DataExtensionServiceImpl extends CommonMcServiceImpl implements Dat
 	public ETResponse<?> upsert(String key, Map<String,String> recordsValues) throws ETSdkException{
 		ETDataExtensionObject de = new ETDataExtensionObject();  //client.retrieveDataExtension(filter);
 		de.setKey(key); //"8B1A73D6-8EFA-4A7D-AB43-88663EB9AD28"
-		de.setClient(this.mcClient.getETClient());
+		de.setClient(this.mcClient.getETClientObject());
 		
 		//add a row to the data extension "products"
 		ETDataExtensionRow row = new ETDataExtensionRow();
@@ -57,19 +57,19 @@ public class DataExtensionServiceImpl extends CommonMcServiceImpl implements Dat
 			throw new CustomException(String.format("de `%s` is not a UAT de", deName));
 		}
 		ETUpdateDataExtensionObject newDE = new ETUpdateDataExtensionObject();
-		newDE.cloneObject(uatDE);
+		newDE.cloneObject(uatDE, this.mcClient.getMID());
 		//newDE.setClient(this.mcClient.getEtClient());
 		newDE.setName(uatDE.getName().replaceFirst("(?i)uat_", "").replaceFirst("(?i)_uat", ""));
 		newDE.setKey(java.util.UUID.randomUUID().toString());
 		if(newDE.getTemplate() == null || newDE.getTemplate().getObjectID().isEmpty()) {
 			String customerKey = uatDE.getKey();
-			List<ETDataExtensionColumn> l = uatDE.retrieveColumns(this.mcClient.getETClient(), customerKey); //this.retrieveList(customerKey, ETDataExtensionColumn.class);
-			for(ETDataExtensionColumn c : l) {
+			List<ETDataExtensionColumnObject> l = uatDE.retrieveColumns(this.mcClient.getETClientObject(), customerKey, this.mcClient.getMID()); //this.retrieveList(customerKey, ETDataExtensionColumn.class);
+			for(ETDataExtensionColumnObject c : l) {
 				newDE.addColumn(c.getName(), c.getType(), c.getLength(), c.getPrecision(), c.getScale(), c.getIsPrimaryKey(), c.getIsRequired(), c.getDefaultValue());
 			}
 		}
 		//newDE.create(this.mcClient.getEtClient(), arg1);
-		ETResponse<ETUpdateDataExtensionObject> response = this.mcClient.getETClient().create(new ArrayList<ETUpdateDataExtensionObject>() {{add(newDE);}});
+		ETResponse<ETUpdateDataExtensionObject> response = this.mcClient.getETClientObject().create(new ArrayList<ETUpdateDataExtensionObject>() {{add(newDE);}});
 		if(response != null) {
 			ETUpdateDataExtensionObject createdDE = response.getObject();		
 			if(createdDE!=null && newDE.getTemplate() != null && !newDE.getTemplate().getObjectID().isEmpty()) {
@@ -78,12 +78,12 @@ public class DataExtensionServiceImpl extends CommonMcServiceImpl implements Dat
 				//createdDE.cloneObject(responseDE);
 				
 				String customerKey = createdDE.getKey();
-				List<ETDataExtensionColumn> createdCols = createdDE.retrieveColumns(this.mcClient.getETClient(), customerKey); //this.retrieveList(customerKey, ETDataExtensionColumn.class);
+				List<ETDataExtensionColumnObject> createdCols = createdDE.retrieveColumns(this.mcClient.getETClientObject(), customerKey, this.mcClient.getMID()); //this.retrieveList(customerKey, ETDataExtensionColumn.class);
 				customerKey = uatDE.getKey();
-				List<ETDataExtensionColumn> uatCols = uatDE.retrieveColumns(this.mcClient.getETClient(), customerKey);
-				for(ETDataExtensionColumn c : uatCols) {
+				List<ETDataExtensionColumnObject> uatCols = uatDE.retrieveColumns(this.mcClient.getETClientObject(), customerKey, this.mcClient.getMID());
+				for(ETDataExtensionColumnObject c : uatCols) {
 					boolean isExist = false;
-					for(ETDataExtensionColumn cc : createdCols) {
+					for(ETDataExtensionColumnObject cc : createdCols) {
 						if(cc.getName().equalsIgnoreCase(c.getName())) {
 							isExist = true;
 							break;
@@ -108,7 +108,7 @@ public class DataExtensionServiceImpl extends CommonMcServiceImpl implements Dat
 					*/
 															
 				}
-				ETResponse<ETUpdateDataExtensionObject> resCol = this.mcClient.getETClient().update(new ArrayList<ETUpdateDataExtensionObject>() {{add(createdDE);}});
+				ETResponse<ETUpdateDataExtensionObject> resCol = this.mcClient.getETClientObject().update(new ArrayList<ETUpdateDataExtensionObject>() {{add(createdDE);}});
 				return resCol;
 			}
 		}

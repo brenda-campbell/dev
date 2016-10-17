@@ -13,12 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.exacttarget.fuelsdk.ETApiObject;
-import com.exacttarget.fuelsdk.ETFolder;
 import com.exacttarget.fuelsdk.ETResponse;
 import com.exacttarget.fuelsdk.ETResult;
 import com.exacttarget.fuelsdk.ETSdkException;
 import com.google.common.collect.Lists;
 import com.mcreceiverdemo.et.APIObjectExtended;
+import com.mcreceiverdemo.et.ETFolderObject;
 import com.mcreceiverdemo.et.ETRetrieveDataExtensionObject;
 import com.mcreceiverdemo.et.ETRetrieveQueryObject;
 import com.mcreceiverdemo.et.ETUpdateDataExtensionObject;
@@ -37,28 +37,37 @@ public class FolderSearchServiceImpl extends CommonMcServiceImpl implements Fold
 	
 	
 	@Override
-	public ETFolder retrieveTargetFolder(String folderPath) throws ETSdkException, CustomException {
+	public ETFolderObject retrieveTargETFolderObject(String folderPath) throws ETSdkException, CustomException {
 		List<String> folders = Lists.reverse(Arrays.asList(folderPath.split(">")));
 		String folder = folders.get(0);
-		List<ETFolder> matchedFolders = super.retrieveListByName(folder.trim(), ETFolder.class);
+		List<ETFolderObject> matchedFolders = super.retrieveListByName(folder.trim(), ETFolderObject.class);
 		boolean isCorrectFolder = false;
-		for(ETFolder matchedFolder : matchedFolders) {
-			String parentFolderKey = matchedFolder.getParentFolderKey();
-			int idx = 1;
-			while(parentFolderKey != null && idx < folders.size()) {
-				ETFolder parentFolder = super.retrieveByKey(parentFolderKey, ETFolder.class);
-				if(parentFolder.getName().equalsIgnoreCase(folders.get(idx++))) {
-					isCorrectFolder = true;
-					parentFolderKey = parentFolder.getParentFolderKey();
+		if(1 == folders.size() && matchedFolders.size() > 0) {
+			isCorrectFolder = true;
+			return matchedFolders.get(0);
+		}
+		else {
+			for(ETFolderObject matchedFolder : matchedFolders) {
+				String parentFolderKey = matchedFolder.getParentFolderKey();
+				int idx = 1;
+				while(parentFolderKey != null && idx < folders.size()) {
+					ETFolderObject parentFolder = super.retrieveByKey(parentFolderKey, ETFolderObject.class);
+					if(parentFolder.getName().equalsIgnoreCase(folders.get(idx++))) {
+						isCorrectFolder = true;
+						parentFolderKey = parentFolder.getParentFolderKey();
+					}
+					else {
+						isCorrectFolder = false;
+					}
 				}
-				else {
-					isCorrectFolder = false;
+			
+				
+				if(isCorrectFolder) {
+					return matchedFolder;
 				}
-			}
-			if(isCorrectFolder) {
-				return matchedFolder;
 			}
 		}
+		
 		return null;
 	}
 	
@@ -66,7 +75,10 @@ public class FolderSearchServiceImpl extends CommonMcServiceImpl implements Fold
 	public List<APIObjectExtended> retrieveApiObjectsInFolder(String folderPath) throws CustomException, ETSdkException {
 		List<APIObjectExtended> apiObjectList = new ArrayList<APIObjectExtended>(); 
 				
-		ETFolder folder = this.retrieveTargetFolder(folderPath);
+		ETFolderObject folder = this.retrieveTargETFolderObject(folderPath);
+		if(folder == null) {
+			throw new CustomException("Folder path "+folderPath+" does not exist.");
+		}
 		if(folder.getContentType().equalsIgnoreCase(com.mcreceiverdemo.utils.ETAPIObjectType.DATA_EXTENSION)) {
 			List<ETRetrieveDataExtensionObject> l = this.retrieveDataExtensionsInFolder(folder);
 			for(ETRetrieveDataExtensionObject de: l) {
@@ -95,12 +107,12 @@ public class FolderSearchServiceImpl extends CommonMcServiceImpl implements Fold
 	}
 	
 	@Override
-	public List<ETRetrieveDataExtensionObject> retrieveDataExtensionsInFolder(ETFolder folder) throws CustomException, ETSdkException {	
+	public List<ETRetrieveDataExtensionObject> retrieveDataExtensionsInFolder(ETFolderObject folder) throws CustomException, ETSdkException {	
 		return super.retrieveListByFolder(folder.getId(), ETRetrieveDataExtensionObject.class);
 	}
 	
 	@Override
-	public List<ETRetrieveQueryObject> retrieveQueryActivitiesInFolder(ETFolder folder) throws CustomException, ETSdkException {	
+	public List<ETRetrieveQueryObject> retrieveQueryActivitiesInFolder(ETFolderObject folder) throws CustomException, ETSdkException {	
 		return super.retrieveListByFolder(folder.getId(), ETRetrieveQueryObject.class);
 	}
 	

@@ -21,17 +21,17 @@ private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Override
 	public ETRetrieveQueryObject retrieve(String customerKey) throws CustomException, ETSdkException {
-		ETRetrieveQueryObject x = new ETRetrieveQueryObject().select(this.mcClient.getETClient(), customerKey).getObject();
+		ETRetrieveQueryObject x = new ETRetrieveQueryObject().select(this.mcClient.getETClientObject(), customerKey).getObject();
 		return x;
 	}
 	
 	@Override
 	public void uatToProd(ETRetrieveQueryObject etQuery) throws CustomException, ETSdkException{
 		ETUpdateQueryObject u = new ETUpdateQueryObject();
-		u.cloneQueryObject(etQuery);
+		u.cloneQueryObject(etQuery, this.mcClient.getMID());
 		String queryText = etQuery.getQueryText();
 		queryText = queryText.replace("(?i)uat_", "").replace("(?i)_uat", "");
-		u.update(this.mcClient.getETClient());
+		u.update(this.mcClient.getETClientObject());
 	}
 	
 	@Override
@@ -57,7 +57,7 @@ private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	public void uatToProd(ETRetrieveQueryObject etQuery, String targetDEObjectId, String targetDECustomerKey, String targetDEName) throws CustomException, ETSdkException {
 		// TODO Auto-generated method stub
 		ETUpdateQueryObject u = new ETUpdateQueryObject();
-		u.cloneQueryObject(etQuery);
+		u.cloneQueryObject(etQuery, this.mcClient.getMID());
 		InteractionBaseObject targetDE = new InteractionBaseObject();
 		targetDE.setObjectID(targetDEObjectId);
 		targetDE.setCustomerKey(targetDECustomerKey);
@@ -67,6 +67,6 @@ private final Logger logger = LoggerFactory.getLogger(this.getClass());
 		queryText = queryText.replaceAll("(?i)uat_", "");
 		queryText = queryText.replaceAll("(?i)_uat", "");
 		u.setQueryText(queryText);
-		u.update(this.mcClient.getETClient());
+		u.update(this.mcClient.getETClientObject());
 	}
 }
