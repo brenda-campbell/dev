@@ -19,7 +19,7 @@ import com.mcreceiverdemo.mvcmodels.MyKey;
 import com.mcreceiverdemo.services.MyKeyCollectionService;
 
 @Controller
-public class UatToProdCloneDEController {
+public class UatToProdDEController {
 	
 	@Autowired
     private MyKeyCollectionService deKeyCollectionService;
@@ -27,7 +27,7 @@ public class UatToProdCloneDEController {
 	@Autowired
     private DataExtensionService deService;
 	
-	public UatToProdCloneDEController() {
+	public UatToProdDEController() {
         super();
     }
 	

@@ -4,9 +4,14 @@ import java.util.List;
 
 import com.exacttarget.fuelsdk.ETApiObject;
 import com.exacttarget.fuelsdk.ETSdkException;
+import com.mcreceiverdemo.et.ETFolderObject;
+import com.mcreceiverdemo.exceptions.CustomException;
 
 public interface CommonMcService {
-	public <T extends ETApiObject> T retrieve(String key, Class<T> type) throws ETSdkException;
-	public <T extends ETApiObject> List<T> retrieveList(String key, Class<T> type) throws ETSdkException;
-	public <T> T retrieveObject(String key, Class<T> type) throws ETSdkException;
+	
+	<T extends ETApiObject> T retrieveByName(String key, Class<T> type) throws ETSdkException;
+	<T extends ETApiObject> List<T> retrieveListByName(String key, Class<T> type) throws ETSdkException;
+	<T extends ETApiObject> T retrieveByKey(String key, Class<T> type) throws ETSdkException;
+	<T extends ETApiObject> List<T> retrieveListByFolder(String folderKey, Class<T> type) throws ETSdkException;
+	<T> T retrieveObject(String key, Class<T> type) throws ETSdkException;
 }

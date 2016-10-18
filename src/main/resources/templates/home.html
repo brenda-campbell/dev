@@ -1,49 +1,108 @@
-
 <div class="row" th:fragment="content">
+<style>
+    .padding {
+        padding-bottom:10px;
+    }
+    .left-center-align {
+    	float:left !important;
+    	margin-left:0 !important;
+    	padding-top:10px !important;
+    }
+</style>
 	<div class="col-lg-12">
 		<div class="row">
 			<div class="col-lg-12">
-		        <h1 class="page-header">Ali's MC API Stuff.
-		            <small>Item Subheading</small>
-		        </h1>
-		        <h3>Project Description</h3>
-		        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-		        <h3>Project Details</h3>
-		        <ul>
-		            <li>Lorem Ipsum</li>
-		            <li>Dolor Sit Amet</li>
-		            <li>Consectetur</li>
-		            <li>Adipiscing Elit</li>
-		        </ul>
-		        <span th:text="${msg}"></span>
+				<div class="alert alert-dismissable alert-warning">
+					<h1>Project Thor</h1>
+                    <blockquote>An attempt to MC@ Automation</blockquote> 
+                </div>
+		        <!-- <h1 class="page-header">Ali's MC API Stuff.</h1>-->		        
 		    </div>		
 		</div>
-		<form action="#" th:action="@{/}" th:object="${apiLoginData}" method="post">
-			<div class="row" th:if="${isShowForm}">
-				<div class="col-xs-4"> API Key</div>
-				<div class="col-lg-8">
-					<input type="text" th:field="*{apiKey}" th:class="${#fields.hasErrors('apiKey')}? fieldError" />
-				</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="panel " th:classappend="${#strings.isEmpty(panel)}? panel-primary : ${panel}">
+			        <div class="panel-heading">
+			            <h3 class="panel-title"><i class="fa fa-user"></i> Log in</h3>
+			        </div>
+			        <div class="panel-body">
+						<form action="#" th:action="@{/}" th:object="${apiLoginData}" method="post">
+							<div class="row padding">
+								<div class="col-lg-12">
+									<ul th:if="${#fields.hasErrors('*')}" class="errorlist">
+					           			<li class="text-danger" th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+					         		</ul>									
+									<span class="text-danger" th:text="${msg}"></span>
+								</div>
+							</div>
+							<div class="row padding" th:if="${isShowForm}">
+								<label class="col-md-2"> <b>KEY</b></label>
+								<div class="col-lg-10">
+									<input type="text" th:field="*{key}" class="form-control " th:classappend="${#fields.hasErrors('key')}? fieldError"/>
+								</div>
+							</div>
+							<div class="row padding" th:if="${isShowForm}">
+								<div class="col-md-2"><b>SECRET</b> </div>
+								<div class="col-lg-10">
+									<input type="password" th:field="*{secret}" class="form-control " th:classappend="${#fields.hasErrors('secret')}? fieldError" />
+								</div>
+							</div>
+							<div class="row padding" th:if="${isShowForm}">
+								<div class="col-md-2"> &nbsp;</div>
+								<div class="col-md-2">
+									<input type="checkbox" th:field="*{apiLogin}" class="form-control"></input>
+								</div>
+								<div class="col-lg-8 left-center-align" >IS API</div>
+							</div>
+							<div class="row padding" th:if="${isShowForm}">
+								<div class="col-md-2"> Endpoint </div>
+								<div class="col-lg-10">
+									<select th:field="*{soapEndpoint}" class="form-control">
+						              <option selected="true" value="">----</option>
+						              <option selected="true" value="https://webservice.exacttarget.com/Service.asmx">S1</option>
+						              <option selected="true" value="https://webservice.s4.exacttarget.com/Service.asmx">S4</option>
+						              <option selected="true" value="https://webservice.s6.exacttarget.com/Service.asmx">S6</option>
+						              <option selected="true" value="https://webservice.s7.exacttarget.com/Service.asmx">S7</option>
+						              <option selected="true" value="https://webservice.s8.exacttarget.com/Service.asmx">S8</option>
+						            </select>
+								</div>
+							</div>
+														
+							<div class="row padding" th:if="${isShowForm}">
+								<div class="col-md-2"> &nbsp;</div>
+								<div class="col-lg-10">
+									<button type="submit" name="initiate" class="btn btn-default">Authorize</button>
+								</div>
+							</div>
+							<div class="row padding" th:unless="${isShowForm}">
+								<div class="col-md-2"> &nbsp;</div>
+								<div class="col-lg-10">
+									<button type="submit" name="logout" class="btn btn-success">Logout</button>
+								</div>
+							</div>
+						</form>	            
+			        </div>
+			    </div>
 			</div>
-			<div class="row" th:if="${isShowForm}">
-				<div class="col-xs-4"> API Secret</div>
-				<div class="col-lg-8">
-					<input type="text" th:field="*{apiSecret}" th:class="${#fields.hasErrors('apiSecret')}? fieldError" />
-				</div>
+			<div class="col-md-8">
+			    <div class="panel panel-info">
+			        <div class="panel-heading">
+			            <h3 class="panel-title"><i class="fa fa-rss"></i> Some important info</h3>
+			        </div>
+			        <div class="panel-body">
+			        	<!-- xpccf7k0qfgdh7nx4f7vncflX1XYgrGQ6XRqclQPMlaETfBxmT1 -->
+			            This tool is not meant to replace the MC Studio. Rather it is a complementary tool to help implementation faster.
+			            The MC Studio is the ultimate tool to create objects for MC.
+			            <p style="color:#ffffff">
+			            	You don't need soap endpoint if you're using API login using client/secret. Just tick teh "IS API" box.
+			            	<br/>
+			            	<b>Caution:</b> Use at your own risk. May the force be with you.!
+			            </p>
+			        </div>
+			    </div>
 			</div>
-			<div class="row" th:if="${isShowForm}">
-				<div class="col-xs-4"> &nbsp;</div>
-				<div class="col-lg-8">
-					<button type="submit" name="initiate">Initiate</button>
-				</div>
-			</div>
-			<div class="row" th:unless="${isShowForm}">
-				<div class="col-xs-4"> &nbsp;</div>
-				<div class="col-lg-8">
-					<button type="submit" name="logout">Logout</button>
-				</div>
-			</div>
-		</form>
+		</div>
+		
 		
 	</div>
     

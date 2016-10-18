@@ -25,7 +25,7 @@ import com.exacttarget.fuelsdk.internal.UpdateRequest;
 import com.exacttarget.fuelsdk.internal.UpdateResponse;
 
 
-public class ETQueryObject extends ETSoapObject  {
+public class ETQueryObject extends ETSoapObjectExtended  {
 
 	@ExternalName("id")
     private String id = null;

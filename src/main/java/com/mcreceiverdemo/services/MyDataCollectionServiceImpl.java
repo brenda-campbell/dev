@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mcreceiverdemo.mvcmodels.MyData;
-import com.mcreceiverdemo.repositories.DEDataRepository;
+import com.mcreceiverdemo.repositories.MyDataRepository;
 
 @Service
 public class MyDataCollectionServiceImpl implements MyDataCollectionService {
 	
 	@Autowired
-    private DEDataRepository nameValueRepository; 
+    private MyDataRepository nameValueRepository; 
 	
 	@Override
 	public List<MyData> findAll() {

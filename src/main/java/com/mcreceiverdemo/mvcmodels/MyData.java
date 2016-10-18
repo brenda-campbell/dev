@@ -6,15 +6,16 @@ import java.util.List;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MyData {
 	
-	@NotNull
-	private String key;
+	@NotNull @NotEmpty(message = "{MyData.key.required}")
+	protected String key;
 	
-	@Size(min=1)
+	@Size(min=1, max=400)
 	private List<NameValue> nameValues = new ArrayList<NameValue>();
 	
 	
@@ -36,7 +37,7 @@ public class MyData {
 
     @Override
     public String toString() {
-        return "DEData [key=" + this.key + ", rows=" + this.nameValues + "]";
+        return "Data [key=" + this.key + ", rows=" + this.nameValues + "]";
     }
 	
 	

@@ -6,15 +6,30 @@ import java.util.List;
 
 import com.exacttarget.fuelsdk.ETClient;
 import com.exacttarget.fuelsdk.ETSdkException;
+import com.exacttarget.fuelsdk.annotations.ExternalName;
+import com.exacttarget.fuelsdk.annotations.InternalName;
 import com.exacttarget.fuelsdk.annotations.SoapObject;
+import com.exacttarget.fuelsdk.internal.ClientID;
 
 @SoapObject(internalType = com.exacttarget.fuelsdk.internal.QueryDefinition.class, unretrievable = {
 	    "ID"
 	})
 public class ETUpdateQueryObject extends ETQueryObject {
 
+	public ClientID getClientID() {
+		return clientID;
+	}
+
+	public void setClientID(ClientID clientID) {
+		this.clientID = clientID;
+	}
+
+	@ExternalName("client")
+	@InternalName("client")
+	private ClientID clientID;
 	
-	public void cloneQueryObject(ETRetrieveQueryObject r){
+	
+	public void cloneQueryObject(ETRetrieveQueryObject r, Integer mid){
 		this.setKey(r.getKey());
 		this.setName(r.getName());
 		this.setQueryText(r.getQueryText());
@@ -29,7 +44,11 @@ public class ETUpdateQueryObject extends ETQueryObject {
 		this.setCreatedDate(r.getCreatedDate());
 		this.setModifiedDate(new Date());
 		
-		
+		if(mid != null && mid.intValue() > 0) {
+			ClientID cid = new ClientID();
+			cid.setClientID(mid);
+			this.setClientID(cid);
+		}
 	}
 	
 	public void update(ETClient client) throws ETSdkException {

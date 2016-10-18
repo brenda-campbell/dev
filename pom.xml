@@ -22,7 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		  <start-class>com.mcreceiverdemo.McreceiverApplication</start-class>
+		<start-class>com.mcreceiverdemo.McreceiverApplication</start-class>
 		  <!-- <org.springframework-version>4.3.2.RELEASE</org.springframework-version>-->
 	</properties>
 
@@ -46,6 +46,9 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+		
+		
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -77,6 +80,12 @@
 	        <groupId>org.springframework.security</groupId>
 	        <artifactId>spring-security-config</artifactId>
 	    </dependency>
+	    
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity4</artifactId>	
+			<!-- <version>2.1.2.RELEASE</version>-->
+		</dependency>
 		<!-- end Security -->
 		
 		<!-- JAXB stuff -->
@@ -92,7 +101,6 @@
 		</dependency>
 		<!-- end JAXB -->
 		
-		
 		<!-- Code@MC FUEL SDK -->		
 		<dependency>
 		  <groupId>com.exacttarget</groupId>
@@ -100,6 +108,7 @@
 		  <version>1.1.0</version>
 		</dependency>		
 		<!-- //End FUEL SDK -->
+		
 		
 		
 	</dependencies>
@@ -134,8 +143,11 @@
 		<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				
 			</plugin>
+
+			
+
+
 
 		</plugins>
 		
@@ -145,7 +157,6 @@
 	    	<plugin>
 	      		<groupId>org.springframework.boot</groupId>
 	      		<artifactId>spring-boot-maven-plugin</artifactId>
-	      		
 	    	</plugin>
 	  </plugins>
 		

@@ -1,97 +1,120 @@
 <div class="row" th:fragment="content">
 		
-	<div class="col-lg-12">
-	<form action="#" th:action="@{/qa/uattoprod}" th:object="${qaKey}" method="post">
-	
-		<div class="qakeylist" th:unless="${#lists.isEmpty(allQAKeys)}">
-	   
-	     		<h2>List of QA Data</h2>
-	
-			<table>
-		    	<thead>
-		        	<tr>
-			            <th>Bunch</th>
-			            <th>Keys</th>
-		          	</tr>
-		        </thead>
-		        <tbody>
-		          	<tr th:each="fd : ${allQAKeys}">
-		            	<td th:text="${fd.bunchName}">bunch</td>
-		            	<td>
-			              	<table>
-			                	<tbody>
-			                  		<tr th:each="nv,nvStat : ${fd.keys}">
-			                    		<td th:text="${nvStat.count}">1</td>
-			                    		<td th:text="${nv}">Keys</td>
-			                  		</tr>
-			                	</tbody>
-			              	</table>
-			            </td>
-		          	</tr>
-		        </tbody>
-			</table>
-	      
-	    </div>
-		
-		<div class="submit">
-        	<button type="submit" name="save">Clone UAT To PROD</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        	<button type="submit" name="clearQueue">Clear Queue</button>
-        </div>
-	</form>
-		<div>
-			<h2>Add new dynamic</h2>
+	<div class="col-lg-12">	
+
+		<div class="row">
+			<div class="col-lg-12">
+				<form action="#" th:action="@{/qa/uattoprod}" th:object="${qaKey}" method="post">
+					<div class="panel " th:classappend="${#fields.hasErrors('*')} ? panel-danger : panel-primary">
+						<div class="panel-heading">
+				            <h3 class="panel-title"><i class="fa fa-cogs fa-2x"></i> <span class="lead"> Query Activity Input</span></h3>
+				        </div>
+				        <div class="panel-body">
+				        	<ul th:if="${#fields.hasErrors('*')}" class="errorlist">
+			           			<li class="text-danger" th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+			         		</ul>
+			         		
+			         		<div class="row padding-bottom-20">
+					        	<div class="col-md-2">	<b>Package Name</b> </div>
+				            	<div class="col-lg-6">
+				            		<input type="text" th:field="*{bunchName}" class="form-control" th:classappend="${#fields.hasErrors('bunchName')}? fieldError" />
+				            	</div>
+					            <div class="col-lg-4">&nbsp;</div>
+					        </div>
+					        <div class="row padding-bottom-20">
+					        	<div class="col-md-2">	<b>External Keys</b> </div>
+				            	<div class="col-lg-6">
+				            		<table class="table table-striped">
+				             			<thead>
+					               			<tr>
+				                 				<th>#</th>
+				                 				<th>External Key</th>
+				                 				<th>
+				                   					<button type="submit" name="addKey" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+				                 				</th>
+					               			</tr>
+				             			</thead>
+				             			<tbody>
+				               				<tr th:each="nv,nvStat : *{keys}">
+				                 				<td th:text="${nvStat.count}">1</td>
+				                 				<td>
+												  	<input type="text" 
+												  		th:field="*{keys[__${nvStat.index}__]}" 
+							                           	class="form-control" th:classappend="${#fields.hasErrors('keys[__${nvStat.index}__]')}? 'fieldError'"/>
+												</td>
+				                 				
+												<td>
+													<button type="submit" name="removeKey" th:value="${nvStat.index}" class="btn btn-primary"><i class="fa fa-minus"></i></button>
+												</td>
+				               				</tr>
+				             			</tbody>
+				           			</table>
+				            	
+				            	</div>
+				            	<div class="col-lg-4">&nbsp;</div>
+				            </div>
+				            <div class="row padding-bottom-20">
+					        	<div class="col-md-2">	&nbsp; </div>
+				            	<div class="col-lg-6">
+				            		<button type="submit" name="addToQueue" class="btn btn-primary"><i class="fa fa-list-alt"></i> Add To Data Queue</button>	
+				            	</div>
+				            	<div class="col-lg-4">&nbsp;</div>
+				            </div>
+			         		
+				        </div>
+				        	
+				   </div>
+				
+				</form>
+				
+						
+			</div>		
 		</div>
 		
-		<form action="#" th:action="@{/qa/uattoprod}" th:object="${qaKey}" method="post">
-			<fieldset>
-         		<legend>qa Key</legend>
-
-         		<ul th:if="${#fields.hasErrors('*')}" class="errorlist">
-           			<li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
-         		</ul>
-         		
-          		<div>
-	            	<label for="bunchName">
-	              		<span>Package Name</span>
-	            	</label>
-	            	<input type="text" th:field="*{bunchName}" th:class="${#fields.hasErrors('bunchName')}? fieldError" required="required" />
-	          	</div>
-	          	
-	          	<div>
-	           		<label>Keys</label>
-	           		<table>
-	             			<thead>
-		               			<tr>
-		                 				<th>Row</th>
-		                 				<th>Key</th>
-		                 				<th>
-		                   					<button type="submit" name="addKey">Add Key</button>
-		                 				</th>
-		               			</tr>
-	             			</thead>
-	             			<tbody>
-	               				<tr th:each="nv,nvStat : *{keys}">
-	                 				<td th:text="${nvStat.count}">1</td>
-	                 				<td>
-									  	<input type="text" 
-				                           th:field="*{keys[__${nvStat.index}__]}" 
-				                           th:class="${#fields.hasErrors('keys[__${nvStat.index}__]')}? 'fieldError'"/>
-									</td>
-	                 				
-									<td>
-										<button type="submit" name="removeKey" th:value="${nvStat.index}">Remove row</button>
-									</td>
-	               				</tr>
-	             			</tbody>
-	           		</table>
+		<div class="row" th:unless="${#lists.isEmpty(allQAKeys)}">
+			<div class="col-lg-12">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<i class="fa fa-th"> <span class="lead"> List of Query Definition(s) To be executed</span></i>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<form action="#" th:action="@{/qa/uattoprod}" th:object="${qaKey}" method="post">
+							<table class="table table-striped table-inverse">
+						    	<thead>
+						        	<tr>
+							            <th>Package</th>
+							            <th>External Keys</th>
+						          	</tr>
+						        </thead>
+						        <tbody>
+						          	<tr th:each="fd : ${allQAKeys}">
+						            	<td th:text="${fd.bunchName}">bunch</td>
+						            	<td>
+							              	<table>
+							                	<tbody>
+							                  		<tr th:each="nv,nvStat : ${fd.keys}">
+							                    		<td th:text="${nvStat.count}">1</td>
+							                    		<td th:text="${nv}">Keys</td>
+							                  		</tr>
+							                	</tbody>
+							              	</table>
+							            </td>
+						          	</tr>
+						        </tbody>
+							</table>
+						
+							<div class="submit">
+					        	<button type="submit" name="save" class="btn btn-primary"><i class="fa fa-copy"></i> Clone UAT To PROD</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					        	<button type="submit" name="clearQueue" class="btn btn-primary"><i class="fa fa-trash"></i> Clear Queue</button>
+					        </div>
+						</form>
+						
+					</div>
 				</div>
-	   
-		        <div class="submit">
-		        	<button type="submit" name="addToQueue">Add To Data Queue</button>
-		        </div>
-			</fieldset>
-		</form>
-		
+			</div>
+		</div>
 	
 	</div>	
 		

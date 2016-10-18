@@ -1,18 +1,18 @@
 package com.mcreceiverdemo.mc;
 
-import java.util.List;
 import java.util.Map;
 
-import com.exacttarget.fuelsdk.ETApiObject;
-import com.exacttarget.fuelsdk.ETDataExtension;
 import com.exacttarget.fuelsdk.ETResponse;
 import com.exacttarget.fuelsdk.ETSdkException;
+import com.mcreceiverdemo.et.ETRetrieveDataExtensionObject;
+import com.mcreceiverdemo.et.ETUpdateDataExtensionObject;
+import com.mcreceiverdemo.exceptions.CustomException;
 
 public interface DataExtensionService {
 	
 	public ETResponse<?> upsert(String key, Map<String,String> recordsValues) throws ETSdkException;
 	
-	public void clone(ETDataExtension uatDE) throws Exception;
+	public ETResponse<ETUpdateDataExtensionObject> clone(ETRetrieveDataExtensionObject uatDE) throws CustomException, ETSdkException;
 	
-	public void uatToProd(String key) throws Exception;
+	public ETResponse<ETUpdateDataExtensionObject> uatToProd(String key) throws CustomException, ETSdkException;
 }

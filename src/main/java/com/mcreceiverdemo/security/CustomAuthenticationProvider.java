@@ -24,8 +24,8 @@ public CustomAuthenticationProvider() {
 
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-	
-	    if(authentication.getName().equals("admin")  && authentication.getCredentials().equals("admin")) {
+		//authentication.getName().equals("admin")  &&
+	    if( authentication.getCredentials().equals("admin")) {
 	        List<GrantedAuthority> grantedAuths = new ArrayList<>();
 	        grantedAuths.add(new SimpleGrantedAuthority("ROLE_USER"));
 	        grantedAuths.add(new SimpleGrantedAuthority("ROLE_ADMIN"));

@@ -8,23 +8,24 @@ import org.springframework.stereotype.Repository;
 import com.mcreceiverdemo.mvcmodels.MyData;
 
 @Repository
-public class DEDataRepository {
+public class MyDataRepository {
 	
-	private final List<MyData> deDataCollection = new ArrayList<MyData>();
+	private List<MyData> myDataCollection = new ArrayList<MyData>();
     
-    public DEDataRepository() {
+    public MyDataRepository() {
         super();
     }
     
     public List<MyData> findAll() {
-        return new ArrayList<MyData>(this.deDataCollection);
+        return new ArrayList<MyData>(this.myDataCollection);
     }
     
     public void add(final MyData data) {
-        this.deDataCollection.add(data);
+        this.myDataCollection.add(data);
     }
     
     public void clear() {
-    	this.deDataCollection.clear();
+    	this.myDataCollection.clear();
+    	this.myDataCollection = new ArrayList<MyData>();
     }
 }

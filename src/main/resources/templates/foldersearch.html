@@ -1,0 +1,125 @@
+<div class="row" th:fragment="content">
+		
+	<div class="col-lg-12">
+		
+		<form action="#" th:action="@{/folder/search}" th:object="${folderPath}" method="post">
+			<div class="panel " th:classappend="${#fields.hasErrors('*')} ? panel-danger : panel-primary">
+				<div class="panel-heading">
+		            <h3 class="panel-title"><i class="fa fa-search fa-2x"></i> <span class="lead"> Search folder path</span></h3>
+		        </div>
+		        <div class="panel-body">
+		    		
+	         		<ul th:if="${#fields.hasErrors('*')}" class="errorlist">
+	           			<li class="text-danger" th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+	         		</ul>
+	         		
+	          		<div class="row padding-bottom-20">
+		            	<div class="col-md-2">	<b>Package Name</b> </div>
+		            	<div class="col-lg-6">	
+							<input type="text" th:field="*{bunchName}" class="form-control" th:classappend="${#fields.hasErrors('bunchName')}? fieldError"/>
+						</div>
+						<div class="col-lg-4">&nbsp;</div>
+		          	</div>
+		          	
+		          	<div class="row padding-bottom-20">
+		           		<div class="col-md-2">	<b>Folder Paths</b> </div>
+		           		<div class="col-lg-8">
+		           			<table class="table table-striped">
+		             			<thead>
+			               			<tr>
+		                 				<th>#</th>
+		                 				<th>Path</th>
+		                 				<th>
+		                   					<button type="submit" name="addPath" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+		                 				</th>
+			               			</tr>
+		             			</thead>
+		             			<tbody>
+		               				<tr th:each="nv,nvStat : *{keys}">
+		                 				<td th:text="${nvStat.count}">1</td>
+		                 				<td>
+										  	<input type="text" 
+					                           th:field="*{keys[__${nvStat.index}__]}" 
+					                           class="form-control" th:classappend="${#fields.hasErrors('keys[__${nvStat.index}__]')}? 'fieldError'"/>
+										</td>
+		                 				
+										<td>
+											<button type="submit" name="removePath" class="btn btn-primary" th:value="${nvStat.index}"><i class="fa fa-minus"></i></button>
+										</td>
+		               				</tr>
+		             			</tbody>
+		           			</table>
+		           		</div>
+		           			
+					</div>
+		   
+			        <div class="row padding-bottom-20">
+			        	<div class="col-md-2">&nbsp;</div>
+		            	<div class="col-lg-6">	
+							<button type="submit" name="search" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
+						</div>
+						<div class="col-lg-4">&nbsp;</div>
+			        	
+			        </div>
+					
+					    	
+		        </div>
+			</div>
+		</form>
+		
+		<div class="panel panel-info" th:unless="${#lists.isEmpty(allAPIObjects)}">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<i class="fa fa-bar-chart-o"> <span class="lead"> Search result</span></i>
+				</h3>
+			</div>
+			<div class="panel-body">
+				<form action="#" th:action="@{/folder/search}" th:object="${apiObjectData}" method="post">
+					<div th:each="fd: ${allAPIObjects}">
+						<span th:text="${fd.key}">package name</span>
+						<table class="table table-striped table-inverse">
+					    	<thead>
+					        	<tr>
+					        		<th>&nbsp;</th>
+						            <th>Name</th>
+						            <th>Type</th>
+						            <th>Customer Key</th>
+					          	</tr>
+					        </thead>
+					        <tbody>
+					          	<tr th:each="nv,nvStat : ${fd.nameValues}">
+					          		<td>
+					          			<input type="checkbox" 
+						                           th:field="*{nameValues[__${nvStat.index}__].key}"
+						                           class="form-control" 
+						                           th:value="${nv.key}"/>
+										<input type="hidden" 
+						                           th:attr="name='nameValues[__${nvStat.index}__].name'"
+						                           class="form-control" 
+						                           th:value="${fd.key}"/>
+					          		</td>
+					            	<td th:text="${nv.name}">object name</td>
+					            	<td th:text="${nv.value}">Object Type</td>
+					            	<td th:text="${nv.key}">object Customer Key</td>
+					          	</tr>
+					        </tbody>
+						</table>	
+					</div>
+					
+					
+				
+					<div class="submit">
+						<button type="submit" name="queue" class="btn btn-primary"><i class="fa fa-list"></i> Queue</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			        	<button type="submit" name="cloneQ" class="btn btn-primary"><i class="fa fa-copy"></i> Clone UAT To PROD</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			        	<button type="submit" name="clearQ" class="btn btn-primary"><i class="fa fa-trash"></i> Clear</button>
+			        </div>
+				</form>
+									
+			</div>
+		</div>
+	
+	</div>	
+		
+
+	
+</div>

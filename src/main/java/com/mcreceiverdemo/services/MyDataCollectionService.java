@@ -6,6 +6,6 @@ import com.mcreceiverdemo.mvcmodels.MyData;
 
 public interface MyDataCollectionService {
 	public List<MyData> findAll();
-	public void add(final MyData nameValue);
+	public void add(final MyData myData);
 	public void clear();
 }
